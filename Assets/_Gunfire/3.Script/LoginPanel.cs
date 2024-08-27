@@ -11,6 +11,8 @@ public class LoginPanel : MonoBehaviour
     public Button loginButton;
     public Button signUpButton;
 
+    public GameObject namePanel;
+
     private void Awake()
     {
         loginButton.onClick.AddListener(LoginButtonClick);
@@ -42,5 +44,10 @@ public class LoginPanel : MonoBehaviour
     {
         signUpButton.interactable = false;
 
+        FirebaseManager.Instance.SignUp(idInput.text, pwInput.text, (user) =>
+        {
+
+            signUpButton.interactable = true;
+        });
     }
 }

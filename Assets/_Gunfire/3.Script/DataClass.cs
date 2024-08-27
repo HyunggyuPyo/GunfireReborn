@@ -18,10 +18,11 @@ public class UserData
         this.soulPoint = soul;
     }
 
-    public UserData(string userId, string userName)
+    public UserData(string userId)//, string userName
     {
         this.userId = userId;
-        this.userName = userName;
+        //this.userName = userName;         todo : 닉네임 변경 만들기
+        userName = $"{userId}";
         soulPoint = 0;
     }
 }

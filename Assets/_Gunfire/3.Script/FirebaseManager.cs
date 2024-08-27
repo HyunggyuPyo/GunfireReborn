@@ -1,6 +1,7 @@
 using Firebase;
 using Firebase.Auth;
 using Firebase.Database;
+using Newtonsoft.Json;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -15,6 +16,7 @@ public class FirebaseManager : MonoBehaviour
     public FirebaseDatabase DB { get; private set; }
 
     public DatabaseReference usersRef;
+    public UserData userData;
 
     public bool IsInitialized { get; private set; } = false;
 
@@ -47,7 +49,19 @@ public class FirebaseManager : MonoBehaviour
     {
         try
         {
+            var result = await Auth.CreateUserWithEmailAndPasswordAsync(email, password);
 
+            callback?.Invoke(result.User);
+
+            usersRef = DB.GetReference($"users/{result.User.UserId}");
+
+            UserData userData = new UserData(result.User.UserId);
+
+            string userDataJson = JsonConvert.SerializeObject(userData);
+
+            await usersRef.SetRawJsonValueAsync(userDataJson);
+
+            this.userData = userData;
         }
         catch (FirebaseException e)
         {
