@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:keep="@string/gcm_defaultSenderId,@string/google_storage_bucket,@string/project_id,@string/google_api_key,@string/google_crash_reporting_api_key,@string/google_app_id">
+  <string name="gcm_defaultSenderId" translatable="false">852605936797</string>
+  <string name="google_storage_bucket" translatable="false">gunfirereborn-dfa80.appspot.com</string>
+  <string name="project_id" translatable="false">gunfirereborn-dfa80</string>
+  <string name="google_api_key" translatable="false">AIzaSyBo5IcpU0CX7Y9kx0o_X7x5qr1mO43xbYE</string>
+  <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBo5IcpU0CX7Y9kx0o_X7x5qr1mO43xbYE</string>
+  <string name="google_app_id" translatable="false">1:852605936797:android:3f94cf11a1f5b22757a074</string>
+</resources>

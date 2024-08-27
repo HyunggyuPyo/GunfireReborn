@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "852605936797",
+    "project_id": "gunfirereborn-dfa80",
+    "storage_bucket": "gunfirereborn-dfa80.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:852605936797:android:3f94cf11a1f5b22757a074",
+        "android_client_info": {
+          "package_name": "com.pyo.GunfireReborn"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBo5IcpU0CX7Y9kx0o_X7x5qr1mO43xbYE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,795 @@
+fileFormatVersion: 2
+guid: 319468e9d4054374188c96e1a0d0ad59
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: img_logofire_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 853.3333
+        width: 173.4
+        height: 170.66667
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71e7a0c50578776438bfc797212127a1
+      internalID: 1066529182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: img_logofire_1
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 853.3333
+        width: 173.4
+        height: 170.66667
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcb7f4880f0cad14eaa26951be6cf414
+      internalID: 695463442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: img_logofire_2
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 853.3333
+        width: 173.4
+        height: 170.66667
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79cad505ca9cf5d41b48c90679316823
+      internalID: -2133063307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: img_logofire_4
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 853.3333
+        width: 173.4
+        height: 170.66667
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10f7c532b3ee72144a0d2e0746a1751f
+      internalID: -1443536714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: img_logofire_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 683.3333
+        width: 173.4
+        height: 170.66667
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c9b9165b578d6f4f918a3d1241378c1
+      internalID: -917427160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: img_logofire_8
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 683.3333
+        width: 173.4
+        height: 170.66667
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e49b38563e72294ebb594d25bdda3bc
+      internalID: 569660495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: img_logofire_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 513.3333
+        width: 173.4
+        height: 170.66667
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7754f9a4f68eb548a25945f2c7f4ef3
+      internalID: -1152879848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: img_logofire_12
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 513.3333
+        width: 173.4
+        height: 170.66667
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd470e5ae41a5fa4385905d34cf6a7a7
+      internalID: 1878272630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: img_logofire_14
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 513.3333
+        width: 173.4
+        height: 170.66667
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eee0a292364871540aba390a3f41018d
+      internalID: 1713290222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: img_logofire_16
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 343.3333
+        width: 173.4
+        height: 170.66667
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0c10a480d722da42affd2aff1b990c3
+      internalID: -807262174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: img_logofire_18
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 343.3333
+        width: 173.4
+        height: 170.66667
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9ffaf724e08c7847b8eeaf70d808e8a
+      internalID: 2035492728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: img_logofire_19
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 343.3333
+        width: 173.4
+        height: 170.66667
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13fed60e62c27d14181f2ec2b84119d8
+      internalID: -2043916787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: img_logofire_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 173.33333
+        width: 173.4
+        height: 170.66667
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 746bc4eff40030c43897771f8d1d1f11
+      internalID: -519070141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: img_logofire_22
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 173.33333
+        width: 173.4
+        height: 170.66667
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef1ce99a8f3413c45a5996eb0a0d28f0
+      internalID: 1656752359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: img_logofire_23
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 173.33333
+        width: 173.4
+        height: 170.66667
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e2cff24b486c304e8beee0493075a44
+      internalID: 1707078420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: img_logofire_24
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 173.33333
+        width: 173.4
+        height: 170.66667
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a93fd1de57e15e47966b8faa4f85967
+      internalID: 1493376030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: img_logofire_26
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 3.3333282
+        width: 173.4
+        height: 170.66667
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5c054d5352fdb0449b294e76ca1f5d3
+      internalID: 1636872583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: img_logofire_28
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 3.3333282
+        width: 173.4
+        height: 170.66667
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84d6669634a49d24281eebc7746b3c9f
+      internalID: -1168855858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: img_logofire_3
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 853.3333
+        width: 173.4
+        height: 170.66667
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64317578af4b0cb4a9bb894048780126
+      internalID: -635122522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: img_logofire_6
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 683.3333
+        width: 173.4
+        height: 170.66667
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1167c1ac9bc132e4885eec422d1047b4
+      internalID: -730467209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: img_logofire_7
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 683.3333
+        width: 173.4
+        height: 170.66667
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b65bc31c94ca21d499b57c893b0bbbed
+      internalID: 1979769213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: img_logofire_9
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 683.3333
+        width: 173.4
+        height: 170.66667
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9709433d862a5cc419df4de968e1dc0e
+      internalID: 242614165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: img_logofire_11
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 513.3333
+        width: 173.4
+        height: 170.66667
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9b534b22817a7f44b32f49c7d904d20
+      internalID: -1137096139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: img_logofire_13
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 513.3333
+        width: 173.4
+        height: 170.66667
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: defd61470c031274b9780e09db038d86
+      internalID: -1787840381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: img_logofire_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 343.3333
+        width: 173.4
+        height: 170.66667
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99b379cc29109c84b92f3ccae286b7e5
+      internalID: -1964108576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: img_logofire_17
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 343.3333
+        width: 173.4
+        height: 170.66667
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc29df9b18fab9742b33f85ce6741be1
+      internalID: 311125534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: img_logofire_21
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 173.33333
+        width: 173.4
+        height: 170.66667
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f508f327481ab04eb1606d4ffa32c55
+      internalID: -934149917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: img_logofire_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3.3333282
+        width: 173.4
+        height: 170.66667
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b9093b29ce5e004087e324354fe5970
+      internalID: -2002357903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: img_logofire_27
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 3.3333282
+        width: 173.4
+        height: 170.66667
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdb135980bcdc7546a2d931bae9dc718
+      internalID: 1941185874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: img_logofire_29
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 3.3333282
+        width: 173.4
+        height: 170.66667
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75e659ff9da5d6d4aa72df03a241bdb1
+      internalID: -61297158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      img_logofire_0: 1066529182
+      img_logofire_1: 695463442
+      img_logofire_10: -1152879848
+      img_logofire_11: -1137096139
+      img_logofire_12: 1878272630
+      img_logofire_13: -1787840381
+      img_logofire_14: 1713290222
+      img_logofire_15: -1964108576
+      img_logofire_16: -807262174
+      img_logofire_17: 311125534
+      img_logofire_18: 2035492728
+      img_logofire_19: -2043916787
+      img_logofire_2: -2133063307
+      img_logofire_20: -519070141
+      img_logofire_21: -934149917
+      img_logofire_22: 1656752359
+      img_logofire_23: 1707078420
+      img_logofire_24: 1493376030
+      img_logofire_25: -2002357903
+      img_logofire_26: 1636872583
+      img_logofire_27: 1941185874
+      img_logofire_28: -1168855858
+      img_logofire_29: -61297158
+      img_logofire_3: -635122522
+      img_logofire_4: -1443536714
+      img_logofire_5: -917427160
+      img_logofire_6: -730467209
+      img_logofire_7: 1979769213
+      img_logofire_8: 569660495
+      img_logofire_9: 242614165
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
