@@ -26,6 +26,11 @@ public class FirebaseManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    void Start()
+    {
+        InitializeAsync();
+    }
+
     async void InitializeAsync()
     {
         DependencyStatus status = await FirebaseApp.CheckAndFixDependenciesAsync();
@@ -76,5 +81,28 @@ public class FirebaseManager : MonoBehaviour
         usersRef = DB.GetReference($"users/{result.User.UserId}");
 
         DataSnapshot userDataValues = await usersRef.GetValueAsync();
+
+        if(userDataValues.Exists)
+        {
+            string json = userDataValues.GetRawJsonValue();
+            userData = JsonConvert.DeserializeObject<UserData>(json);
+        }
+        else
+        {
+            //todo 에러창 띄우기
+        }
+
+        callback?.Invoke(result.User);
+    }
+
+    public async void SetName(string name, Action callback = null)
+    {
+        var targetRef = usersRef.Child("userName");
+        await targetRef.SetValueAsync(name);
+
+        userData.userName = name;
+
+        callback?.Invoke();
+        //todo 닉네임 중복검사 만들기
     }
 }
