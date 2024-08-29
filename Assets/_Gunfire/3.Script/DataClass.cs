@@ -26,3 +26,9 @@ public class UserData
         soulPoint = 0;
     }
 }
+
+[Serializable]
+public class Message
+{
+    public string sender;
+}

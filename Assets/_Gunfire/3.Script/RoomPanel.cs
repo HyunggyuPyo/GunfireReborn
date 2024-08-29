@@ -15,7 +15,7 @@ public class RoomPanel : MonoBehaviourPunCallbacks
     public Toggle readyToggle;
     public TMP_Text readyButtonText;
 
-    public Transform entryPlayers;
+    //public Transform entryPlayers;
     public Transform[] playerPoint;
     public GameObject playerEntryPrefab;
     public Button[] InviteButtons;
@@ -127,6 +127,7 @@ public class RoomPanel : MonoBehaviourPunCallbacks
         print(FirebaseManager.Instance.userData.userName);
         readyButtonText.text = "게임 시작";
 
+        //todo :  이부분 OnJoinedRoom()으로 내리는게 맞을까?
         Instantiate(playerEntryPrefab, playerPoint[0], false);
     }
 
