@@ -8,4 +8,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Gunfire/1.Scene/PlayerTest.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/_Gunfire/1.Scene/Robby.unity
+    guid: 7b7c2066a78d8e84baa9bae6d948c3f8
+  - enabled: 1
+    path: Assets/_Gunfire/1.Scene/Game.unity
+    guid: cc51d8d459ca79443b87cf209f097c65
+  - enabled: 1
+    path: Assets/_Gunfire/1.Scene/Boss.unity
+    guid: ad07b3603c91b614a8f3dc423acb6ef4
   m_configObjects: {}
