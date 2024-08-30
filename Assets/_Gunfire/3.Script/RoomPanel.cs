@@ -18,7 +18,10 @@ public class RoomPanel : MonoBehaviourPunCallbacks
     //public Transform entryPlayers;
     public Transform[] playerPoint;
     public GameObject playerEntryPrefab;
-    public Button[] InviteButtons;
+
+    public Button[] inviteButtons;
+    public SendMessage sendPopup;
+    public ReceiveMessage receivePopup;
 
     private Dictionary<int, bool> playersReady;
     public Dictionary<int, PlayerEntry> playerEntries = new();
@@ -30,7 +33,15 @@ public class RoomPanel : MonoBehaviourPunCallbacks
     {
         readyButton.onClick.AddListener(ReadyButtonClick);
         exitButton.onClick.AddListener(ExitRoomButtonClick);
-        
+
+        inviteButtons[0].onClick.AddListener(InviteButtonCilck);
+        inviteButtons[1].onClick.AddListener(InviteButtonCilck);
+        inviteButtons[2].onClick.AddListener(InviteButtonCilck);
+    }
+
+    private void Start()
+    {
+        FirebaseManager.Instance.onInviteMessage += receivePopup.OnReceiveMessage;
     }
 
     public override void OnEnable()
@@ -125,21 +136,23 @@ public class RoomPanel : MonoBehaviourPunCallbacks
             });
 
         print(FirebaseManager.Instance.userData.userName);
-        readyButtonText.text = "게임 시작";
-
-        //todo :  이부분 OnJoinedRoom()으로 내리는게 맞을까?
-        Instantiate(playerEntryPrefab, playerPoint[0], false);
     }
 
     public override void OnJoinedRoom()
     {
         base.OnJoinedRoom();
 
-        if(!PhotonNetwork.IsMasterClient)
+        if(PhotonNetwork.IsMasterClient)
+        {
+            readyButtonText.text = "게임 시작";
+            //todo :  이부분 OnJoinedRoom()으로 내리는게 맞을까?
+            Instantiate(playerEntryPrefab, playerPoint[0], false);
+        }
+        else
         {
             readyButtonText.text = "준비";
             Instantiate(playerEntryPrefab, playerPoint[PhotonNetwork.CurrentRoom.PlayerCount - 1], false);
-        }   
+        }
     }
 
     void ReadyButtonClick()
@@ -169,6 +182,11 @@ public class RoomPanel : MonoBehaviourPunCallbacks
         PhotonNetwork.LeaveRoom();
         PhotonNetwork.AutomaticallySyncScene = false;
         OnConnectedToMaster();
+    }
+
+    void InviteButtonCilck()
+    {
+        sendPopup.gameObject.SetActive(true);
     }
 
 }

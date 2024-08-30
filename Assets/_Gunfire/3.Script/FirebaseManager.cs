@@ -15,10 +15,15 @@ public class FirebaseManager : MonoBehaviour
     public FirebaseAuth Auth { get; private set; }
     public FirebaseDatabase DB { get; private set; }
 
+    public bool IsInitialized { get; private set; } = false;
+
     public DatabaseReference usersRef;
     public UserData userData;
 
-    public bool IsInitialized { get; private set; } = false;
+    public event Action<FirebaseUser> onLogin;
+    public event Action<string> onInviteMessage;
+
+    
 
     void Awake()
     {
@@ -28,7 +33,24 @@ public class FirebaseManager : MonoBehaviour
 
     void Start()
     {
+        onLogin += OnLogin;
         InitializeAsync();
+    }
+
+    void OnLogin(FirebaseUser user)
+    {
+        var invitRef = DB.GetReference($"invitation/{user.UserId}");
+        //invitRef.ChildAdded += InvitationEventHandler;
+        invitRef.ValueChanged += InvitationEventHandler;
+    }
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.F))
+        {
+            print($"userId : {userData.userId} \n  ");
+        }
+
     }
 
     async void InitializeAsync()
@@ -67,6 +89,8 @@ public class FirebaseManager : MonoBehaviour
             await usersRef.SetRawJsonValueAsync(userDataJson);
 
             this.userData = userData;
+
+            onLogin?.Invoke(result.User);
         }
         catch (FirebaseException e)
         {
@@ -92,6 +116,7 @@ public class FirebaseManager : MonoBehaviour
             //todo 에러창 띄우기
         }
 
+        onLogin?.Invoke(result.User);
         callback?.Invoke(result.User);
     }
 
@@ -104,5 +129,39 @@ public class FirebaseManager : MonoBehaviour
 
         callback?.Invoke();
         //todo 닉네임 중복검사 만들기
+    }
+
+    public async void FindNickName(string name)
+    {
+        //DB.GetReference($"users
+        // 근데 이렇게하면 유저가 1000명이면 1000명 다 검사 해야 하는데? 
+    }
+
+    public void SendInvitation(string receiver, Message msg)
+    {
+        var invitRef = DB.GetReference($"invitation/{receiver}");
+        invitRef.SetValueAsync(msg);
+
+
+
+    }
+
+    public void InvitationEventHandler(object sender, ValueChangedEventArgs args)
+    {
+        if (args.DatabaseError != null)
+        {
+            Debug.LogError(args.DatabaseError);
+            return;
+        }
+
+        string inviter = args.Snapshot.Value.ToString();
+        if (!string.IsNullOrEmpty(inviter))
+        {
+            Debug.Log($"{inviter}로 부터 초대");
+        }
+        onInviteMessage?.Invoke(inviter);
+
+
+
     }
 }

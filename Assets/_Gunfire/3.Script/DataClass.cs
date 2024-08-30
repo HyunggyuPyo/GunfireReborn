@@ -31,4 +31,5 @@ public class UserData
 public class Message
 {
     public string sender;
+    public string nickname;
 }
