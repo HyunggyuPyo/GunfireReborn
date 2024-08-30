@@ -3,10 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class ReceiveMessage : MonoBehaviour
 {
-    public Text msgText;
+    public TMP_Text msgText;
     public Button refusalButton; // 거절
     public Button acceptanceButton; //수락
 
