@@ -12,6 +12,7 @@ public class RoomPanel : MonoBehaviourPunCallbacks
 {
     public Button readyButton;
     public Button exitButton;
+    public Button lobbyButton;
     public Toggle readyToggle;
     public TMP_Text readyButtonText;
 
@@ -33,6 +34,7 @@ public class RoomPanel : MonoBehaviourPunCallbacks
     {
         readyButton.onClick.AddListener(ReadyButtonClick);
         exitButton.onClick.AddListener(ExitRoomButtonClick);
+        lobbyButton.onClick.AddListener(LobbyButtonClick);
 
         inviteButtons[0].onClick.AddListener(InviteButtonCilck);
         inviteButtons[1].onClick.AddListener(InviteButtonCilck);
@@ -41,7 +43,7 @@ public class RoomPanel : MonoBehaviourPunCallbacks
 
     private void Start()
     {
-        FirebaseManager.Instance.onInviteMessage += receivePopup.OnReceiveMessage;
+        FirebaseManager.Instance.onInviteMessage += receivePopup.OnReceiveMessage; // todo 이거 로비패널에도 추가?
     }
 
     public override void OnEnable()
@@ -56,15 +58,17 @@ public class RoomPanel : MonoBehaviourPunCallbacks
 
         PhotonNetwork.AutomaticallySyncScene = true;
 
-        //foreach (Player player in PhotonNetwork.CurrentRoom.Players.Values)
-        //{
-        //    JoinPlayer(player);
+        foreach (Player player in PhotonNetwork.CurrentRoom.Players.Values)
+        {
+            //플레이어 다른방 입장 만들어야 됨
+            //JoinPlayer(player); 오류 수정
 
-        //    if(player.CustomProperties.ContainsKey("Ready"))
-        //    {
-        //        SetPlayerReady(player.ActorNumber, (bool)player.CustomProperties["Ready"]);
-        //    }
-        //}
+            if (player.CustomProperties.ContainsKey("Ready"))
+            {
+                SetPlayerReady(player.ActorNumber, (bool)player.CustomProperties["Ready"]);
+            }
+        }
+
     }
 
     private void CheckReady()
@@ -77,23 +81,6 @@ public class RoomPanel : MonoBehaviourPunCallbacks
         }
     }
 
-    //public void JoinPlayer(Player newPlayer)
-    //{
-    //    var playerEntry = Instantiate(playerEntryPrefab, entryPlayers, false).GetComponent<PlayerEntry>();
-
-    //    playerEntry.player = newPlayer;
-    //    playerEntry.nickNameText.text = newPlayer.NickName;
-
-    //    playerEntries[newPlayer.ActorNumber] = playerEntry;
-
-    //    if(PhotonNetwork.IsMasterClient)
-    //    {
-    //        playersReady[newPlayer.ActorNumber] = false;
-    //        CheckReady();
-    //    }
-
-    //    SortPlayers();
-    //}
 
     public void SetPlayerReady(int actorNumber, bool isReady)
     {
@@ -106,21 +93,14 @@ public class RoomPanel : MonoBehaviourPunCallbacks
         }
     }
 
-    //void SortPlayers()
-    //{
-    //    foreach (int actorNumber in playerEntries.Keys)
-    //    {
-    //        playerEntries[actorNumber].transform.SetSiblingIndex(actorNumber);
-    //    }
-    //}
-
     public override void OnDisable()
     {
         base.OnDisable();
 
         for (int i = 0; i < playerPoint.Length; i++)
         {
-            Destroy(playerPoint[i].GetChild(0).gameObject);
+            if(playerPoint[i].childCount != 0)
+                Destroy(playerPoint[i].GetChild(0).gameObject);
         }
     }
 
@@ -128,21 +108,15 @@ public class RoomPanel : MonoBehaviourPunCallbacks
     {
         base.OnConnectedToMaster();
 
-        PhotonNetwork.CreateRoom(
-            FirebaseManager.Instance.userData.userName,
-            new RoomOptions()
-            {
-                MaxPlayers = 4
-            });
-
-        print(FirebaseManager.Instance.userData.userName);
     }
 
     public override void OnJoinedRoom()
     {
         base.OnJoinedRoom();
+        print($"방에 들어왔어");
+        exitButton.gameObject.SetActive(!PhotonNetwork.IsMasterClient);
 
-        if(PhotonNetwork.IsMasterClient)
+        if (PhotonNetwork.IsMasterClient)
         {
             readyButtonText.text = "게임 시작";
             //todo :  이부분 OnJoinedRoom()으로 내리는게 맞을까?
@@ -155,38 +129,47 @@ public class RoomPanel : MonoBehaviourPunCallbacks
         }
     }
 
+    public override void OnJoinRoomFailed(short returnCode, string message)
+    {
+        base.OnJoinRoomFailed(returnCode, message);
+        print("방에 참여 실패");
+    }
+
     void ReadyButtonClick()
     {
-        if(PhotonNetwork.IsMasterClient) 
+        if(!PhotonNetwork.IsMasterClient) 
         {
             //if(모두가 레디 상태일때)
-            PhotonNetwork.LoadLevel("Game");
+            //PhotonNetwork.LoadLevel("Game");
+
+            Player localPlayer = PhotonNetwork.LocalPlayer;
+            PhotonHashtable customProps = localPlayer.CustomProperties;
+
+            if (!playerReady)
+                playerReady = true;
+            else
+                playerReady = false;
+
+            customProps["Ready"] = playerReady;
+            localPlayer.SetCustomProperties(customProps);
         }
-        //else
-        //{
-        //    if (playerReady)
-        //        playerReady = false;
-        //    else
-        //        playerReady = true;
-
-        //    Player localPlayer = PhotonNetwork.LocalPlayer;
-        //    PhotonHashtable customProps = localPlayer.CustomProperties;
-
-        //    customProps["Ready"] = playerReady;
-        //    localPlayer.SetCustomProperties(customProps);
-        //}
     }
 
     void ExitRoomButtonClick()
     {
         PhotonNetwork.LeaveRoom();
         PhotonNetwork.AutomaticallySyncScene = false;
-        OnConnectedToMaster();
+        //OnConnectedToMaster();
     }
 
     void InviteButtonCilck()
     {
         sendPopup.gameObject.SetActive(true);
+    }
+
+    void LobbyButtonClick()
+    {
+        PhotonNetwork.LeaveRoom();
     }
 
 }

@@ -18,21 +18,21 @@ public class SendMessage : MonoBehaviour
 
     private void OnEnable()
     {
-        //if(!string.IsNullOrEmpty(nameInput.text))
-        //{
-        //    nameInput.text = string.Empty;
-        //}  
+        if (!string.IsNullOrEmpty(nameInput.text))
+        {
+            nameInput.text = string.Empty;
+        }
     }
 
     public void SendButtonClick()
     {
-        Message msg = new Message()
-        {
-            sender = FirebaseManager.Instance.Auth.CurrentUser.UserId,
-            nickname = FirebaseManager.Instance.Auth.CurrentUser.DisplayName
-        };
+        //Message msg = new Message()
+        //{
+        //    sender = FirebaseManager.Instance.Auth.CurrentUser.UserId,
+        //    nickname = FirebaseManager.Instance.userData.userName
+        //};
 
-        FirebaseManager.Instance.SendInvitation(nameInput.text, msg);
+        FirebaseManager.Instance.SendInvitation(nameInput.text, FirebaseManager.Instance.userData.userName);
 
         gameObject.SetActive(false);
     }

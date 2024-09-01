@@ -19,10 +19,11 @@ public class ReceiveMessage : MonoBehaviour
         acceptanceButton.onClick.AddListener(AcceptanceButtonClick);
     }
 
-    public void OnReceiveMessage(string msg)
+    public void OnReceiveMessage(string inviter)
     {
-        msgText.text = $"{msg}님으로부터 초대받으셨습니다. \n 파티에 참가하시겠습니까?";
-        roomName = msg;
+        msgText.text = $"{inviter}님으로부터 초대받으셨습니다. \n 파티에 참가하시겠습니까?";
+        roomName = inviter;
+        FirebaseManager.Instance.SendInvitation(FirebaseManager.Instance.userData.userId, " ");
         gameObject.SetActive(true);
     }
 

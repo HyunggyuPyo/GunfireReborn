@@ -44,15 +44,6 @@ public class FirebaseManager : MonoBehaviour
         invitRef.ValueChanged += InvitationEventHandler;
     }
 
-    private void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.F))
-        {
-            print($"userId : {userData.userId} \n  ");
-        }
-
-    }
-
     async void InitializeAsync()
     {
         DependencyStatus status = await FirebaseApp.CheckAndFixDependenciesAsync();
@@ -131,19 +122,15 @@ public class FirebaseManager : MonoBehaviour
         //todo 닉네임 중복검사 만들기
     }
 
-    public async void FindNickName(string name)
-    {
-        //DB.GetReference($"users
-        // 근데 이렇게하면 유저가 1000명이면 1000명 다 검사 해야 하는데? 
-    }
-
-    public void SendInvitation(string receiver, Message msg)
+    public void SendInvitation(string receiver, string inviter)
     {
         var invitRef = DB.GetReference($"invitation/{receiver}");
-        invitRef.SetValueAsync(msg);
+        invitRef.SetValueAsync(inviter);
 
-
-
+        //var invitJson = JsonConvert.SerializeObject(msg);
+        //invitRef.Child( msg.nickname).SetRawJsonValueAsync(invitJson);
+        //invitRef.SetValueAsync(msg.nickname);
+        
     }
 
     public void InvitationEventHandler(object sender, ValueChangedEventArgs args)
@@ -155,13 +142,21 @@ public class FirebaseManager : MonoBehaviour
         }
 
         string inviter = args.Snapshot.Value.ToString();
+
         if (!string.IsNullOrEmpty(inviter))
         {
-            Debug.Log($"{inviter}로 부터 초대");
+            onInviteMessage?.Invoke(inviter);
         }
-        onInviteMessage?.Invoke(inviter);
+        
 
+        //수락이든 거절이든 버튼 받으면 값 다시 초기화 
 
+        //var rawJson = args.Snapshot.GetRawJsonValue();
 
+        //Message msg = JsonConvert.DeserializeObject<Message>(rawJson);
+
+        //string msgString = $"{msg.nickname}님으로부터 초대받으셨습니다. \n 파티에 참가하시겠습니까?";
+
+        //onInviteMessage?.Invoke(msgString);
     }
 }

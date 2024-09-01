@@ -10,8 +10,7 @@ public class PanelManager : MonoBehaviourPunCallbacks
     public static PanelManager Instance { get; private set; }
 
     public LoginPanel login;
-    //todo 재능 panel 만들기
-    //public LobbyPanel lobby;
+    public LobbyPanel lobby;
     public RoomPanel room;
 
     private Dictionary<string, GameObject> PanelTable;
@@ -22,7 +21,7 @@ public class PanelManager : MonoBehaviourPunCallbacks
         PanelTable = new Dictionary<string, GameObject>
         {
             { "Login", login.gameObject },
-            //{ "Lobby", lobby.gameObject },
+            { "Lobby", lobby.gameObject },
             { "Room", room.gameObject }
         };
 
@@ -38,20 +37,20 @@ public class PanelManager : MonoBehaviourPunCallbacks
         }
     }
 
-    public override void OnConnected()
+    public override void OnConnected() //OnJoinedLobby
+    {
+        PanelOpen("Lobby");
+    }
+
+    public override void OnJoinedRoom()
     {
         PanelOpen("Room");
     }
 
-    //public override void OnJoinedRoom()
-    //{
-    //    PanelOpen("Room");
-    //}
-
-    //public override void OnCreatedRoom()
-    //{
-    //    PanelOpen("Room");
-    //}
+    public override void OnCreatedRoom()
+    {
+        PanelOpen("Room");
+    }
 
     public override void OnDisconnected(DisconnectCause cause)
     {
