@@ -92,7 +92,7 @@ public class FirebaseManager : MonoBehaviour
             Debug.LogError(e.Message);
         }
     }
-    
+
     public async void Login(string email, string password, Action<FirebaseUser> callback = null)
     {
         var result = await Auth.SignInWithEmailAndPasswordAsync(email, password);

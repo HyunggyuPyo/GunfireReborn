@@ -39,6 +39,7 @@ public class PanelManager : MonoBehaviourPunCallbacks
 
     public override void OnConnected() //OnJoinedLobby
     {
+        PhotonNetwork.LocalPlayer.NickName = FirebaseManager.Instance.userData.userName;
         PanelOpen("Lobby");
     }
 
