@@ -56,4 +56,14 @@ public class PanelManager : MonoBehaviourPunCallbacks
     {
         PanelOpen("Login");
     }
+
+    public override void OnPlayerEnteredRoom(Player newPlayer)
+    {
+        room.JoinPlayer(newPlayer);
+    }
+
+    public override void OnPlayerLeftRoom(Player otherPlayer)
+    {
+        room.LeavePlayer(otherPlayer);
+    }
 }

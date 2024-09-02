@@ -79,6 +79,10 @@ public class FirebaseManager : MonoBehaviour
 
             await usersRef.SetRawJsonValueAsync(userDataJson);
 
+            var invitRef = DB.GetReference($"invitation/{result.User.UserId}");
+
+            await invitRef.SetValueAsync("");
+
             this.userData = userData;
 
             onLogin?.Invoke(result.User);
@@ -125,6 +129,7 @@ public class FirebaseManager : MonoBehaviour
     public void SendInvitation(string receiver, string inviter)
     {
         var invitRef = DB.GetReference($"invitation/{receiver}");
+        invitRef.SetValueAsync("");
         invitRef.SetValueAsync(inviter);
 
         //var invitJson = JsonConvert.SerializeObject(msg);
@@ -138,16 +143,16 @@ public class FirebaseManager : MonoBehaviour
         if (args.DatabaseError != null)
         {
             Debug.LogError(args.DatabaseError);
+            print("여기서 오류");
             return;
         }
 
-        string inviter = args.Snapshot.Value.ToString();
+        string inviter = args.Snapshot.Value.ToString();    
 
         if (!string.IsNullOrEmpty(inviter))
         {
             onInviteMessage?.Invoke(inviter);
         }
-        
 
         //수락이든 거절이든 버튼 받으면 값 다시 초기화 
 

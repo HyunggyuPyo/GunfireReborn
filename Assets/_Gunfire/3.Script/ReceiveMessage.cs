@@ -5,11 +5,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class ReceiveMessage : MonoBehaviour
+public class ReceiveMessage : MonoBehaviourPunCallbacks
 {
     public TMP_Text msgText;
-    public Button refusalButton; // 거절
-    public Button acceptanceButton; //수락
+    public Button refusalButton;
+    public Button acceptanceButton;
 
     private string roomName;
 
@@ -23,18 +23,65 @@ public class ReceiveMessage : MonoBehaviour
     {
         msgText.text = $"{inviter}님으로부터 초대받으셨습니다. \n 파티에 참가하시겠습니까?";
         roomName = inviter;
-        FirebaseManager.Instance.SendInvitation(FirebaseManager.Instance.userData.userId, " ");
         gameObject.SetActive(true);
     }
 
     public void RefusalButtonClick()
     {
-        gameObject.SetActive(false);
+        if (PhotonNetwork.InRoom)
+        {
+            PhotonNetwork.LeaveRoom();
+        }
+        else
+        {
+            JoinTargetRoom();
+        }
+    }
+
+    public override void OnLeftRoom()
+    {
+        base.OnLeftRoom();
+        print("방을 나왔습니다");
+
+        //PhotonNetwork.JoinLobby();
+        PhotonNetwork.ConnectUsingSettings();
+        //JoinTargetRoom();
+    }
+
+    void JoinTargetRoom()
+    {
+        if (PhotonNetwork.IsConnected)
+        {
+            PhotonNetwork.JoinRoom(roomName);
+        }
+        else
+        {
+            Debug.LogWarning("Not connected to the server.");
+        }
+    }
+    public override void OnConnectedToMaster()
+    {
+        print("마스터 서버 접속");
+        PhotonNetwork.JoinRoom(roomName);
     }
 
     public void AcceptanceButtonClick()
     {
-        PhotonNetwork.JoinRoom(roomName);
         gameObject.SetActive(false);
     }
+
+    public override void OnJoinedRoom()
+    {
+        base.OnJoinedRoom();
+        print("방 들어옴");
+        gameObject.SetActive(false);
+    }
+
+    public override void OnJoinedLobby()
+    {
+        base.OnJoinedLobby();
+        print("지금 로비 ");
+        JoinTargetRoom();
+    }
+
 }

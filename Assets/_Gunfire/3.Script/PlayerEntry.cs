@@ -13,11 +13,6 @@ public class PlayerEntry : MonoBehaviour
 
     public Player player;
 
-    private void Start()
-    {
-        nickNameText.text = FirebaseManager.Instance.userData.userName;
-    }
-
     public void ReadyTextChange(bool on)
     {
         if(!on)

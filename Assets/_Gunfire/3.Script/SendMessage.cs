@@ -1,3 +1,4 @@
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -32,7 +33,7 @@ public class SendMessage : MonoBehaviour
         //    nickname = FirebaseManager.Instance.userData.userName
         //};
 
-        FirebaseManager.Instance.SendInvitation(nameInput.text, FirebaseManager.Instance.userData.userName);
+        FirebaseManager.Instance.SendInvitation(nameInput.text, PhotonNetwork.CurrentRoom.Name);
 
         gameObject.SetActive(false);
     }
@@ -42,3 +43,5 @@ public class SendMessage : MonoBehaviour
         gameObject.SetActive(false);
     }
 }
+
+

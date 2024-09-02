@@ -33,6 +33,7 @@ public class LobbyPanel : MonoBehaviourPunCallbacks
     {
         base.OnCreatedRoom();
         print($"规 积己 己傍");
+        print($"规捞抚 => {PhotonNetwork.CurrentRoom.Name}");
     }
 
     public override void OnCreateRoomFailed(short returnCode, string message)

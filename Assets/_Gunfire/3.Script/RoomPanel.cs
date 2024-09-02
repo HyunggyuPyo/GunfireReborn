@@ -61,7 +61,7 @@ public class RoomPanel : MonoBehaviourPunCallbacks
         foreach (Player player in PhotonNetwork.CurrentRoom.Players.Values)
         {
             //플레이어 다른방 입장 만들어야 됨
-            //JoinPlayer(player); 오류 수정
+            JoinPlayer(player);
 
             if (player.CustomProperties.ContainsKey("Ready"))
             {
@@ -69,6 +69,43 @@ public class RoomPanel : MonoBehaviourPunCallbacks
             }
         }
 
+    }
+
+    public void JoinPlayer(Player newPlayer)
+    {
+        var playerEntry = Instantiate(playerEntryPrefab, playerPoint[PhotonNetwork.CurrentRoom.PlayerCount - 1], false).GetComponent<PlayerEntry>();
+
+        playerEntry.player = newPlayer;
+        playerEntry.nickNameText.text = newPlayer.NickName;
+
+        playerEntries[newPlayer.ActorNumber] = playerEntry;
+
+        if(PhotonNetwork.IsMasterClient)
+        {
+            playersReady[newPlayer.ActorNumber] = false;
+            CheckReady();
+        }
+
+        SortPlayers();
+    }
+
+    public void SortPlayers()
+    {
+        foreach (int actorNumber in playerEntries.Keys)
+        {
+            playerEntries[actorNumber].transform.SetSiblingIndex(actorNumber);
+        }
+    }
+
+    public override void OnDisable()
+    {
+        base.OnDisable();
+
+        for (int i = 0; i < playerPoint.Length; i++)
+        {
+            if (playerPoint[i].childCount != 0)
+                Destroy(playerPoint[i].GetChild(0).gameObject);
+        }
     }
 
     private void CheckReady()
@@ -84,23 +121,12 @@ public class RoomPanel : MonoBehaviourPunCallbacks
 
     public void SetPlayerReady(int actorNumber, bool isReady)
     {
-        playerEntries[actorNumber].ReadyTextChange(playerReady);
+        playerEntries[actorNumber].ReadyTextChange(isReady);
 
-        if(PhotonNetwork.IsMasterClient)
+        if (PhotonNetwork.IsMasterClient)
         {
             playersReady[actorNumber] = isReady;
             CheckReady();
-        }
-    }
-
-    public override void OnDisable()
-    {
-        base.OnDisable();
-
-        for (int i = 0; i < playerPoint.Length; i++)
-        {
-            if(playerPoint[i].childCount != 0)
-                Destroy(playerPoint[i].GetChild(0).gameObject);
         }
     }
 
@@ -119,20 +145,35 @@ public class RoomPanel : MonoBehaviourPunCallbacks
         if (PhotonNetwork.IsMasterClient)
         {
             readyButtonText.text = "게임 시작";
-            //todo :  이부분 OnJoinedRoom()으로 내리는게 맞을까?
-            Instantiate(playerEntryPrefab, playerPoint[0], false);
+            //Instantiate(playerEntryPrefab, playerPoint[0], false);
         }
         else
         {
             readyButtonText.text = "준비";
-            Instantiate(playerEntryPrefab, playerPoint[PhotonNetwork.CurrentRoom.PlayerCount - 1], false);
+            //Instantiate(playerEntryPrefab, playerPoint[PhotonNetwork.CurrentRoom.PlayerCount - 1], false);
         }
     }
 
-    public override void OnJoinRoomFailed(short returnCode, string message)
+    //public override void OnJoinRoomFailed(short returnCode, string message)
+    //{
+    //    base.OnJoinRoomFailed(returnCode, message);
+    //    print("방에 참여 실패");
+    //}
+
+    public void LeavePlayer(Player gonePlayer)
     {
-        base.OnJoinRoomFailed(returnCode, message);
-        print("방에 참여 실패");
+        GameObject leaveTarget = playerEntries[gonePlayer.ActorNumber].gameObject;
+        // 그냥 leaveTarget으로 바로 destory
+        playerEntries.Remove(gonePlayer.ActorNumber);
+        Destroy(playerPoint[PhotonNetwork.CurrentRoom.PlayerCount - 1].gameObject);
+
+        if (PhotonNetwork.IsMasterClient)
+        {
+            playersReady.Remove(gonePlayer.ActorNumber);
+            CheckReady();
+        }
+
+        SortPlayers();
     }
 
     void ReadyButtonClick()
