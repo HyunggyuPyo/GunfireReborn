@@ -54,7 +54,7 @@ public class RoomPanel : MonoBehaviourPunCallbacks
         {
             playersReady = new Dictionary<int, bool>();
             readyButton.interactable = false;
-            readyButtonText.text = "게임 시작";
+            readyButtonText.text = "도전 시작";
         }
         else
         {
@@ -90,8 +90,9 @@ public class RoomPanel : MonoBehaviourPunCallbacks
 
         playerEntries[newPlayer.ActorNumber] = playerEntry;
 
-        if(PhotonNetwork.IsMasterClient)
+        if(PhotonNetwork.IsMasterClient && PhotonNetwork.LocalPlayer.ActorNumber == newPlayer.ActorNumber)
         {
+            playerEntries[newPlayer.ActorNumber].readyText.text = "대장";
             playersReady[newPlayer.ActorNumber] = false;
             CheckReady();
         }
@@ -143,7 +144,6 @@ public class RoomPanel : MonoBehaviourPunCallbacks
         }
     }
 
-
     public void SetPlayerReady(int actorNumber, bool isReady)
     {
         playerEntries[actorNumber].ReadyTextChange(isReady);
@@ -193,10 +193,16 @@ public class RoomPanel : MonoBehaviourPunCallbacks
         SortPlayers();
     }
 
+    public override void OnPlayerPropertiesUpdate(Player targetPlayer, PhotonHashtable changedProps)
+    {
+        if(changedProps.ContainsKey("Ready"))
+        {
+            SetPlayerReady(targetPlayer.ActorNumber, (bool)changedProps["Ready"]);
+        }
+    }
+
     void ReadyButtonClick()
     {
-        //readyButton.interactable = false;
-
         if(!PhotonNetwork.IsMasterClient) 
         {
             //if(모두가 레디 상태일때)
@@ -219,9 +225,12 @@ public class RoomPanel : MonoBehaviourPunCallbacks
                 customProps["Ready"] = playerReady;
                 localPlayer.SetCustomProperties(customProps);
 
-                print($"레디 버튼 클릭 => {playerReady}");
                 playerEntries[localPlayer.ActorNumber].GetComponent<PlayerEntry>().ReadyTextChange(playerReady);
             }
+        }
+        else
+        {
+            PhotonNetwork.LoadLevel("Game");
         }
     }
 

@@ -19,12 +19,12 @@ public class PlayerEntry : MonoBehaviour
         if(false == on)
         {
             readyText.color = Color.red;
-            readyText.text = "준비되지 않음";
+            readyText.text = "미준비";
         }
         else
         {
             readyText.color = Color.green;
-            readyText.text = "준비완료";
+            readyText.text = "준비 완료";
         }
     }
 
