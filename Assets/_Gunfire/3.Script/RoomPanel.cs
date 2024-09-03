@@ -54,13 +54,17 @@ public class RoomPanel : MonoBehaviourPunCallbacks
         {
             playersReady = new Dictionary<int, bool>();
             readyButton.interactable = false;
+            readyButtonText.text = "게임 시작";
+        }
+        else
+        {
+            readyButtonText.text = "준비";
         }
 
         PhotonNetwork.AutomaticallySyncScene = true;
 
         foreach (Player player in PhotonNetwork.CurrentRoom.Players.Values)
         {
-            //플레이어 다른방 입장 만들어야 됨
             JoinPlayer(player);
 
             if (player.CustomProperties.ContainsKey("Ready"))
@@ -69,14 +73,20 @@ public class RoomPanel : MonoBehaviourPunCallbacks
             }
         }
 
+        exitButton.gameObject.SetActive(!PhotonNetwork.IsMasterClient);
     }
 
     public void JoinPlayer(Player newPlayer)
     {
-        var playerEntry = Instantiate(playerEntryPrefab, playerPoint[PhotonNetwork.CurrentRoom.PlayerCount - 1], false).GetComponent<PlayerEntry>();
+        var playerEntry = Instantiate(playerEntryPrefab, playerPoint[newPlayer.ActorNumber - 1], false).GetComponent<PlayerEntry>(); 
 
         playerEntry.player = newPlayer;
         playerEntry.nickNameText.text = newPlayer.NickName;
+
+        if(PhotonNetwork.LocalPlayer.ActorNumber == newPlayer.ActorNumber)
+        {
+            //readyButton.onClick.AddListener(ReadyButtonClick);
+        }
 
         playerEntries[newPlayer.ActorNumber] = playerEntry;
 
@@ -91,6 +101,21 @@ public class RoomPanel : MonoBehaviourPunCallbacks
 
     public void SortPlayers()
     {
+        List<int> keysToRemave = new List<int>();
+
+        foreach (int actorNumber in playerEntries.Keys)
+        {
+            if(playerEntries[actorNumber] == null)
+            {
+                keysToRemave.Add(actorNumber);
+            }
+        }
+
+        foreach (int key in keysToRemave)
+        {
+            playerEntries.Remove(key);
+        }
+
         foreach (int actorNumber in playerEntries.Keys)
         {
             playerEntries[actorNumber].transform.SetSiblingIndex(actorNumber);
@@ -130,28 +155,20 @@ public class RoomPanel : MonoBehaviourPunCallbacks
         }
     }
 
-    public override void OnConnectedToMaster()
-    {
-        base.OnConnectedToMaster();
-
-    }
-
     public override void OnJoinedRoom()
     {
         base.OnJoinedRoom();
-        print($"방에 들어왔어");
-        exitButton.gameObject.SetActive(!PhotonNetwork.IsMasterClient);
+        print($"방에 들어왔어!");
+        //exitButton.gameObject.SetActive(!PhotonNetwork.IsMasterClient);
 
-        if (PhotonNetwork.IsMasterClient)
-        {
-            readyButtonText.text = "게임 시작";
-            //Instantiate(playerEntryPrefab, playerPoint[0], false);
-        }
-        else
-        {
-            readyButtonText.text = "준비";
-            //Instantiate(playerEntryPrefab, playerPoint[PhotonNetwork.CurrentRoom.PlayerCount - 1], false);
-        }
+        //if (PhotonNetwork.IsMasterClient)
+        //{
+        //    readyButtonText.text = "게임 시작";
+        //}
+        //else
+        //{
+        //    readyButtonText.text = "준비";
+        //}
     }
 
     //public override void OnJoinRoomFailed(short returnCode, string message)
@@ -165,7 +182,7 @@ public class RoomPanel : MonoBehaviourPunCallbacks
         GameObject leaveTarget = playerEntries[gonePlayer.ActorNumber].gameObject;
         // 그냥 leaveTarget으로 바로 destory
         playerEntries.Remove(gonePlayer.ActorNumber);
-        Destroy(playerPoint[PhotonNetwork.CurrentRoom.PlayerCount - 1].gameObject);
+        Destroy(playerPoint[gonePlayer.ActorNumber - 1].GetChild(0).gameObject);
 
         if (PhotonNetwork.IsMasterClient)
         {
@@ -178,21 +195,33 @@ public class RoomPanel : MonoBehaviourPunCallbacks
 
     void ReadyButtonClick()
     {
+        //readyButton.interactable = false;
+
         if(!PhotonNetwork.IsMasterClient) 
         {
             //if(모두가 레디 상태일때)
             //PhotonNetwork.LoadLevel("Game");
 
-            Player localPlayer = PhotonNetwork.LocalPlayer;
-            PhotonHashtable customProps = localPlayer.CustomProperties;
+            if(PhotonNetwork.LocalPlayer.IsLocal)
+            {
+                Player localPlayer = PhotonNetwork.LocalPlayer;
+                PhotonHashtable customProps = localPlayer.CustomProperties;
 
-            if (!playerReady)
-                playerReady = true;
-            else
-                playerReady = false;
+                if (false == playerReady)
+                {
+                    playerReady = true;
+                }
+                else
+                {
+                    playerReady = false;
+                }
 
-            customProps["Ready"] = playerReady;
-            localPlayer.SetCustomProperties(customProps);
+                customProps["Ready"] = playerReady;
+                localPlayer.SetCustomProperties(customProps);
+
+                print($"레디 버튼 클릭 => {playerReady}");
+                playerEntries[localPlayer.ActorNumber].GetComponent<PlayerEntry>().ReadyTextChange(playerReady);
+            }
         }
     }
 

@@ -15,13 +15,16 @@ public class PlayerEntry : MonoBehaviour
 
     public void ReadyTextChange(bool on)
     {
-        if(!on)
+        print("ReadyTextChange함수 실행 됨");
+        if(false == on)
         {
             readyText.color = Color.red;
+            readyText.text = "준비되지 않음";
         }
         else
         {
             readyText.color = Color.green;
+            readyText.text = "준비완료";
         }
     }
 

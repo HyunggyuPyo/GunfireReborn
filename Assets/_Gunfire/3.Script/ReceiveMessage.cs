@@ -43,9 +43,7 @@ public class ReceiveMessage : MonoBehaviourPunCallbacks
         base.OnLeftRoom();
         print("방을 나왔습니다");
 
-        //PhotonNetwork.JoinLobby();
         PhotonNetwork.ConnectUsingSettings();
-        //JoinTargetRoom();
     }
 
     void JoinTargetRoom()
@@ -73,14 +71,12 @@ public class ReceiveMessage : MonoBehaviourPunCallbacks
     public override void OnJoinedRoom()
     {
         base.OnJoinedRoom();
-        print("방 들어옴");
         gameObject.SetActive(false);
     }
 
     public override void OnJoinedLobby()
     {
         base.OnJoinedLobby();
-        print("지금 로비 ");
         JoinTargetRoom();
     }
 
