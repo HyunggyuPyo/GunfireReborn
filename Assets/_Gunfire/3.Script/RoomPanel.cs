@@ -16,7 +16,7 @@ public class RoomPanel : MonoBehaviourPunCallbacks
     public Toggle readyToggle;
     public TMP_Text readyButtonText;
 
-    //public Transform entryPlayers;
+
     public Transform[] playerPoint;
     public GameObject playerEntryPrefab;
 
@@ -90,10 +90,16 @@ public class RoomPanel : MonoBehaviourPunCallbacks
 
         playerEntries[newPlayer.ActorNumber] = playerEntry;
 
-        if(PhotonNetwork.IsMasterClient && PhotonNetwork.LocalPlayer.ActorNumber == newPlayer.ActorNumber)
+        if(PhotonNetwork.IsMasterClient)
         {
-            playerEntries[newPlayer.ActorNumber].readyText.text = "대장";
             playersReady[newPlayer.ActorNumber] = false;
+
+            if(PhotonNetwork.LocalPlayer.ActorNumber == newPlayer.ActorNumber)
+            {
+                playerEntries[newPlayer.ActorNumber].readyText.text = "대장";
+                playersReady[newPlayer.ActorNumber] = true;
+            }
+
             CheckReady();
         }
 
@@ -140,10 +146,10 @@ public class RoomPanel : MonoBehaviourPunCallbacks
 
         if(PhotonNetwork.IsMasterClient)
         {
-            readyButton.interactable = true;
+            readyButton.interactable = allReady;
         }
     }
-
+    
     public void SetPlayerReady(int actorNumber, bool isReady)
     {
         playerEntries[actorNumber].ReadyTextChange(isReady);
@@ -153,29 +159,13 @@ public class RoomPanel : MonoBehaviourPunCallbacks
             playersReady[actorNumber] = isReady;
             CheckReady();
         }
-    }
+    } //todo : actornumber 1인 놈을 일단 대장으로 띄우고 만약 나가면 다른 사람이 방장 될때 int 변수에 번호 저장하게 해서 그놈을 대장으로 띄우기 
 
     public override void OnJoinedRoom()
     {
         base.OnJoinedRoom();
         print($"방에 들어왔어!");
-        //exitButton.gameObject.SetActive(!PhotonNetwork.IsMasterClient);
-
-        //if (PhotonNetwork.IsMasterClient)
-        //{
-        //    readyButtonText.text = "게임 시작";
-        //}
-        //else
-        //{
-        //    readyButtonText.text = "준비";
-        //}
     }
-
-    //public override void OnJoinRoomFailed(short returnCode, string message)
-    //{
-    //    base.OnJoinRoomFailed(returnCode, message);
-    //    print("방에 참여 실패");
-    //}
 
     public void LeavePlayer(Player gonePlayer)
     {
@@ -205,9 +195,6 @@ public class RoomPanel : MonoBehaviourPunCallbacks
     {
         if(!PhotonNetwork.IsMasterClient) 
         {
-            //if(모두가 레디 상태일때)
-            //PhotonNetwork.LoadLevel("Game");
-
             if(PhotonNetwork.LocalPlayer.IsLocal)
             {
                 Player localPlayer = PhotonNetwork.LocalPlayer;
