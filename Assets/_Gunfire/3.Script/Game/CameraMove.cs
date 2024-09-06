@@ -6,8 +6,16 @@ public class CameraMove : MonoBehaviour
 {
     Transform playerPosition;
     Transform lookTarget;
-    
-    private void Awake()
+
+    //private IEnumerator Start()
+    //{
+    //    yield return new WaitUntil(() => GameObject.Find("LocalFox(Clone)"));
+
+    //    playerPosition = GameObject.Find("CameraPoint").transform;
+    //    lookTarget = GameObject.Find("CameraLookTarget").transform;
+    //}
+
+    private void Start()
     {
         playerPosition = GameObject.Find("CameraPoint").transform;
         lookTarget = GameObject.Find("CameraLookTarget").transform;

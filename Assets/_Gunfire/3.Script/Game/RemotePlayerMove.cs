@@ -1,8 +1,9 @@
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RemotePlayerMove : MonoBehaviour
+public class RemotePlayerMove : MonoBehaviour, IPunInstantiateMagicCallback
 {
     #region 전역변수
     CharacterController cc;
@@ -70,7 +71,7 @@ public class RemotePlayerMove : MonoBehaviour
     {
         float time = 0;
 
-        while (time < 0.3f)
+        while (time < .4f)
         {
             cc.Move(cc.transform.up * 8f * Time.deltaTime);
             time += Time.deltaTime;
@@ -82,5 +83,11 @@ public class RemotePlayerMove : MonoBehaviour
         gravity = -4f;
 
         jumpCoroutine = null;
+    }
+
+    public void OnPhotonInstantiate(PhotonMessageInfo info)
+    {
+        print("Remote OnPhotonInstantiate 호출");
+        
     }
 }

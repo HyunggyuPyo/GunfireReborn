@@ -1,8 +1,9 @@
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LocalPlayerMove : MonoBehaviour
+public class LocalPlayerMove : MonoBehaviour, IPunInstantiateMagicCallback
 {
     #region 전역변수
     CharacterController cc;
@@ -70,7 +71,7 @@ public class LocalPlayerMove : MonoBehaviour
     {
         float time = 0;
 
-        while (time < 0.3f)
+        while (time < .4f) // .3f
         {
             cc.Move(cc.transform.up * 8f * Time.deltaTime);
             time += Time.deltaTime;
@@ -82,5 +83,21 @@ public class LocalPlayerMove : MonoBehaviour
         gravity = -4f;
 
         jumpCoroutine = null;
+    }
+
+    public void OnPhotonInstantiate(PhotonMessageInfo info)
+    {
+        print("Local OnPhotonInstantiate 호출");
+
+        if (GetComponent<PhotonView>().IsMine)
+        {
+            CameraMove cm = FindObjectOfType<CameraMove>();
+            cm.enabled = true;
+        }
+        else
+        {
+            GameObject newprefab = PhotonNetwork.Instantiate("RemoteFox", transform.position, transform.rotation);
+            Destroy(gameObject);
+        }
     }
 }
