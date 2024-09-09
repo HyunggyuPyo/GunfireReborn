@@ -1814,8 +1814,9 @@ GameObject:
   - component: {fileID: 6977266894501688356}
   - component: {fileID: -2057743925887690482}
   - component: {fileID: 5753214222904813130}
-  - component: {fileID: 5262392516551745596}
-  - component: {fileID: 863152475235083850}
+  - component: {fileID: 2548328078281670950}
+  - component: {fileID: 6343313038334177734}
+  - component: {fileID: -4200146472760465456}
   m_Layer: 0
   m_Name: LocalFox
   m_TagString: Untagged
@@ -1930,7 +1931,7 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
   m_UseLocal: 1
---- !u!114 &5262392516551745596
+--- !u!114 &2548328078281670950
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1939,12 +1940,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 6977266894501688357}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc48c9ce4d746e743b93bda1d8fe8294, type: 3}
+  m_Script: {fileID: 11500000, guid: 30d66d0617dfa9141a3376117eaacb95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myWeapon: {fileID: 863152475235083850}
-  startPosition: {fileID: 6977266893230878858}
---- !u!114 &863152475235083850
+  playerCharacter: {fileID: 6343313038334177734}
+--- !u!114 &6343313038334177734
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1953,7 +1953,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 6977266894501688357}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c668e1b95a3f696418913445041ab16c, type: 3}
+  m_Script: {fileID: 11500000, guid: dfa716c929284234a988c5763277aa75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-4200146472760465456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6977266894501688357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 043660346bafa3447811df7a38b5dbeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &6977266894512301568
@@ -2363,18 +2375,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8185494304968802926, guid: f786dad7821f44c45b49e1bf0ff4cd50, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 8185494304968802926, guid: f786dad7821f44c45b49e1bf0ff4cd50, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 8185494304968802926, guid: f786dad7821f44c45b49e1bf0ff4cd50, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 8185494304968802926, guid: f786dad7821f44c45b49e1bf0ff4cd50, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.072
       objectReference: {fileID: 0}
@@ -2413,10 +2413,6 @@ PrefabInstance:
     - target: {fileID: 8185494304968802926, guid: f786dad7821f44c45b49e1bf0ff4cd50, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8185494304968802926, guid: f786dad7821f44c45b49e1bf0ff4cd50, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f786dad7821f44c45b49e1bf0ff4cd50, type: 3}
