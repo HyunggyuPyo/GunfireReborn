@@ -13,6 +13,11 @@ public class DefaultGun : Gun
         data.bullet = Resources.Load<GameObject>("DefultBullet");
     }
 
+    public override void InitPool()
+    {
+        base.InitPool();
+    }
+
     public override void Using(Transform sPos)
     {
         base.Using(sPos);

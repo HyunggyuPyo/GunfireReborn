@@ -18,16 +18,40 @@ public abstract class Gun : MonoBehaviour
     bool shootAble = true;
     float restTime = 0;
 
+    int pointer;
+    List<GameObject> pool = new List<GameObject>();
+
     public abstract void InitSetting();
+
+    public virtual void InitPool()
+    {
+        for (int i = 0; i < data.maxBullet / 4; i++)
+        {
+            GameObject bulletObj = Instantiate(data.bullet, transform);
+            bulletObj.SetActive(false);
+            pool.Add(bulletObj);
+        }
+
+        pointer = 0;
+    }
 
     public virtual void Using(Transform startPos)
     {
         if(Input.GetMouseButtonDown(0) && shootAble)
         {
-            var bull = Instantiate(data.bullet);
-            bull.transform.position = startPos.position;
-
-            // 파티클도 동일한 방법으로 생성
+            if (pointer != pool.Count)
+            {
+                pool[pointer].transform.position = startPos.position;
+                pool[pointer].SetActive(true);
+                pointer++;
+            }
+            else
+            {
+                pointer = 0;
+                pool[pointer].transform.position = startPos.position;
+                pool[pointer].SetActive(true);
+                pointer++;
+            }
 
             shootAble = false;
 

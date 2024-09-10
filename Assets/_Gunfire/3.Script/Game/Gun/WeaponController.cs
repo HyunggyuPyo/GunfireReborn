@@ -12,6 +12,7 @@ public class WeaponController : MonoBehaviour
     {
         tempWeapon = myWeapon;
         myWeapon.InitSetting();
+        myWeapon.InitPool();
     }
 
     private void Update()
