@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PickupGun : MonoBehaviour
+public class RayManager : MonoBehaviour
 {
-    public static PickupGun Instance;
+    public static RayManager Instance;
 
     bool targetGun;
     bool targetEnemy;
@@ -12,7 +12,11 @@ public class PickupGun : MonoBehaviour
     public LayerMask targetMask;
 
     Camera mainCamera;
-    Vector3 ScreenCenter;
+
+    [HideInInspector]
+    public Vector3 ScreenCenter;
+    [HideInInspector]
+    public Vector3 centerPosition;
 
     public RaycastHit hit;
     public RaycastHit hitEnemy;
@@ -36,10 +40,11 @@ public class PickupGun : MonoBehaviour
     private void Update()
     {   
         Ray ray = mainCamera.ScreenPointToRay(ScreenCenter);
+        centerPosition = ray.direction;
 
         targetGun = Physics.Raycast(ray, out hit, 30f, gunMask);
 
         targetEnemy = Physics.Raycast(ray, out hitEnemy, 30f, targetMask);
-        Debug.DrawRay(ray.origin, ray.direction * 30f, Color.red, 2f);
+        //Debug.DrawRay(ray.origin, ray.direction * 30f, Color.red, 2f);
     }
 }

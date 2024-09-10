@@ -17,22 +17,20 @@ public class BulletMove : MonoBehaviour
         rigid = GetComponent<Rigidbody>();   
     }
 
-    //private void Start()
-    //{
-    //    Camera mainCamera = Camera.main;
-    //    Ray ray = mainCamera.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
-
-    //    dir = ray.direction;
-
-    //    transform.forward = dir;
-    //}
-
     private void OnEnable()
     {
-        print(PickupGun.Instance.hitEnemy.point);
-        dir = PickupGun.Instance.hitEnemy.point;
-        //transform.forward = dir;
-        transform.LookAt(dir);
+        
+        dir = RayManager.Instance.hitEnemy.point;
+        
+        if(dir == Vector3.zero)
+        {
+            dir = RayManager.Instance.centerPosition;
+            transform.forward = dir;
+        }
+        else
+        {
+            transform.LookAt(dir);
+        }
 
         StartCoroutine(DespawnBullet());
         reach = false;

@@ -1970,7 +1970,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetMask:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 4294967295
+  ScreenCenter: {x: 0, y: 0, z: 0}
+  centerPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &6977266894512301568
 GameObject:
   m_ObjectHideFlags: 0
