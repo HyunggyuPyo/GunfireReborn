@@ -11,6 +11,13 @@ public class MoleRat : Monster
         
     }
 
+    private void OnEnable()
+    {
+        InitSetting();
+        FindPlayer();
+        print($"MoleRat Target => {target}");
+    }
+
     private void Update()
     {
         //if(!reack)
@@ -19,12 +26,6 @@ public class MoleRat : Monster
         //    Vector3 targetPosition = transform.position + Vector3.forward * MonsterData.speed * Time.deltaTime;
         //    rigid.MovePosition(targetPosition);
         //}
-        if(Input.GetKeyDown(KeyCode.F))
-        {
-            InitSetting();
-            FindPlayer();
-            print(target);
-        }
     }
 
     public override void Attack()
