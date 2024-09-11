@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BulletMove : MonoBehaviour
 {
-    float speed = 5f;
+    float speed = 8f;
     int damage = 10; //todo 총에 데이미지가 있고 그걸 갖와야 함 그래서 강화를 만들수 있음
     Rigidbody rigid;
     bool reach = false;
@@ -20,11 +20,11 @@ public class BulletMove : MonoBehaviour
     private void OnEnable()
     {
         
-        dir = RayManager.Instance.hitEnemy.point;
+        dir = RayController.Instance.hitEnemy.point;
         
         if(dir == Vector3.zero)
         {
-            dir = RayManager.Instance.centerPosition;
+            dir = RayController.Instance.centerPosition;
             transform.forward = dir;
         }
         else
@@ -79,3 +79,9 @@ public class BulletMove : MonoBehaviour
         gameObject.SetActive(false);
     }
 }
+
+/*
+ * todo : 10%확률 럭키샷 만들떄 참고
+ var randomNum = Random.value; => 0~1까지 float로 랜덤한 숫자를 뽑아줌
+    if(randomNum < 0.1f) => 이게 10%확률일때 
+ */

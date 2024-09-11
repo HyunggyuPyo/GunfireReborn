@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RayManager : MonoBehaviour
+public class RayController : MonoBehaviour
 {
-    public static RayManager Instance;
+    public static RayController Instance;
 
     bool targetGun;
     bool targetEnemy;

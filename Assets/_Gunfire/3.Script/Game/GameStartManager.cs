@@ -7,6 +7,7 @@ using UnityEngine;
 public class GameStartManager : MonoBehaviour
 {
     public Transform startPosition;
+    public Transform players;
 
     private void Start()
     {
@@ -27,9 +28,10 @@ public class GameStartManager : MonoBehaviour
         int playerNumber = PhotonNetwork.LocalPlayer.GetPlayerNumber();
         Transform playerPos = startPosition.GetChild(playerNumber);
         GameObject playerObj = PhotonNetwork.Instantiate("LocalFox", playerPos.position, playerPos.rotation);
-        playerObj.transform.SetParent(playerPos);
+        //playerObj.transform.SetParent(playerPos);
+        playerObj.transform.SetParent(players);
         //playerObj.name = FirebaseManager.Instance.userData.userName;
-        
+
         // todo : 로컬 아니면 만들어둘 ui프리팹(remote유저들 hp인터페이스)도 같이 소환 
     }
 
