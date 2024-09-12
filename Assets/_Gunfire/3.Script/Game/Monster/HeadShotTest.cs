@@ -7,8 +7,20 @@ public class HeadShotTest : MonoBehaviour
     public Transform headBone;
     public Transform nickBone;
 
+    LayerMask targetLayer;
+
+    private void Awake()
+    {
+        targetLayer = (1 << LayerMask.NameToLayer("Bullet"));
+    }
+
     private void OnTriggerEnter(Collider other)
     {
+        if ((targetLayer | (1 << other.gameObject.layer)) != targetLayer)
+        {
+            return;
+        }
+
         Vector3 hitPoint = other.ClosestPoint(transform.position);
         Transform hitBone = FindClosestBone(hitPoint);
         if(hitBone == headBone || hitBone == nickBone)

@@ -14,8 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterPrefab: {fileID: 4621246683165438788, guid: c5256c41a2b70ca4e9185ebb1c2ca757, type: 3}
   maxHealth: 30
-  hp: 30
   maxShield: 0
-  shield: 0
-  speed: 5
+  speed: 2
   damage: 10

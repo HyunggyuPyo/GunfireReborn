@@ -724,7 +724,7 @@ GameObject:
   - component: {fileID: 682849867222089972}
   - component: {fileID: 4535736614924083600}
   - component: {fileID: 3258616451086146906}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RemoteFox
   m_TagString: Untagged
   m_Icon: {fileID: 0}

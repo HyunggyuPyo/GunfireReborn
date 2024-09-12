@@ -22,11 +22,12 @@ public class CharacterManager : MonoBehaviour, IHitable
 
     public void Hit(int damage)
     {
+        print($"fox hit -> {damage}, hp : {data.hp}");
         if(data.shield < damage)
         {
             if(data.shield != 0)
             {
-                data.hp = damage - data.shield;
+                data.hp -= damage - data.shield;
                 data.shield = 0;
             }
             else
@@ -38,5 +39,7 @@ public class CharacterManager : MonoBehaviour, IHitable
         {
             data.shield -= damage; 
         }
+
+        PlayerInfoUI.Instance.SetUI(data.shield, data.hp);
     }
 }

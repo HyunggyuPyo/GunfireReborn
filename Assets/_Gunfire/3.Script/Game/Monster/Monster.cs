@@ -5,6 +5,7 @@ using UnityEngine;
 public abstract class Monster : MonoBehaviour, IHitable
 {
     public MonsterSO MonsterData;
+    protected Animator animator;
 
     protected Rigidbody rigid;
     protected List<Transform> players;
@@ -13,9 +14,15 @@ public abstract class Monster : MonoBehaviour, IHitable
     protected int hp;
     protected int shield;
 
+    protected float distance;
+
+    protected LayerMask targetLayer;
+
     protected void Awake()
     {
         rigid = GetComponent<Rigidbody>();
+        animator = GetComponent<Animator>();
+        targetLayer = (1 << LayerMask.NameToLayer("Player"));
 
         hp = MonsterData.maxHealth;
         shield = MonsterData.maxShield;
@@ -54,8 +61,12 @@ public abstract class Monster : MonoBehaviour, IHitable
 
         target = targetPlayer;
     }
+    public virtual void IsReach()
+    {
+        distance = Vector3.Distance(transform.position, target.position);
+    }
 
-    public abstract void Attack();
+    public abstract IEnumerator Attack();
 
     public abstract void Move();
 

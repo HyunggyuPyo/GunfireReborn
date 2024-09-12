@@ -1817,7 +1817,7 @@ GameObject:
   - component: {fileID: 2548328078281670950}
   - component: {fileID: 6343313038334177734}
   - component: {fileID: -4200146472760465456}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LocalFox
   m_TagString: Untagged
   m_Icon: {fileID: 0}

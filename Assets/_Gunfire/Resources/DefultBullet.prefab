@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3965867495280991092}
   - component: {fileID: -5399190491364101704}
   - component: {fileID: -8191861850659781997}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: DefultBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
