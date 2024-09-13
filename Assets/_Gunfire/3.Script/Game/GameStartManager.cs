@@ -45,6 +45,4 @@ public class GameStartManager : MonoBehaviour
 
         StartCoroutine(NormalStart());
     }
-
-    
 }

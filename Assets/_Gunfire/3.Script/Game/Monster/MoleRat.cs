@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoleRat : Monster
+public class MoleRat : Enemy
 {
     bool canAtk = true;
     public GameObject attackParticle;

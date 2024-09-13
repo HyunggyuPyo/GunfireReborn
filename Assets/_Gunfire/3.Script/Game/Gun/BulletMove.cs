@@ -20,7 +20,7 @@ public class BulletMove : MonoBehaviour
     private void OnEnable()
     {
         
-        dir = RayController.Instance.hitEnemy.point;
+        dir = RayController.Instance.hitObj.point;
         
         if(dir == Vector3.zero)
         {

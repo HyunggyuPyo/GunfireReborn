@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cactus : Monster
+public class Cactus : Enemy
 {
     bool canAtk = true;
 

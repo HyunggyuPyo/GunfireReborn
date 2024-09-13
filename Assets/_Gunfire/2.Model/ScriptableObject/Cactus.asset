@@ -17,3 +17,4 @@ MonoBehaviour:
   maxShield: 0
   speed: 4
   damage: 20
+  uiHeight: 2.5

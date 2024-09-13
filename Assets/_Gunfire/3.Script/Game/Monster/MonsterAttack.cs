@@ -10,7 +10,7 @@ public class MonsterAttack : MonoBehaviour
     private void Awake()
     {
         targetLayer = (1 << LayerMask.NameToLayer("Player"));
-        damage = transform.root.gameObject.GetComponent<Monster>().MonsterData.damage;
+        damage = transform.root.gameObject.GetComponent<Enemy>().MonsterData.damage;
     }
 
     private void OnTriggerEnter(Collider other)

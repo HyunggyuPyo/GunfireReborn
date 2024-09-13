@@ -8,4 +8,6 @@ public class MonsterSO : ScriptableObject
     public int maxShield;
     public float speed;
     public int damage;
+
+    public float uiHeight;
 }

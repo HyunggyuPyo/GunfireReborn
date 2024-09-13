@@ -99,5 +99,7 @@ public class LocalPlayerMove : MonoBehaviour, IPunInstantiateMagicCallback
             GameObject newprefab = PhotonNetwork.Instantiate("RemoteFox", transform.position, transform.rotation);
             Destroy(gameObject);
         }
+
+        EnemyUIController.Instance.inConnect = true;
     }
 }

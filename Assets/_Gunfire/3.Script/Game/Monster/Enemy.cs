@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Monster : MonoBehaviour, IHitable
+public abstract class Enemy : MonoBehaviour, IHitable
 {
     public MonsterSO MonsterData;
     protected Animator animator;
@@ -11,7 +11,8 @@ public abstract class Monster : MonoBehaviour, IHitable
     protected List<Transform> players;
     protected Transform target;
 
-    protected int hp;
+    [HideInInspector]
+    public int hp;
     protected int shield;
 
     protected float distance;
@@ -72,6 +73,7 @@ public abstract class Monster : MonoBehaviour, IHitable
 
     public virtual void Hit(int damage)
     {
-        
+        hp -= damage;
+        print($"{name} ÇÇ ´âÀ½ -> -{damage} : ÀÜ¿©hp -> {hp}");
     }
 }
