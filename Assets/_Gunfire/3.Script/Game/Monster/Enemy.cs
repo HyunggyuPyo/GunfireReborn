@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public abstract class Enemy : MonoBehaviour, IHitable
 {
     public MonsterSO MonsterData;
     protected Animator animator;
+    protected NavMeshAgent agent;
 
     protected Rigidbody rigid;
     protected List<Transform> players;
@@ -23,6 +25,7 @@ public abstract class Enemy : MonoBehaviour, IHitable
     {
         rigid = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
+        agent = GetComponent<NavMeshAgent>();
         targetLayer = (1 << LayerMask.NameToLayer("Player"));
 
         hp = MonsterData.maxHealth;
@@ -41,7 +44,6 @@ public abstract class Enemy : MonoBehaviour, IHitable
                 players.Add(playerPos);
             }
         }
-        
     }
 
     public virtual void FindPlayer()

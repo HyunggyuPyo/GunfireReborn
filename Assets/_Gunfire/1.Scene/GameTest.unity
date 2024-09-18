@@ -121,7 +121,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 94e2cdd23b7a13244abdc743dc4636d4, type: 2}
 --- !u!1001 &14509678
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12400,9 +12400,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: TempleCircle_A (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4871709356803489779, guid: bea5de77ab0b75e4a8d56a921e7ce630, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 6113872440185868540, guid: bea5de77ab0b75e4a8d56a921e7ce630, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6113872440185868540, guid: bea5de77ab0b75e4a8d56a921e7ce630, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12410,7 +12414,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6113872440185868540, guid: bea5de77ab0b75e4a8d56a921e7ce630, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.79
+      value: 5.7
       objectReference: {fileID: 0}
     - target: {fileID: 6113872440185868540, guid: bea5de77ab0b75e4a8d56a921e7ce630, type: 3}
       propertyPath: m_LocalPosition.z
@@ -13742,14 +13746,6 @@ PrefabInstance:
     - target: {fileID: 4621246683165438788, guid: c5256c41a2b70ca4e9185ebb1c2ca757, type: 3}
       propertyPath: m_Name
       value: BigMoleRat
-      objectReference: {fileID: 0}
-    - target: {fileID: 4621246683165438788, guid: c5256c41a2b70ca4e9185ebb1c2ca757, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4621246683165438788, guid: c5256c41a2b70ca4e9185ebb1c2ca757, type: 3}
-      propertyPath: m_TagString
-      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 5434199825597295102, guid: c5256c41a2b70ca4e9185ebb1c2ca757, type: 3}
       propertyPath: m_RootOrder
@@ -15088,6 +15084,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TempleTile_D
       objectReference: {fileID: 0}
+    - target: {fileID: 4637977876985461128, guid: a1369124381bf8e40aa75d9e51428a36, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7697240531749774939, guid: a1369124381bf8e40aa75d9e51428a36, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -15216,21 +15216,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 870353119720734535, guid: e1fd4ae8ba9b63444af89af734121121, type: 3}
-      propertyPath: MonsterData
-      value: 
-      objectReference: {fileID: 11400000, guid: 419b4935786cf674fac8b71ed2f398b6, type: 2}
-    - target: {fileID: 870353119720734537, guid: e1fd4ae8ba9b63444af89af734121121, type: 3}
-      propertyPath: m_Constraints
-      value: 80
-      objectReference: {fileID: 0}
     - target: {fileID: 870353119720734539, guid: e1fd4ae8ba9b63444af89af734121121, type: 3}
       propertyPath: m_Name
       value: Cactus
-      objectReference: {fileID: 0}
-    - target: {fileID: 870353119720734539, guid: e1fd4ae8ba9b63444af89af734121121, type: 3}
-      propertyPath: m_TagString
-      value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1fd4ae8ba9b63444af89af734121121, type: 3}

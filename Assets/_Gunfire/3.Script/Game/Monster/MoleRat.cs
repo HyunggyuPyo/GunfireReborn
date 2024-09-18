@@ -16,25 +16,45 @@ public class MoleRat : Enemy
 
     private void Update()
     {
-        IsReach();
+        //IsReach();
 
-        Quaternion lookTarget = Quaternion.LookRotation(target.position - transform.position);
-        transform.rotation = Quaternion.Euler(0, lookTarget.eulerAngles.y, 0);
+        //Quaternion lookTarget = Quaternion.LookRotation(target.position - transform.position);
+        //transform.rotation = Quaternion.Euler(0, lookTarget.eulerAngles.y, 0);
 
-        if (distance >= 2.7f && canAtk)
+        //if (distance >= 2.7f && canAtk)
+        //{
+        //    animator.SetBool("Move", true);
+        //    Vector3 targetPosition = transform.position + transform.forward * MonsterData.speed * Time.deltaTime;
+        //    rigid.MovePosition(targetPosition);
+        //}
+        //else
+        //{
+        //    animator.SetBool("Move", false);
+        //    if(canAtk)
+        //    {
+        //        canAtk = false;
+        //        StartCoroutine(Attack());
+        //    }   
+        //}
+
+        agent.SetDestination(target.position);
+
+        if (agent.velocity.magnitude > 0)
         {
             animator.SetBool("Move", true);
-            Vector3 targetPosition = transform.position + transform.forward * MonsterData.speed * Time.deltaTime;
-            rigid.MovePosition(targetPosition);
         }
         else
         {
+            Quaternion lookTarget = Quaternion.LookRotation(target.position - transform.position);
+            transform.rotation = Quaternion.Euler(0, lookTarget.eulerAngles.y, 0);
             animator.SetBool("Move", false);
-            if(canAtk)
+
+            if (canAtk)
             {
                 canAtk = false;
                 StartCoroutine(Attack());
-            }   
+            }
+
         }
     }
 
