@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f57ccabcd45e44b488a818562d15694a, type: 3}
-  m_Name: MoleRat
+  m_Name: BigMoleRat
   m_EditorClassIdentifier: 
-  monsterPrefab: {fileID: 2773261381488995062, guid: a4e3506926d15864dbc1b108f047cea4, type: 3}
-  maxHealth: 15
+  monsterPrefab: {fileID: 4621246683165438788, guid: c5256c41a2b70ca4e9185ebb1c2ca757, type: 3}
+  maxHealth: 30
   maxShield: 0
-  speed: 3
-  damage: 30
-  uiHeight: 1.5
+  speed: 2
+  damage: 10
+  uiHeight: 2

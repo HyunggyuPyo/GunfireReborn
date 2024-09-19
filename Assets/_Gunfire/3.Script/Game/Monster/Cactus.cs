@@ -5,12 +5,14 @@ using UnityEngine;
 public class Cactus : Enemy
 {
     bool canAtk = true;
+    ThornProjectilePool pool;
 
     private void OnEnable()
     {
         InitSetting();
         FindPlayer();
         print($"cactus Target => {target}");
+        pool = GetComponent<ThornProjectilePool>();
     }
 
     private void Update()
@@ -35,33 +37,37 @@ public class Cactus : Enemy
         //        StartCoroutine(Attack());
         //    }
         //}
-
-        agent.SetDestination(target.position);
-
-        if (agent.velocity.magnitude > 0)
+        if(!isDead)
         {
-            animator.SetBool("Move", true);
-        }
-        else
-        {
-            Quaternion lookTarget = Quaternion.LookRotation(target.position - transform.position);
-            transform.rotation = Quaternion.Euler(0, lookTarget.eulerAngles.y, 0);
-            animator.SetBool("Move", false);
+            agent.SetDestination(target.position);
 
-            if (canAtk)
+            if (agent.velocity.magnitude > 0)
             {
-                canAtk = false;
-                StartCoroutine(Attack());
+                animator.SetBool("Move", true);
             }
+            else
+            {
+                Quaternion lookTarget = Quaternion.LookRotation(target.position - transform.position);
+                transform.rotation = Quaternion.Euler(0, lookTarget.eulerAngles.y, 0);
+                animator.SetBool("Move", false);
 
+                if (canAtk)
+                {
+                    canAtk = false;
+                    StartCoroutine(Attack());
+                }
+
+            }
         }
     }
 
     public override IEnumerator Attack()
     {
         animator.SetTrigger("Atk");
-        // todo 가시 프리팹 발사 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(.5f);
+        pool.ShotThorn();
+         
+        yield return new WaitForSeconds(1.5f);
         canAtk = true;
     }
 

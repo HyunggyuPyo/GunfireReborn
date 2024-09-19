@@ -16,6 +16,7 @@ public abstract class Enemy : MonoBehaviour, IHitable
     [HideInInspector]
     public int hp;
     protected int shield;
+    protected bool isDead = false;
 
     protected float distance;
 
@@ -77,5 +78,19 @@ public abstract class Enemy : MonoBehaviour, IHitable
     {
         hp -= damage;
         print($"{name} ÇÇ ´âÀ½ -> -{damage} : ÀÜ¿©hp -> {hp}");
+
+        if(hp <= 0)
+        {
+            hp = 0;
+            isDead = true;
+            animator.SetTrigger("Dead");
+            StartCoroutine(Dead());
+        }
+    }
+
+    public IEnumerator Dead()
+    {
+        yield return new WaitForSeconds(2f);
+        gameObject.SetActive(false);
     }
 }
