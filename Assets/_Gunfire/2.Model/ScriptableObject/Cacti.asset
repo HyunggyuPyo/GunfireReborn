@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f57ccabcd45e44b488a818562d15694a, type: 3}
-  m_Name: CactusBoss
+  m_Name: Cacti
   m_EditorClassIdentifier: 
-  monsterPrefab: {fileID: 7927433857649264623, guid: d7e4536c8d1a5db419b313e2e251b401, type: 3}
-  maxHealth: 200
+  monsterPrefab: {fileID: 7206563123752141401, guid: 819f35e925cf73049852c2ed67bfa5c4, type: 3}
+  maxHealth: 10
   maxShield: 0
-  speed: 4
-  damage: 30
-  uiHeight: 0
+  speed: 0
+  damage: 10
+  uiHeight: 1.5

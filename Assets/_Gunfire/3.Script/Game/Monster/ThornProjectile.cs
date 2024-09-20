@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class ThornProjectile : MonoBehaviour
 {
-    float speed = 6f;
+    public float despawnTime;
+    public float speed;
+    
     Rigidbody rigid;
     LayerMask targetLayer;
     int damage;
@@ -19,6 +21,11 @@ public class ThornProjectile : MonoBehaviour
     private void OnEnable()
     {
         StartCoroutine(DespawnThorn());
+    }
+
+    private void OnDisable()
+    {
+        rigid.velocity = Vector3.zero;
     }
 
     private void Update()
@@ -39,12 +46,14 @@ public class ThornProjectile : MonoBehaviour
             print($"가시가 플레이어에게 준 대미지 : {damage}");
         }
 
+        StopCoroutine(DespawnThorn());
         gameObject.SetActive(false);
     }
 
     IEnumerator DespawnThorn()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(despawnTime); 
+        //todo 너무 빨리 사라짐 캐릭터한테 오지도 못함 늘리고 pool 크기 좀 늘리기 
         gameObject.SetActive(false);
     }
 }

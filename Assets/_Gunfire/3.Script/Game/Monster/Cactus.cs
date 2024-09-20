@@ -5,14 +5,14 @@ using UnityEngine;
 public class Cactus : Enemy
 {
     bool canAtk = true;
-    ThornProjectilePool pool;
+    ObjectPool pool;
 
     private void OnEnable()
     {
         InitSetting();
         FindPlayer();
         print($"cactus Target => {target}");
-        pool = GetComponent<ThornProjectilePool>();
+        pool = GetComponent<ObjectPool>();
     }
 
     private void Update()
@@ -65,7 +65,7 @@ public class Cactus : Enemy
     {
         animator.SetTrigger("Atk");
         yield return new WaitForSeconds(.5f);
-        pool.ShotThorn();
+        pool.SpawnObj();
          
         yield return new WaitForSeconds(1.5f);
         canAtk = true;

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ThornProjectilePool : MonoBehaviour
+public class ObjectPool : MonoBehaviour
 {
     // todo 이름 make pool 같은걸로 바꾸고 변수로 다 받아서 그냥 pool 생성 공용 스크립트로 바꾸기 
     public GameObject prefab;
@@ -24,7 +24,7 @@ public class ThornProjectilePool : MonoBehaviour
         pointer = 0;
     }
 
-    public void ShotThorn()
+    public void SpawnObj()
     {
         if(pointer != pool.Count)
         {
