@@ -1817,6 +1817,7 @@ GameObject:
   - component: {fileID: 2548328078281670950}
   - component: {fileID: 6343313038334177734}
   - component: {fileID: -4200146472760465456}
+  - component: {fileID: -3898280177368815523}
   m_Layer: 10
   m_Name: LocalFox
   m_TagString: Untagged
@@ -1968,6 +1969,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 043660346bafa3447811df7a38b5dbeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetGun: 0
   targetEnemy: 0
   targetMask:
     serializedVersion: 2
@@ -1975,6 +1977,20 @@ MonoBehaviour:
   mainCamera: {fileID: 0}
   ScreenCenter: {x: 0, y: 0, z: 0}
   centerPosition: {x: 0, y: 0, z: 0}
+--- !u!114 &-3898280177368815523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6977266894501688357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f123f4490fc2ad14f841405ab3bdb1de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapons: {fileID: 6977266893230878858}
+  defaultGun: {fileID: 1246526186798878661}
 --- !u!1 &6977266894512301568
 GameObject:
   m_ObjectHideFlags: 0
@@ -2426,5 +2442,10 @@ PrefabInstance:
 --- !u!4 &1246526186798519269 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8185494304968802926, guid: f786dad7821f44c45b49e1bf0ff4cd50, type: 3}
+  m_PrefabInstance: {fileID: 6977266893497241995}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1246526186798878661 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8185494304968515150, guid: f786dad7821f44c45b49e1bf0ff4cd50, type: 3}
   m_PrefabInstance: {fileID: 6977266893497241995}
   m_PrefabAsset: {fileID: 0}

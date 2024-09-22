@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DefaultGun : Gun
 {
+    public Sprite image;
+
     public override void InitSetting()
     {
         data.delay = 1f;

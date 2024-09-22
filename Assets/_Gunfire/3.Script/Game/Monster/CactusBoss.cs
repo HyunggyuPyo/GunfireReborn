@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CactusBoss : Enemy
 {
-    bool canAtk = true;
+    bool canAtk = false;
     public ObjectPool thornPool;
     public ObjectPool tornadoPool;
 
@@ -25,45 +25,62 @@ public class CactusBoss : Enemy
                 agent.SetDestination(target.position);
             }
 
-            if (agent.velocity.magnitude > 0)
+            if (agent.velocity.magnitude > 0) // || 로 돌진시 방향전환 안되게 변수ㅠ 추가
             {
                 animator.SetBool("Move", true);
             }
             else
             {
+                if (canAtk)
+                {
+                    return;
+                }
+
                 Quaternion lookTarget = Quaternion.LookRotation(target.position - transform.position);
                 transform.rotation = Quaternion.Euler(0, lookTarget.eulerAngles.y, 0);
                 animator.SetBool("Move", false);
-
-                if (canAtk)
-                {
-                    canAtk = false;
-                    animator.SetTrigger("Atk");
-                }
             }
         }
     }
 
     void RandPattem()
     {
+        print("패턴 실행");
         float randomNum = Random.value;
 
         if (randomNum <= 0.3f)
         {
             StartCoroutine(Rush());
+            print("rush 실행");
         }
         else if(randomNum <= 0.6f)
         {
             StartCoroutine(Tornado());
+            print("tornado 실행");
         }
         else
         {
             StartCoroutine(Shot());
+            print("shot 실행");
+        }
+    }
+
+    public override IEnumerator Attack()
+    {
+        print("attack 실행");
+        while (!isDead)
+        {
+            agent.speed = 0f;
+            FindPlayer();
+            RandPattem();
+
+            yield return new WaitForSeconds(5f);
         }
     }
 
     IEnumerator Rush()
     {
+        canAtk = true;
         animator.SetBool("Rush", true);
         Quaternion lookTarget = Quaternion.LookRotation(target.position - transform.position);
         transform.rotation = Quaternion.Euler(0, lookTarget.eulerAngles.y, 0);
@@ -72,18 +89,18 @@ public class CactusBoss : Enemy
 
         while(time < .3f)
         {
-            Vector3 targetPosition = transform.position + transform.forward * MonsterData.speed * 2f * Time.deltaTime;
-            rigid.MovePosition(targetPosition);
+            //Vector3 targetPosition = transform.position + transform.forward * 8f * Time.deltaTime;
+            //rigid.MovePosition(targetPosition);
+            rigid.AddForce(transform.forward * MonsterData.speed * 3f, ForceMode.VelocityChange);
             time += Time.deltaTime;
             yield return null;
         }
 
-        yield return new WaitForSeconds(2f);
-        rigid.velocity = Vector3.zero;
         animator.SetBool("Rush", false);
-
-        canAtk = true;
-        agent.enabled = true;
+        yield return new WaitForSeconds(2f);
+        //rigid.velocity = Vector3.zero;
+        canAtk = false;
+        agent.speed = 2f;
     }
 
     IEnumerator Tornado()
@@ -93,8 +110,7 @@ public class CactusBoss : Enemy
         tornadoPool.SpawnObj();
 
         yield return new WaitForSeconds(1.5f);
-        canAtk = true;
-        agent.enabled = true;
+        agent.speed = 2f;
     }
 
     IEnumerator Shot()
@@ -104,24 +120,20 @@ public class CactusBoss : Enemy
         thornPool.SpawnObj();
 
         yield return new WaitForSeconds(1.5f);
-        canAtk = true;
-        agent.enabled = true;
+        agent.speed = 2f;
     }
 
-    public override IEnumerator Attack()
-    {
-        while(!isDead)
-        {
-            if (canAtk)
-            {
-                canAtk = false;
-                agent.enabled = false;
-                RandPattem();
-            }
-                
-            yield return new WaitForSeconds(7f);
-        }
-    }
+    //IEnumerator Smash()
+    //{
+    //    canAtk = true;
+    //    agent.enabled = true;
+    //    agent.speed = 6f;
+    //    agent.stoppingDistance = 5f;
+
+    //    yield return new WaitForSeconds(2f);
+    //    agent.speed = 2f;
+    //    agent.stoppingDistance = 13f;
+    //}
 
     public override void Move()
     {

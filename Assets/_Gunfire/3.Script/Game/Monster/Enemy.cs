@@ -11,7 +11,8 @@ public abstract class Enemy : MonoBehaviour, IHitable
 
     protected Rigidbody rigid;
     protected List<Transform> players;
-    protected Transform target;
+    [HideInInspector]
+    public Transform target;
 
     [HideInInspector]
     public int hp;

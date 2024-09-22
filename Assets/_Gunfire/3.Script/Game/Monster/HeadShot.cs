@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HeadShotTest : MonoBehaviour
+public class HeadShot : MonoBehaviour
 {
     public Transform headBone;
     public Transform nickBone;

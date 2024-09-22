@@ -6,7 +6,7 @@ public class RayController : MonoBehaviour
 {
     public static RayController Instance;
 
-    bool targetGun;
+    public bool targetGun;
     bool shotObj;
     public bool targetEnemy;
 
@@ -14,8 +14,7 @@ public class RayController : MonoBehaviour
     LayerMask EnemyMask;
     public LayerMask targetMask;
 
-    public 
-        Camera mainCamera;
+    public Camera mainCamera;
 
     [HideInInspector]
     public Vector3 ScreenCenter;
