@@ -131,6 +131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myWeapon: {fileID: -8996907795650603933}
   startPosition: {fileID: 1282879378254192466}
+  wearing: 0
 --- !u!114 &-8996907795650603933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,4 +144,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c668e1b95a3f696418913445041ab16c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: b3d9a20aa3b5b8d4a9b875ed68b244b5, type: 3}
+  image: {fileID: 21300000, guid: 81c76bb9c9aca3c41880186dad460834, type: 3}

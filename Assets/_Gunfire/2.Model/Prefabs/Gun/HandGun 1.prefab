@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6664420871139727385
 Transform:
   m_ObjectHideFlags: 0
@@ -49,6 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myWeapon: {fileID: 7385827903571702838}
   startPosition: {fileID: 2158762615899494965}
+  wearing: 0
 --- !u!114 &7385827903571702838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61,7 +62,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b74784cf88f9fc248a7b3ce7e84a94c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: b3d9a20aa3b5b8d4a9b875ed68b244b5, type: 3}
+  image: {fileID: 21300000, guid: e168e7bd8a9ab514b924009bbe1c05d0, type: 3}
 --- !u!135 &6664420871139727386
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -206,6 +207,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myWeapon: {fileID: 1088838466790969604}
   startPosition: {fileID: 2158762615899494965}
+  wearing: 0
 --- !u!114 &1088838466790969604
 MonoBehaviour:
   m_ObjectHideFlags: 0
