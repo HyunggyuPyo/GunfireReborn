@@ -7,6 +7,8 @@ public class WeaponController : MonoBehaviour
     public Gun myWeapon;
     Gun tempWeapon;
     public Transform startPosition;
+    [HideInInspector]
+    public bool wearing = false;
 
     private void Start()
     {
@@ -17,12 +19,16 @@ public class WeaponController : MonoBehaviour
 
     private void Update()
     {
-        if(tempWeapon != myWeapon)
+        if(wearing)
         {
-            tempWeapon = myWeapon;
-            myWeapon.InitSetting();
-        }
+            if (tempWeapon != myWeapon)
+            {
+                tempWeapon = myWeapon;
+                myWeapon.InitSetting();
+            }
 
-        myWeapon.Using(startPosition);
+            myWeapon.Using(startPosition);
+            myWeapon.ReLoad();
+        }
     }
 }

@@ -84,6 +84,7 @@ public abstract class Enemy : MonoBehaviour, IHitable
         {
             hp = 0;
             isDead = true;
+            //agent.speed = 0f;
             animator.SetTrigger("Dead");
             StartCoroutine(Dead());
         }

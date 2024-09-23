@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerWeaponManager : MonoBehaviour
 {
-    public static PlayerWeaponManager Instance;
+    //public static PlayerWeaponManager Instance;
 
     public Transform weapons;
 
@@ -19,12 +19,20 @@ public class PlayerWeaponManager : MonoBehaviour
 
     private void Awake()
     {
-        Instance = this;
+        //Instance = this;
         gunNum = 3;
-        fieldDrop =GameObject.Find("DropGunPrefab").transform;
+        fieldDrop = GameObject.Find("DropGunPrefab").transform;
         //hitGun = RayController.Instance.hit.collider.gameObject;
         guns.AddRange(new GameObject[] { null, null, defaultGun});
+        
+    }
 
+    private void Start()
+    {
+        PlayerWeaponUI.Instance.ImageChange(guns[gunNum - 1].GetComponent<Gun>().data.image);
+        //todo 이거 실행 안 되는데
+
+        guns[2].GetComponent<WeaponController>().wearing = true;
     }
 
     private void Update()
@@ -61,10 +69,11 @@ public class PlayerWeaponManager : MonoBehaviour
 
     void PickUpGun(GameObject hitGun)
     {
-        if(guns[0] == null)
+        if (guns[0] == null)
         {
             hitGun.transform.SetParent(weapons);
             guns[0] = hitGun;
+            guns[0].GetComponent<WeaponController>().wearing = true;
             guns[gunNum - 1].SetActive(false);
 
             tempNum = gunNum;
@@ -75,6 +84,7 @@ public class PlayerWeaponManager : MonoBehaviour
         {
             hitGun.transform.SetParent(weapons);
             guns[1] = hitGun;
+            guns[1].GetComponent<WeaponController>().wearing = true;
             guns[gunNum - 1].SetActive(false);
 
             tempNum = gunNum;
@@ -83,10 +93,13 @@ public class PlayerWeaponManager : MonoBehaviour
         }
         else if (gunNum == 3)
         {
+            guns[0].GetComponent<WeaponController>().wearing = false;
             guns[0].transform.SetParent(fieldDrop);
             guns[0].SetActive(true);
+
             hitGun.transform.SetParent(weapons);
             guns[0] = hitGun;
+            guns[0].GetComponent<WeaponController>().wearing = true;
             tempNum = gunNum;
             gunNum = 1;
             changeGun();
@@ -94,10 +107,14 @@ public class PlayerWeaponManager : MonoBehaviour
         else
         {
             guns[gunNum - 1].transform.SetParent(fieldDrop);
+            guns[gunNum - 1].GetComponent<WeaponController>().wearing = true;
+
             hitGun.transform.SetParent(weapons);
             guns[gunNum - 1] = hitGun;
+            guns[gunNum - 1].GetComponent<WeaponController>().wearing = true;
             changeGun();
         }
+        InitTransform(hitGun);
     }
 
     void changeGun()
@@ -117,6 +134,14 @@ public class PlayerWeaponManager : MonoBehaviour
                 guns[2].SetActive(true);
                 break;
         }
+
+        PlayerWeaponUI.Instance.ImageChange(guns[gunNum - 1].GetComponent<Gun>().data.image);
+    }
+
+    void InitTransform(GameObject gun)
+    {
+        gun.transform.localPosition = Vector3.zero;
+        gun.transform.localRotation = Quaternion.identity;
     }
 
 }

@@ -43,6 +43,7 @@ public class MoleRat : Enemy
     public override IEnumerator Attack()
     {
         animator.SetTrigger("Atk");
+        agent.speed = 0f;
 
         yield return new WaitForSeconds(3f); //2.5
         gameObject.SetActive(false);

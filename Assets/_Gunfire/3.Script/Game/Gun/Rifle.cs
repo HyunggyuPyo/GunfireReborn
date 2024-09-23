@@ -2,16 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DefaultGun : Gun
+public class Rifle : Gun
 {
     public Sprite image;
 
     public override void InitSetting()
     {
-        data.delay = 1f;
-        data.maxBullet = 20;
+        data.delay = 0.5f;
+        data.maxBullet = 30;
         data.bulletCount = data.maxBullet;
-        data.info = "기본 권총";
+        data.info = "라이플 1";
         //data.soundEffect = ;
         data.bullet = Resources.Load<GameObject>("DefultBullet");
         data.image = image;
@@ -25,10 +25,5 @@ public class DefaultGun : Gun
     public override void Using(Transform sPos)
     {
         base.Using(sPos);
-    }
-
-    public override void ReLoad()
-    {
-        base.ReLoad();
     }
 }
