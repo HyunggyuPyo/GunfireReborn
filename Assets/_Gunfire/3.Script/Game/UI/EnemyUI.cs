@@ -15,9 +15,12 @@ public class EnemyUI : MonoBehaviour
     private void OnEnable()
     {
         if(targetObj != null)
+        {
             enemyName.text = targetObj.GetComponent<Enemy>().name;
+            hp.maxValue = targetObj.GetComponent<Enemy>().MonsterData.maxHealth;
+        }
+            
         StartCoroutine(OffObj());
-        hp.maxValue = targetObj.GetComponent<Enemy>().MonsterData.maxHealth;
     }
 
     private void OnDisable()

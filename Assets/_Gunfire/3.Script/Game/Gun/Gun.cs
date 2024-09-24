@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public struct GunData
 {
+    public int level;
+    public int damage;
     public float delay;
     public int maxBullet;
     public int bulletCount;

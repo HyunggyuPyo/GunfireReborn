@@ -9,8 +9,8 @@ public class EnemyUIController : MonoBehaviour
     public GameObject uiPrefab;
     int pointer;
 
-    [HideInInspector]
-    public bool inConnect = false;
+    //[HideInInspector]
+    //public bool inConnect = false;
 
     List<GameObject> uiList = new List<GameObject>();
 
@@ -35,7 +35,7 @@ public class EnemyUIController : MonoBehaviour
 
     private void Update()
     {
-        if(inConnect && RayController.Instance.targetEnemy)
+        if(GameManager.Instance.isConnect && RayController.Instance.targetEnemy)
         {
             print($"{RayController.Instance.hitEnemy.collider.gameObject}°¡ ¸ÂÀ½");
 

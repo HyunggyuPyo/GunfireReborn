@@ -4,27 +4,29 @@ using UnityEngine;
 
 public class PlayerWeaponManager : MonoBehaviour
 {
-    //public static PlayerWeaponManager Instance;
+    public static PlayerWeaponManager Instance;
 
     public Transform weapons;
 
     List<GameObject> guns = new List<GameObject>(3);
-    List<int> bullet = new List<int>();
+    //List<int> bullet = new List<int>();
     int gunNum;
     int tempNum;
     Transform fieldDrop;
     public GameObject defaultGun; //todo 이거 여기서 리소스 이니트 하면 되는거 아닌가?
+    [HideInInspector]
+    public int damage;
 
     //GameObject hitGun;
 
     private void Awake()
     {
-        //Instance = this;
+        Instance = this;
         gunNum = 3;
         fieldDrop = GameObject.Find("DropGunPrefab").transform;
         //hitGun = RayController.Instance.hit.collider.gameObject;
         guns.AddRange(new GameObject[] { null, null, defaultGun});
-        
+        damage = guns[2].GetComponent<Gun>().data.damage;
     }
 
     private void Start()
@@ -136,6 +138,7 @@ public class PlayerWeaponManager : MonoBehaviour
         }
 
         PlayerWeaponUI.Instance.ImageChange(guns[gunNum - 1].GetComponent<Gun>().data.image);
+        damage = guns[gunNum - 1].GetComponent<Gun>().data.damage + (guns[gunNum - 1].GetComponent<Gun>().data.level * 2);
     }
 
     void InitTransform(GameObject gun)

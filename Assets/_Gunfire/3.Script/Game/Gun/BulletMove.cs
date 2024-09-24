@@ -5,7 +5,7 @@ using UnityEngine;
 public class BulletMove : MonoBehaviour
 {
     float speed = 8f;
-    int damage = 10; //todo 총에 데이미지가 있고 그걸 갖와야 함 그래서 강화를 만들수 있음
+    int damage; //todo 총에 데이미지가 있고 그걸 갖와야 함 그래서 강화를 만들수 있음
     Rigidbody rigid;
     bool reach = false;
     LayerMask targetLayer;
@@ -32,6 +32,8 @@ public class BulletMove : MonoBehaviour
         {
             transform.LookAt(dir);
         }
+
+        damage = PlayerWeaponManager.Instance.damage;
 
         StartCoroutine(DespawnBullet());
         reach = false;

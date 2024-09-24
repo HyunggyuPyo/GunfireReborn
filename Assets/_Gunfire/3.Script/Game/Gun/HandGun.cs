@@ -8,6 +8,8 @@ public class HandGun : Gun
 
     public override void InitSetting()
     {
+        data.level = Random.Range(0, 4);
+        data.damage = 12;
         data.delay = 0.8f;
         data.maxBullet = 25;
         data.bulletCount = data.maxBullet;

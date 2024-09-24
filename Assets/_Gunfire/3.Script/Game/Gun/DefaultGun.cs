@@ -8,6 +8,8 @@ public class DefaultGun : Gun
 
     public override void InitSetting()
     {
+        data.level = 0;
+        data.damage = 8;
         data.delay = 1f;
         data.maxBullet = 20;
         data.bulletCount = data.maxBullet;

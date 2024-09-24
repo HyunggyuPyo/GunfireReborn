@@ -100,6 +100,7 @@ public class LocalPlayerMove : MonoBehaviour, IPunInstantiateMagicCallback
             Destroy(gameObject);
         }
 
-        EnemyUIController.Instance.inConnect = true;
+        //EnemyUIController.Instance.inConnect = true;
+        GameManager.Instance.isConnect = true;
     }
 }
