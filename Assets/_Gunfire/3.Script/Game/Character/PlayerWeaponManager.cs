@@ -9,6 +9,7 @@ public class PlayerWeaponManager : MonoBehaviour
     public Transform weapons;
 
     List<GameObject> guns = new List<GameObject>(3);
+    public List<GameObject> Guns { get { return guns; } set { guns = value; } }
     //List<int> bullet = new List<int>();
     int gunNum;
     int tempNum;
