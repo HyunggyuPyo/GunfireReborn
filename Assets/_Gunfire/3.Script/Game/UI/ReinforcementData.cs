@@ -14,32 +14,50 @@ public class ReinforcementData : MonoBehaviour
     public int num;
 
     public Button upgrade;
+    NpcInteract blackSmith;
 
     private void Awake()
     {
         upgrade.onClick.AddListener(UpgradeButtonClick);
+        blackSmith= gameObject.GetComponentInParent<NpcInteract>();
     }
 
     private void OnEnable()
     {
-        //todo 이거 못 줄이나?
-        gunImage.sprite = PlayerWeaponManager.Instance.Guns[num].GetComponent<Gun>().data.image;
-        gunName.text = $"{PlayerWeaponManager.Instance.Guns[num].GetComponent<Gun>().data.info} + {PlayerWeaponManager.Instance.Guns[num].GetComponent<Gun>().data.level}";
-        info.text = 
-            $"대미지 : {PlayerWeaponManager.Instance.Guns[num].GetComponent<Gun>().data.damage} \n" +
-            $"딜레이 : {PlayerWeaponManager.Instance.Guns[num].GetComponent<Gun>().data.delay} \n" +
-            $"탄창 용량 : {PlayerWeaponManager.Instance.Guns[num].GetComponent<Gun>().data.maxBullet}";
+        GetInfo();
+    }
 
-        price.text = (200 + (PlayerWeaponManager.Instance.Guns[num].GetComponent<Gun>().data.level * 100)).ToString();
+    void GetInfo()
+    {
+        if (PlayerWeaponManager.Instance.Guns[num] != null)
+        {
+            GunData data = PlayerWeaponManager.Instance.Guns[num].GetComponent<Gun>().data;
 
+            gunImage.sprite = data.image;
+            gunName.text = $"{data.info} + {data.level}";
+            info.text =
+                $"대미지 : {data.damage} + {data.level * 2} \n" +
+                $"딜레이 : {data.delay} \n" +
+                $"탄창 용량 : {data.maxBullet}";
+
+            price.text = (200 + (data.level * 100)).ToString();
+        }
+        else
+        {
+            gameObject.SetActive(false);
+        }
     }
     
     void UpgradeButtonClick()
     {
-        if(Inventory.Instance.coin >= (200 + (PlayerWeaponManager.Instance.Guns[num].GetComponent<Gun>().data.level * 100)))
+        if(blackSmith.upgradeCount > 0 && Inventory.Instance.coin >= (200 + (PlayerWeaponManager.Instance.Guns[num].GetComponent<Gun>().data.level * 100)))
         {
             Inventory.Instance.coin -= (200 + (PlayerWeaponManager.Instance.Guns[num].GetComponent<Gun>().data.level * 100));
             PlayerWeaponManager.Instance.Guns[num].GetComponent<Gun>().data.level += 1;
-        }
+
+            GetInfo();
+            blackSmith.upgradeCount--;
+            upgradeCount.text = $"잔여 강화 횟수 : {blackSmith.upgradeCount}";
+        }        
     }
 }

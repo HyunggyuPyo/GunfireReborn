@@ -15,8 +15,7 @@ public class PlayerWeaponManager : MonoBehaviour
     int tempNum;
     Transform fieldDrop;
     public GameObject defaultGun; //todo 이거 여기서 리소스 이니트 하면 되는거 아닌가?
-    [HideInInspector]
-    public int damage;
+    public int damage { get; set; }
 
     //GameObject hitGun;
 

@@ -12,7 +12,7 @@ public class Inventory : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        coin = 0;
+        coin = 2000; //todo 0으러 변경
         soulStone = 0;
     }
     
