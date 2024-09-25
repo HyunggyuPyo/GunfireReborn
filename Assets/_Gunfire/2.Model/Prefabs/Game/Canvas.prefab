@@ -721,8 +721,7 @@ MonoBehaviour:
   - {fileID: 1680689878700389150}
   gunImage: {fileID: 1680689878097789196}
   bulletCount: {fileID: 1680689878081485936}
-  dushCool: {fileID: 1680689878329361512}
-  dushFill: {fileID: 1680689878329361510}
+  dushCool: {fileID: 1680689878329361510}
   count: {fileID: 1680689878049943303}
 --- !u!1 &1680689878049943305
 GameObject:
@@ -1060,7 +1059,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 81c76bb9c9aca3c41880186dad460834, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1315,7 +1314,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1680689878329361511
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1334,7 +1333,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000022888184, y: 18.6}
+  m_AnchoredPosition: {x: -0.000022888184, y: 0}
   m_SizeDelta: {x: 85.3418, y: 71.3724}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1680689878329361509
@@ -1358,14 +1357,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.6666667}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b3d9a20aa3b5b8d4a9b875ed68b244b5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f2e7a45940d4be240aa6446fa04260b7, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1

@@ -31,9 +31,6 @@ public class PlayerWeaponManager : MonoBehaviour
 
     private void Start()
     {
-        PlayerWeaponUI.Instance.ImageChange(guns[gunNum - 1].GetComponent<Gun>().data.image);
-        //todo 이거 실행 안 되는데
-
         guns[2].GetComponent<WeaponController>().wearing = true;
     }
 
