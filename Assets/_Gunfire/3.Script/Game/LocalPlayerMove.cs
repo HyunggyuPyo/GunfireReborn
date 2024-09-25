@@ -8,13 +8,15 @@ public class LocalPlayerMove : MonoBehaviour, IPunInstantiateMagicCallback
     #region 전역변수
     CharacterController cc;
     Animator animator;
-    private float moveSpeed = 3f;
+    private float moveSpeed;
 
     bool isGrounded;
+    bool isDash = false;
+    bool dashDelay = true;
     LayerMask groundMask;
     Transform groundCheckPoint;
-    float gravity = -4f;
-    Coroutine jumpCoroutine;
+    float gravity = -3f;
+    Coroutine jumpCoroutine, dashCoroutine;
 
     float mouseSensitivity = 200f;
     float dirX, dirY;
@@ -33,6 +35,7 @@ public class LocalPlayerMove : MonoBehaviour, IPunInstantiateMagicCallback
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        moveSpeed = gameObject.GetComponent<CharacterManager>().Data.speed;
     }
 
     void Update()
@@ -48,15 +51,23 @@ public class LocalPlayerMove : MonoBehaviour, IPunInstantiateMagicCallback
             jumpCoroutine = StartCoroutine(Jump());
         }
 
-        cc.Move(transform.forward * dir.z * moveSpeed * Time.deltaTime);
-        cc.Move(transform.right * dir.x * moveSpeed * Time.deltaTime);
+        if(isDash == false)
+        {
+            cc.Move(transform.forward * dir.z * moveSpeed * Time.deltaTime);
+            cc.Move(transform.right * dir.x * moveSpeed * Time.deltaTime);
+        }        
+
+        if (dashDelay && Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            dashCoroutine = StartCoroutine(Dash());
+        }
 
         isGrounded = Physics.Raycast(groundCheckPoint.position, Vector3.down, 0.2f, groundMask);
 
         if (!isGrounded)
         {
             cc.Move(transform.up * gravity * Time.deltaTime);
-        }
+        }        
 
         dirX += Input.GetAxisRaw("Mouse X") * mouseSensitivity * Time.deltaTime;
         dirY -= Input.GetAxisRaw("Mouse Y") * mouseSensitivity * Time.deltaTime;
@@ -70,19 +81,44 @@ public class LocalPlayerMove : MonoBehaviour, IPunInstantiateMagicCallback
     IEnumerator Jump()
     {
         float time = 0;
-
-        while (time < .4f) // .3f
+     
+        while (time < .4f) 
         {
-            cc.Move(cc.transform.up * 8f * Time.deltaTime);
+            cc.Move(cc.transform.up * 9f * Time.deltaTime);
             time += Time.deltaTime;
             yield return null;
         }
 
-        gravity = -2f;
-        yield return new WaitForSeconds(0.2f);
-        gravity = -4f;
+        if(!isDash)
+            gravity = -2f;
+        yield return new WaitForSeconds(0.3f);
+        if (!isDash)
+            gravity = -3f;
 
         jumpCoroutine = null;
+    }
+
+    IEnumerator Dash()
+    {
+        StartCoroutine(PlayerWeaponUI.Instance.CoolTime());
+        isDash = true;
+        dashDelay = false;
+        float time = 0;
+        gravity = 0;
+
+        while (time < .5f)
+        {
+            cc.Move(transform.forward * 8f * Time.deltaTime);
+            time += Time.deltaTime;
+            yield return null;
+        }
+
+        gravity = -3f;
+        isDash = false;
+
+        yield return new WaitForSeconds(2f);
+        dashDelay = true;
+        dashCoroutine = null;
     }
 
     public void OnPhotonInstantiate(PhotonMessageInfo info)

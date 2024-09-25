@@ -43,7 +43,7 @@ public class CactusBoss : Enemy
         }
     }
 
-    void RandPattem()
+    void RandPattem() //todo 잡몹 소환 추가?
     {
         print("패턴 실행");
         float randomNum = Random.value;

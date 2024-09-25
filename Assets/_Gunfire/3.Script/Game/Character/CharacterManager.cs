@@ -6,6 +6,7 @@ public class CharacterManager : MonoBehaviour, IHitable
 {
     public Character playerCharacter;
     CharacterData data;
+    public CharacterData Data { get { return data; } set { data = value; } }
 
     private void Awake()
     {

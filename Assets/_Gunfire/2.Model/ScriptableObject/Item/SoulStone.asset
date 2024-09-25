@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5942db46e047f043abcf9694a384533, type: 3}
+  m_Name: SoulStone
+  m_EditorClassIdentifier: 
+  itemPrefab: {fileID: 4144837248251927008, guid: 3bb754f024972bf428a2c6ad423b673b, type: 3}
+  id: 1
+  Name: "\uC601\uD63C\uC11D"
+  toolTip: 
+  image: {fileID: -418483443, guid: e69325a71a7216348a463f4b1af7e5a0, type: 3}

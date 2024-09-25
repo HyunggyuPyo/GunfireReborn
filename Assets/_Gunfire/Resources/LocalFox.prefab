@@ -1992,7 +1992,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapons: {fileID: 6977266893230878858}
   defaultGun: {fileID: 1246526186798878661}
-  damage: 0
 --- !u!114 &5591847239172554553
 MonoBehaviour:
   m_ObjectHideFlags: 0
