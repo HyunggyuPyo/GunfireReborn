@@ -47,7 +47,7 @@ public class HeadShot : MonoBehaviour
                 }
             }
         }
-        print($"closesBone => {closesBone}");
+        //print($"closesBone => {closesBone}");
         return closesBone;
     }
 }

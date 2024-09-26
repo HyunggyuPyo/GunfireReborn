@@ -37,8 +37,6 @@ public class EnemyUIController : MonoBehaviour
     {
         if(GameManager.Instance.isConnect && RayController.Instance.targetEnemy)
         {
-            print($"{RayController.Instance.hitEnemy.collider.gameObject}°¡ ¸ÂÀ½");
-
             if (!uiDic.ContainsKey(RayController.Instance.hitEnemy.collider.gameObject))
             {
                 if (pointer != uiList.Count)
