@@ -2404,7 +2404,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8185494304968515150, guid: f786dad7821f44c45b49e1bf0ff4cd50, type: 3}
       propertyPath: m_Name
-      value: Gun_02_H
+      value: DefaultGun
       objectReference: {fileID: 0}
     - target: {fileID: 8185494304968802926, guid: f786dad7821f44c45b49e1bf0ff4cd50, type: 3}
       propertyPath: m_RootOrder

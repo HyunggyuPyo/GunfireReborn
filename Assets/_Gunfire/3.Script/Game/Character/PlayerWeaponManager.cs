@@ -26,7 +26,7 @@ public class PlayerWeaponManager : MonoBehaviour
         fieldDrop = GameObject.Find("DropGunPrefab").transform;
         //hitGun = RayController.Instance.hit.collider.gameObject;
         guns.AddRange(new GameObject[] { null, null, defaultGun});
-        damage = guns[2].GetComponent<Gun>().data.damage;
+        damage = defaultGun.GetComponent<Gun>().data.damage;
     }
 
     private void Start()

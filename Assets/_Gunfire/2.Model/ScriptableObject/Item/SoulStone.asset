@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5942db46e047f043abcf9694a384533, type: 3}
   m_Name: SoulStone
   m_EditorClassIdentifier: 
-  itemPrefab: {fileID: 4144837248251927008, guid: 3bb754f024972bf428a2c6ad423b673b, type: 3}
+  itemPrefab: {fileID: 1151962567374242042, guid: 4e04ea2234e1d8849be4cebe4b127468, type: 3}
   id: 1
   Name: "\uC601\uD63C\uC11D"
   toolTip: 

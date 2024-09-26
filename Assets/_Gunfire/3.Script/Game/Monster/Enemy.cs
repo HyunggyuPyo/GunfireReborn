@@ -3,6 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+[System.Serializable]
+public class EnemyDropItem
+{
+    public ItemSO itemData;
+    public float percentage;
+    public int maxDropCount;
+}
+
 public abstract class Enemy : MonoBehaviour, IHitable
 {
     public MonsterSO MonsterData;
@@ -20,8 +28,10 @@ public abstract class Enemy : MonoBehaviour, IHitable
     protected bool isDead = false;
 
     protected float distance;
-
     protected LayerMask targetLayer;
+
+    [SerializeField]
+    protected List<EnemyDropItem> dropItems;
 
     protected void Awake()
     {
@@ -86,6 +96,7 @@ public abstract class Enemy : MonoBehaviour, IHitable
             isDead = true;
             //agent.speed = 0f;
             animator.SetTrigger("Dead");
+            DropItem();
             StartCoroutine(Dead());
         }
     }
@@ -94,5 +105,10 @@ public abstract class Enemy : MonoBehaviour, IHitable
     {
         yield return new WaitForSeconds(2f);
         gameObject.SetActive(false);
+    }
+
+    public virtual void DropItem()
+    {
+        ItemDropManager.Instance.DropItemOnMonster(dropItems, transform);
     }
 }
