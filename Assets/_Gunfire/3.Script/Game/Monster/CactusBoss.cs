@@ -135,8 +135,4 @@ public class CactusBoss : Enemy
     //    agent.stoppingDistance = 13f;
     //}
 
-    public override void Move()
-    {
-        
-    }
 }

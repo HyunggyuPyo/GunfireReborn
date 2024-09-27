@@ -16,6 +16,7 @@ public class PlayerWeaponManager : MonoBehaviour
     Transform fieldDrop;
     public GameObject defaultGun; //todo 이거 여기서 리소스 이니트 하면 되는거 아닌가?
     public int damage { get; set; }
+    public float distance { get; private set; }
 
     //GameObject hitGun;
 
@@ -59,9 +60,14 @@ public class PlayerWeaponManager : MonoBehaviour
         }
         #endregion
 
-        if(RayController.Instance.targetGun && Input.GetKeyDown(KeyCode.F))
+        if (RayController.Instance.targetGun)
         {
-            PickUpGun(RayController.Instance.hit.collider.gameObject);
+            distance = Vector3.Distance(transform.position, RayController.Instance.hit.collider.gameObject.transform.position);
+            
+            if (distance < 2f && Input.GetKeyDown(KeyCode.F))
+            {
+                PickUpGun(RayController.Instance.hit.collider.gameObject);
+            }            
         }
 
     }

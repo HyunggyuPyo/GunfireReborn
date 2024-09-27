@@ -6,7 +6,7 @@ public class RayController : MonoBehaviour
 {
     public static RayController Instance;
 
-    public bool targetGun;
+    public bool targetGun { get; private set; }
     bool shotObj;
     public bool targetEnemy;
 
@@ -16,10 +16,10 @@ public class RayController : MonoBehaviour
 
     public Camera mainCamera;
 
-    [HideInInspector]
-    public Vector3 ScreenCenter;
-    [HideInInspector]
-    public Vector3 centerPosition;
+    //[HideInInspector]
+    public Vector3 ScreenCenter { get; private set; }
+    //[HideInInspector]
+    public Vector3 centerPosition { get; private set; }
 
     public RaycastHit hit;
     public RaycastHit hitObj;

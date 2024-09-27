@@ -1970,14 +1970,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 043660346bafa3447811df7a38b5dbeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetGun: 0
   targetEnemy: 0
   targetMask:
     serializedVersion: 2
     m_Bits: 4294967295
   mainCamera: {fileID: 0}
-  ScreenCenter: {x: 0, y: 0, z: 0}
-  centerPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &-3898280177368815523
 MonoBehaviour:
   m_ObjectHideFlags: 0

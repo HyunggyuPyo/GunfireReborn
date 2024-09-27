@@ -18,3 +18,4 @@ MonoBehaviour:
   speed: 2
   damage: 10
   uiHeight: 2
+  detection: 12

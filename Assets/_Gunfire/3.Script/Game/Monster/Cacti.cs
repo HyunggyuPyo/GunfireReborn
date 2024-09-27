@@ -38,10 +38,5 @@ public class Cacti : Enemy
         canAtk = true;
     }
 
-    public override void Move()
-    {
-        
-    }
-
 
 }

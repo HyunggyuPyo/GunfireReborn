@@ -50,11 +50,6 @@ public class MoleRat : Enemy
 
     }
 
-    public override void Move()
-    {
-        
-    }
-
     public void OnParticle()
     {
         attackParticle.SetActive(true);

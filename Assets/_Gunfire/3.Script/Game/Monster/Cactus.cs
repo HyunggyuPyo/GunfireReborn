@@ -37,27 +37,47 @@ public class Cactus : Enemy
         //        StartCoroutine(Attack());
         //    }
         //}
+
         if(!isDead)
         {
-            agent.SetDestination(target.position);
-
-            if (agent.velocity.magnitude > 0)
+            if (IsReach() > MonsterData.detection)
             {
-                animator.SetBool("Move", true);
+                if (Random.Range(0, 220) == 0)
+                {
+                    transform.Rotate(new Vector3(0, Random.Range(0, 361), 0));
+                    if(move != null)
+                    {
+                        StopCoroutine(move);
+                        move = StartCoroutine(Move());
+                    }
+                    else
+                    {
+                        move = StartCoroutine(Move());
+                    }                    
+                }
             }
             else
             {
-                Quaternion lookTarget = Quaternion.LookRotation(target.position - transform.position);
-                transform.rotation = Quaternion.Euler(0, lookTarget.eulerAngles.y, 0);
-                animator.SetBool("Move", false);
+                agent.SetDestination(target.position);
 
-                if (canAtk)
+                if (agent.velocity.magnitude > 0)
                 {
-                    canAtk = false;
-                    StartCoroutine(Attack());
+                    animator.SetBool("Move", true);
                 }
+                else
+                {
+                    Quaternion lookTarget = Quaternion.LookRotation(target.position - transform.position);
+                    transform.rotation = Quaternion.Euler(0, lookTarget.eulerAngles.y, 0);
+                    animator.SetBool("Move", false);
 
-            }
+                    if (canAtk)
+                    {
+                        canAtk = false;
+                        StartCoroutine(Attack());
+                    }
+
+                }
+            }            
         }
     }
 
@@ -67,12 +87,7 @@ public class Cactus : Enemy
         yield return new WaitForSeconds(.5f);
         pool.SpawnObj();
          
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1.5f); 
         canAtk = true;
-    }
-
-    public override void Move()
-    {
-        
     }
 }

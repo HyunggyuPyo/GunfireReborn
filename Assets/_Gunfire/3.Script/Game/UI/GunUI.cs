@@ -15,9 +15,9 @@ public class GunUI : MonoBehaviour
     // 캐릭터가 매니저에 각각 스크립트에 연결됐음을 알리는 함수를 실행 시키게 바꾸면 안되나?
     private void Update()
     {
-        if(GameManager.Instance.isConnect&& RayController.Instance.targetGun)
+        if(GameManager.Instance.isConnect && RayController.Instance.targetGun)
         {
-            if(RayController.Instance.hit.collider.gameObject != temp)
+            if(PlayerWeaponManager.Instance.distance < 2f && RayController.Instance.hit.collider.gameObject != temp)
             {
                 DataSet();
                 panel.SetActive(true);

@@ -10,4 +10,5 @@ public class MonsterSO : ScriptableObject
     public int damage;
 
     public float uiHeight;
+    public float detection;
 }

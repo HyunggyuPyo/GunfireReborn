@@ -27,7 +27,8 @@ public abstract class Enemy : MonoBehaviour, IHitable
     protected int shield;
     protected bool isDead = false;
 
-    protected float distance;
+    protected float distance; // 이거 지우기/? 리턴을로 값을 받음
+    protected Coroutine move;
     protected LayerMask targetLayer;
 
     [SerializeField]
@@ -76,14 +77,31 @@ public abstract class Enemy : MonoBehaviour, IHitable
 
         target = targetPlayer;
     }
-    public virtual void IsReach()
+    public virtual float IsReach()
     {
         distance = Vector3.Distance(transform.position, target.position);
+        return distance;
     }
 
     public abstract IEnumerator Attack();
 
-    public abstract void Move();
+    public virtual IEnumerator Move()
+    {
+        float time = 0;
+        int cool = Random.Range(1, 3);
+        animator.SetBool("Walk", true);
+        print("move 코루틴 실행");
+
+        while (time < cool)
+        {
+            rigid.AddForce(transform.forward * 10f * Time.deltaTime, ForceMode.Impulse);
+            time += Time.deltaTime;
+            yield return null;
+        }
+
+        animator.SetBool("Walk", false);
+        move = null;
+    }
 
     public virtual void Hit(int damage)
     {

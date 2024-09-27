@@ -291,7 +291,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MonsterData: {fileID: 11400000, guid: 419b4935786cf674fac8b71ed2f398b6, type: 2}
+  target: {fileID: 0}
   hp: 0
+  dropItems:
+  - itemData: {fileID: 11400000, guid: 0c50c13868fa9ed49aea00b9291a21e9, type: 2}
+    percentage: 60
+    maxDropCount: 5
+  - itemData: {fileID: 11400000, guid: 31afebc9a85f4f44f90a2b6b8432ca18, type: 2}
+    percentage: 50
+    maxDropCount: 3
 --- !u!195 &1344231716
 NavMeshAgent:
   m_ObjectHideFlags: 0
