@@ -5,12 +5,14 @@ using UnityEngine;
 public class MoleRat : Enemy
 {
     bool canAtk = false;
+    bool finished = false;
     public GameObject attackParticle;
 
     private void OnEnable()
     {
         InitSetting();
         FindPlayer();
+        
     }
 
     private void Update()
@@ -22,7 +24,7 @@ public class MoleRat : Enemy
             if (agent.velocity.magnitude > 0)
             {
                 animator.SetBool("Move", true);
-                canAtk = true;
+                
             }
             else
             {
@@ -30,6 +32,12 @@ public class MoleRat : Enemy
                 transform.rotation = Quaternion.Euler(0, lookTarget.eulerAngles.y, 0);
 
                 animator.SetBool("Move", false);
+
+                if (IsReach() < 5 && !finished)
+                {
+                    finished = true;
+                    canAtk = true;
+                }
 
                 if (canAtk)
                 {

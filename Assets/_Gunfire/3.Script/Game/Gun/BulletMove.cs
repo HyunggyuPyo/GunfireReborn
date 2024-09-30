@@ -11,6 +11,7 @@ public class BulletMove : MonoBehaviour
     LayerMask targetLayer;
     //Coroutine despawn;
     Vector3 dir;
+    public GameObject particle;
 
     private void Awake()
     {
@@ -37,11 +38,13 @@ public class BulletMove : MonoBehaviour
 
         StartCoroutine(DespawnBullet());
         reach = false;
+        particle.SetActive(true);
     }
 
     private void OnDisable()
     {
         rigid.velocity = Vector3.zero;
+        particle.SetActive(false);
         StopCoroutine(DespawnBullet());
     }
 
@@ -76,7 +79,7 @@ public class BulletMove : MonoBehaviour
 
     IEnumerator DespawnBullet()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.5f);
 
         //despawn = null;
         gameObject.SetActive(false);

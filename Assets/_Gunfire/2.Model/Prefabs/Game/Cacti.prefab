@@ -364,7 +364,7 @@ GameObject:
   - component: {fileID: 8018951976934791398}
   - component: {fileID: 8018951976934791397}
   - component: {fileID: 8018951976934791396}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cacti
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -456,6 +456,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   headBone: {fileID: 8290724509595331912}
   nickBone: {fileID: 5367165773051258140}
+  headShot: 0
 --- !u!114 &8018951976934791398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -469,7 +470,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MonsterData: {fileID: 11400000, guid: 385ec013bf7ad144a8e706c3155db45a, type: 2}
+  target: {fileID: 0}
   hp: 0
+  dropItems:
+  - itemData: {fileID: 11400000, guid: 0c50c13868fa9ed49aea00b9291a21e9, type: 2}
+    percentage: 60
+    maxDropCount: 4
+  - itemData: {fileID: 11400000, guid: 31afebc9a85f4f44f90a2b6b8432ca18, type: 2}
+    percentage: 50
+    maxDropCount: 2
 --- !u!195 &8018951976934791397
 NavMeshAgent:
   m_ObjectHideFlags: 0

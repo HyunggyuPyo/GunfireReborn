@@ -17,10 +17,12 @@ public abstract class Enemy : MonoBehaviour, IHitable
     protected Animator animator;
     protected NavMeshAgent agent;
 
+    protected Collider cd;
     protected Rigidbody rigid;
     protected List<Transform> players;
     [HideInInspector]
     public Transform target;
+    HeadShot headshot;
 
     [HideInInspector]
     public int hp;
@@ -36,9 +38,11 @@ public abstract class Enemy : MonoBehaviour, IHitable
 
     protected void Awake()
     {
+        cd = GetComponent<Collider>();
         rigid = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
+        headshot = GetComponent<HeadShot>();
         targetLayer = (1 << LayerMask.NameToLayer("Player"));
 
         hp = MonsterData.maxHealth;
@@ -90,7 +94,6 @@ public abstract class Enemy : MonoBehaviour, IHitable
         float time = 0;
         int cool = Random.Range(1, 3);
         animator.SetBool("Walk", true);
-        print("move ÄÚ·çÆ¾ ½ÇÇà");
 
         while (time < cool)
         {
@@ -105,10 +108,18 @@ public abstract class Enemy : MonoBehaviour, IHitable
 
     public virtual void Hit(int damage)
     {
-        hp -= damage;
-        print($"{name} ÇÇ ´âÀ½ -> -{damage} : ÀÜ¿©hp -> {hp}");
+        if(headshot.headShot)
+        {
+            hp -= (int)(damage * 1.5f);
+        }
+        else
+        {
+            hp -= damage;
+        }
+        
+        //print($"{name} ÇÇ ´âÀ½ -> -{damage} : ÀÜ¿©hp -> {hp}");
 
-        if(hp <= 0)
+        if(hp <= 0 && !isDead)
         {
             hp = 0;
             isDead = true;
@@ -121,6 +132,9 @@ public abstract class Enemy : MonoBehaviour, IHitable
 
     public IEnumerator Dead()
     {
+        rigid.velocity = Vector3.zero;
+        rigid.useGravity = false;
+        cd.isTrigger = true;
         yield return new WaitForSeconds(2f);
         gameObject.SetActive(false);
     }

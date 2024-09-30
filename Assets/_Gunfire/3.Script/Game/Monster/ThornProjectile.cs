@@ -15,7 +15,7 @@ public class ThornProjectile : MonoBehaviour
     {
         rigid = GetComponent<Rigidbody>();
         targetLayer = (1 << LayerMask.NameToLayer("Player"));
-        damage = transform.root.gameObject.GetComponent<Enemy>().MonsterData.damage;
+        damage = transform.GetComponentInParent<Enemy>().MonsterData.damage;
     }
 
     private void OnEnable()
@@ -43,7 +43,7 @@ public class ThornProjectile : MonoBehaviour
         if(other.TryGetComponent<IHitable>(out IHitable hitable))
         {
             hitable.Hit(damage);
-            print($"가시가 플레이어에게 준 대미지 : {damage}");
+            //print($"가시가 플레이어에게 준 대미지 : {damage}");
         }
 
         StopCoroutine(DespawnThorn());

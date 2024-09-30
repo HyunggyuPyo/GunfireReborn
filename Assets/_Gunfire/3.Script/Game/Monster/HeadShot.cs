@@ -8,10 +8,13 @@ public class HeadShot : MonoBehaviour
     public Transform nickBone;
 
     LayerMask targetLayer;
+    [HideInInspector]
+    public bool headShot;
 
     private void Awake()
     {
         targetLayer = (1 << LayerMask.NameToLayer("Bullet"));
+        headShot = false;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -25,7 +28,11 @@ public class HeadShot : MonoBehaviour
         Transform hitBone = FindClosestBone(hitPoint);
         if(hitBone == headBone || hitBone == nickBone)
         {
-            print("Çìµå¼¦");
+            headShot = true;
+        }
+        else
+        {
+            headShot = false;
         }
     }
 

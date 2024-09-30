@@ -262,7 +262,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &870353119720734538
 MonoBehaviour:
@@ -278,6 +278,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   headBone: {fileID: 3952189289935633901}
   nickBone: {fileID: 8646172399729343675}
+  headShot: 0
 --- !u!114 &870353119720734535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -298,8 +299,11 @@ MonoBehaviour:
     percentage: 60
     maxDropCount: 5
   - itemData: {fileID: 11400000, guid: 31afebc9a85f4f44f90a2b6b8432ca18, type: 2}
-    percentage: 50
+    percentage: 55
     maxDropCount: 3
+  - itemData: {fileID: 11400000, guid: 54c63c5e30ccc5b4cae883541707cb1d, type: 2}
+    percentage: 100
+    maxDropCount: 1
 --- !u!195 &1344231716
 NavMeshAgent:
   m_ObjectHideFlags: 0

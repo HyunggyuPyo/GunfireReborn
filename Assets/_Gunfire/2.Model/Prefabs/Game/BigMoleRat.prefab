@@ -675,7 +675,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5434199825597295102
 Transform:
   m_ObjectHideFlags: 0
@@ -746,7 +746,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &4621246683165438789
 MonoBehaviour:
@@ -762,6 +762,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   headBone: {fileID: 8857760139494240738}
   nickBone: {fileID: 7045124994643195671}
+  headShot: 0
 --- !u!114 &6456266432555688210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -775,7 +776,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MonsterData: {fileID: 11400000, guid: 04379c10c5de7e34786ec4f6ad7dc517, type: 2}
+  target: {fileID: 0}
   hp: 0
+  dropItems:
+  - itemData: {fileID: 11400000, guid: 0c50c13868fa9ed49aea00b9291a21e9, type: 2}
+    percentage: 60
+    maxDropCount: 5
+  - itemData: {fileID: 11400000, guid: 31afebc9a85f4f44f90a2b6b8432ca18, type: 2}
+    percentage: 50
+    maxDropCount: 3
   attackParticle: {fileID: 6579668574651883108}
 --- !u!195 &1968583104
 NavMeshAgent:

@@ -1130,7 +1130,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &2773261381488995063
 MonoBehaviour:
@@ -1146,6 +1146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   headBone: {fileID: 2773261381422081793}
   nickBone: {fileID: 2773261379911734090}
+  headShot: 0
 --- !u!114 &-2002050722003322238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1159,7 +1160,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MonsterData: {fileID: 11400000, guid: 84449bfbea38941489db5bcbf08fc5e6, type: 2}
+  target: {fileID: 0}
   hp: 0
+  dropItems:
+  - itemData: {fileID: 11400000, guid: 0c50c13868fa9ed49aea00b9291a21e9, type: 2}
+    percentage: 60
+    maxDropCount: 4
+  - itemData: {fileID: 11400000, guid: 31afebc9a85f4f44f90a2b6b8432ca18, type: 2}
+    percentage: 50
+    maxDropCount: 2
   attackParticle: {fileID: 157287564524883175}
 --- !u!195 &5440077920932923621
 NavMeshAgent:
