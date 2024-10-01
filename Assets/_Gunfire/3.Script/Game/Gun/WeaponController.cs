@@ -7,6 +7,7 @@ public class WeaponController : MonoBehaviour
     public Gun myWeapon;
     Gun tempWeapon;
     public Transform startPosition;
+    public GameObject particle;
     [HideInInspector]
     public bool wearing = false;
 
@@ -29,6 +30,18 @@ public class WeaponController : MonoBehaviour
 
             myWeapon.Using(startPosition);
             myWeapon.ReLoad();
+        }
+    }
+
+    public void SetParticle()
+    {
+        if(particle.activeSelf)
+        {
+            particle.SetActive(false);
+        }
+        else
+        {
+            particle.SetActive(true);
         }
     }
 }

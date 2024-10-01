@@ -97,11 +97,12 @@ public abstract class Enemy : MonoBehaviour, IHitable
 
         while (time < cool)
         {
-            rigid.AddForce(transform.forward * 10f * Time.deltaTime, ForceMode.Impulse);
+            rigid.velocity = transform.forward * 3f;
             time += Time.deltaTime;
             yield return null;
         }
 
+        rigid.velocity = Vector3.zero;
         animator.SetBool("Walk", false);
         move = null;
     }
@@ -117,9 +118,9 @@ public abstract class Enemy : MonoBehaviour, IHitable
             hp -= damage;
         }
         
-        //print($"{name} ÇÇ ´âÀ½ -> -{damage} : ÀÜ¿©hp -> {hp}");
+        print($"{name} ÇÇ ´âÀ½ -> -{damage} : ÀÜ¿©hp -> {hp}");
 
-        if(hp <= 0 && !isDead)
+        if(!isDead && hp <= 0)
         {
             hp = 0;
             isDead = true;

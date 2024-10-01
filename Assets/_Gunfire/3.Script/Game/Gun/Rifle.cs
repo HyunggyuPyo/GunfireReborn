@@ -9,7 +9,7 @@ public class Rifle : Gun
     public override void InitSetting()
     {
         data.level = Random.Range(0, 4);
-        data.damage = 10;
+        data.damage = 12;
         data.delay = 0.5f;
         data.maxBullet = 30;
         data.bulletCount = data.maxBullet;

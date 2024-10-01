@@ -75,6 +75,7 @@ public class LocalPlayerMove : MonoBehaviour, IPunInstantiateMagicCallback
         dirY = Mathf.Clamp(dirY, -180f, 180f);
 
         body.transform.localRotation = Quaternion.Euler(dirY * 0.4f, 0f, 0f);
+
         transform.localRotation = Quaternion.Euler(0f, dirX * 0.4f, 0f);
     }
 
@@ -129,6 +130,8 @@ public class LocalPlayerMove : MonoBehaviour, IPunInstantiateMagicCallback
         {
             CameraMove cm = FindObjectOfType<CameraMove>();
             cm.enabled = true;
+            MiniMapCamera mcm = FindObjectOfType<MiniMapCamera>();
+            mcm.enabled = true;
         }
         else
         {

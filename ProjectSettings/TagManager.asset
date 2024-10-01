@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - UIRoot
+  - UICamera
+  - Canvas
+  - ForbidClick
   layers:
   - Default
   - TransparentFX
@@ -19,7 +23,7 @@ TagManager:
   - Player
   - Bullet
   - 
-  - 
+  - MiniMap
   - 
   - 
   - 

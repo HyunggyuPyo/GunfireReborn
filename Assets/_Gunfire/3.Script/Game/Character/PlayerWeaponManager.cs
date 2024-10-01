@@ -33,10 +33,13 @@ public class PlayerWeaponManager : MonoBehaviour
     private void Start()
     {
         guns[2].GetComponent<WeaponController>().wearing = true;
+        
     }
 
     private void Update()
     {
+        RayController.Instance.startPoint = guns[gunNum - 1].GetComponent<WeaponController>().startPosition.position;
+
         #region keydown Weapon Change
         if (Input.GetKeyDown(KeyCode.Alpha1) && guns[0] != null)
         {
@@ -79,6 +82,7 @@ public class PlayerWeaponManager : MonoBehaviour
             hitGun.transform.SetParent(weapons);
             guns[0] = hitGun;
             guns[0].GetComponent<WeaponController>().wearing = true;
+            guns[0].GetComponent<WeaponController>().SetParticle();
             guns[gunNum - 1].SetActive(false);
 
             tempNum = gunNum;
@@ -90,6 +94,7 @@ public class PlayerWeaponManager : MonoBehaviour
             hitGun.transform.SetParent(weapons);
             guns[1] = hitGun;
             guns[1].GetComponent<WeaponController>().wearing = true;
+            guns[1].GetComponent<WeaponController>().SetParticle();
             guns[gunNum - 1].SetActive(false);
 
             tempNum = gunNum;
@@ -99,12 +104,14 @@ public class PlayerWeaponManager : MonoBehaviour
         else if (gunNum == 3)
         {
             guns[0].GetComponent<WeaponController>().wearing = false;
+            guns[0].GetComponent<WeaponController>().SetParticle();
             guns[0].transform.SetParent(fieldDrop);
             guns[0].SetActive(true);
 
             hitGun.transform.SetParent(weapons);
             guns[0] = hitGun;
             guns[0].GetComponent<WeaponController>().wearing = true;
+            guns[0].GetComponent<WeaponController>().SetParticle();
             tempNum = gunNum;
             gunNum = 1;
             changeGun();
@@ -112,11 +119,13 @@ public class PlayerWeaponManager : MonoBehaviour
         else
         {
             guns[gunNum - 1].transform.SetParent(fieldDrop);
-            guns[gunNum - 1].GetComponent<WeaponController>().wearing = true;
+            guns[gunNum - 1].GetComponent<WeaponController>().wearing = false;
+            guns[gunNum - 1].GetComponent<WeaponController>().SetParticle();
 
             hitGun.transform.SetParent(weapons);
             guns[gunNum - 1] = hitGun;
             guns[gunNum - 1].GetComponent<WeaponController>().wearing = true;
+            guns[gunNum - 1].GetComponent<WeaponController>().SetParticle();
             changeGun();
         }
         InitTransform(hitGun);
@@ -142,6 +151,7 @@ public class PlayerWeaponManager : MonoBehaviour
 
         PlayerWeaponUI.Instance.ImageChange(guns[gunNum - 1].GetComponent<Gun>().data.image);
         damage = guns[gunNum - 1].GetComponent<Gun>().data.damage + (guns[gunNum - 1].GetComponent<Gun>().data.level * 2);
+        //RayController.Instance.startPoint = guns[gunNum - 1].GetComponent<WeaponController>().startPosition.position;
     }
 
     void InitTransform(GameObject gun)

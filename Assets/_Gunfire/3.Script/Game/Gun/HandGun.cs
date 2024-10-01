@@ -9,8 +9,8 @@ public class HandGun : Gun
     public override void InitSetting()
     {
         data.level = Random.Range(0, 4);
-        data.damage = 12;
-        data.delay = 0.8f;
+        data.damage = 14;
+        data.delay = 0.7f;
         data.maxBullet = 25;
         data.bulletCount = data.maxBullet;
         data.info = "ÇÚµå°Ç1";

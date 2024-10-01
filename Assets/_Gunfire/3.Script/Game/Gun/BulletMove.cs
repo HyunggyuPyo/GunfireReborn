@@ -12,11 +12,13 @@ public class BulletMove : MonoBehaviour
     //Coroutine despawn;
     Vector3 dir;
     public GameObject particle;
+    Transform startPosition;
 
     private void Awake()
     {
         rigid = GetComponent<Rigidbody>();
         targetLayer = (1 << LayerMask.NameToLayer("Enemy"));
+        startPosition = GetComponentInParent<WeaponController>().startPosition;
     }
 
     private void OnEnable()
@@ -43,6 +45,7 @@ public class BulletMove : MonoBehaviour
 
     private void OnDisable()
     {
+        transform.position = startPosition.position;
         rigid.velocity = Vector3.zero;
         particle.SetActive(false);
         StopCoroutine(DespawnBullet());
@@ -80,7 +83,7 @@ public class BulletMove : MonoBehaviour
     IEnumerator DespawnBullet()
     {
         yield return new WaitForSeconds(1.5f);
-
+        //transform.position = startPosition.position;
         //despawn = null;
         gameObject.SetActive(false);
     }
