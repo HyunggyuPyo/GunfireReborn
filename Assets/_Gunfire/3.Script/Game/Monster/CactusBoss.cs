@@ -5,40 +5,49 @@ using UnityEngine;
 public class CactusBoss : Enemy
 {
     bool canAtk = false;
+    bool encounter = false;
     public ObjectPool thornPool;
     public ObjectPool tornadoPool;
 
     private void OnEnable()
     {
         InitSetting();
-        FindPlayer();
-
-        StartCoroutine(Attack());
+        FindPlayer();  
     }
 
     private void Update()
     {
         if(!isDead)
         {
-            if(agent.enabled)
+            if (IsReach() <= MonsterData.detection && !encounter)
             {
-                agent.SetDestination(target.position);
-            }
+                encounter = true;
+                StartCoroutine(Attack());
+            }            
 
-            if (agent.velocity.magnitude > 0) // || 로 돌진시 방향전환 안되게 변수ㅠ 추가
+            if(encounter)
             {
-                animator.SetBool("Move", true);
-            }
-            else
-            {
-                if (canAtk)
+                if (agent.enabled) //agent 안 끄는데 이거 왜 있는 조건문이지?
                 {
-                    return;
+                    agent.SetDestination(target.position);
                 }
 
-                Quaternion lookTarget = Quaternion.LookRotation(target.position - transform.position);
-                transform.rotation = Quaternion.Euler(0, lookTarget.eulerAngles.y, 0);
-                animator.SetBool("Move", false);
+                if (agent.velocity.magnitude > 0) // || 로 돌진시 방향전환 안되게 변수 추가
+                {
+                    animator.SetBool("Move", true);
+                }
+                else
+                {
+                    animator.SetBool("Move", false);
+
+                    if (canAtk)
+                    {
+                        return;
+                    }
+
+                    Quaternion lookTarget = Quaternion.LookRotation(target.position - transform.position);
+                    transform.rotation = Quaternion.Euler(0, lookTarget.eulerAngles.y, 0);                    
+                }
             }
         }
     }

@@ -217,7 +217,7 @@ public class RoomPanel : MonoBehaviourPunCallbacks
         }
         else
         {
-            PhotonNetwork.LoadLevel("Game");
+            PhotonNetwork.LoadLevel("Boss"); // todo "Game"으로 바꾸기 
         }
     }
 

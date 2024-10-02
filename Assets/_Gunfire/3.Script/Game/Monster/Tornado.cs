@@ -13,9 +13,9 @@ public class Tornado : MonoBehaviour
     private void Awake()
     {
         targetLayer = (1 << LayerMask.NameToLayer("Player"));
-        damage = transform.root.gameObject.GetComponent<Enemy>().MonsterData.damage;
+        damage = transform.GetComponentInParent<Enemy>().MonsterData.damage;
         agent = GetComponent<NavMeshAgent>();
-        target = transform.root.gameObject.GetComponent<Enemy>().target;
+        target = transform.GetComponentInParent<Enemy>().target;
     }
 
     private void OnEnable()

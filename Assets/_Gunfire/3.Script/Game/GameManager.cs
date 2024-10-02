@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
-public class GameManager : MonoBehaviour
+public class GameManager : MonoBehaviourPunCallbacks
 {
     public static GameManager Instance;
 
@@ -16,5 +17,13 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(this);
 
         isConnect = false;
+    }
+
+    public void ReturnLobby()
+    {
+        if(PhotonNetwork.IsMasterClient)
+        {
+            PhotonNetwork.LoadLevel("Robby");
+        }        
     }
 }

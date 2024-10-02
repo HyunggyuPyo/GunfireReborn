@@ -10,6 +10,7 @@ public class PortalCheck : MonoBehaviour
     LayerMask targetLayer;
     bool inCollider = false;
     bool clear = false;
+    public bool isBossRound = false;
 
     private void Awake()
     {
@@ -25,7 +26,15 @@ public class PortalCheck : MonoBehaviour
             if (clear)
             {
                 //todo 여기서 파티워 레디 받아서 이동
-                RoundManager.instace.ClearRound();
+                if(isBossRound == false)
+                {
+                    RoundManager.instace.ClearRound();
+                }
+                else
+                {
+                    GameManager.Instance.ReturnLobby();
+                }
+                
                 gameObject.SetActive(false);
             }
         }

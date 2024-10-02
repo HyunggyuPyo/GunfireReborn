@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: CactusBoss
   m_EditorClassIdentifier: 
   monsterPrefab: {fileID: 7927433857649264623, guid: d7e4536c8d1a5db419b313e2e251b401, type: 3}
-  maxHealth: 200
+  maxHealth: 10
   maxShield: 0
   speed: 4
   damage: 30
   uiHeight: 0
+  detection: 40

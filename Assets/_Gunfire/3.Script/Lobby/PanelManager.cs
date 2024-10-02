@@ -29,6 +29,17 @@ public class PanelManager : MonoBehaviourPunCallbacks
         PhotonNetwork.AddCallbackTarget(this);
     }
 
+    private void Start()
+    {
+        if(PhotonNetwork.InRoom)
+        {
+            PanelOpen("Room");
+
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+    }
+
     public void PanelOpen(string panelName)
     {
         foreach (var row in PanelTable)
