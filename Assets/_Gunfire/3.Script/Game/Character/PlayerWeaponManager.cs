@@ -151,7 +151,15 @@ public class PlayerWeaponManager : MonoBehaviour
 
         PlayerWeaponUI.Instance.ImageChange(guns[gunNum - 1].GetComponent<Gun>().data.image);
         damage = guns[gunNum - 1].GetComponent<Gun>().data.damage + (guns[gunNum - 1].GetComponent<Gun>().data.level * 2);
+        print($"damage => {damage}");
         //RayController.Instance.startPoint = guns[gunNum - 1].GetComponent<WeaponController>().startPosition.position;
+    }
+
+    public void InitSetting()
+    {
+        PlayerWeaponUI.Instance.ImageChange(guns[gunNum - 1].GetComponent<Gun>().data.image);
+        damage = guns[gunNum - 1].GetComponent<Gun>().data.damage + (guns[gunNum - 1].GetComponent<Gun>().data.level * 2);
+        print($"damage => {damage}");
     }
 
     void InitTransform(GameObject gun)

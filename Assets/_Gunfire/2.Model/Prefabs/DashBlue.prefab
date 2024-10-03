@@ -9699,7 +9699,7 @@ GameObject:
   - component: {fileID: 198453203807914442}
   - component: {fileID: 199604178595072224}
   m_Layer: 0
-  m_Name: DashBlue 1
+  m_Name: DashBlue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

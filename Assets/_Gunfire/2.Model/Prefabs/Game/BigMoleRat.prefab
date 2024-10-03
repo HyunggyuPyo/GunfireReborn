@@ -1659,6 +1659,10 @@ PrefabInstance:
       value: Attack Particle
       objectReference: {fileID: 0}
     - target: {fileID: 8792079695798041162, guid: 7923e37648055d34abc4f9ce4dfbbba0, type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 8792079695798041162, guid: 7923e37648055d34abc4f9ce4dfbbba0, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}

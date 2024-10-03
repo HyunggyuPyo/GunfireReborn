@@ -21,6 +21,7 @@ public class LocalPlayerMove : MonoBehaviour, IPunInstantiateMagicCallback
     float mouseSensitivity = 200f;
     float dirX, dirY;
     public GameObject body;
+    public GameObject dushEff;
     #endregion
 
     private void Awake()
@@ -106,6 +107,7 @@ public class LocalPlayerMove : MonoBehaviour, IPunInstantiateMagicCallback
         dashDelay = false;
         float time = 0;
         gravity = 0;
+        dushEff.SetActive(true);
 
         while (time < .5f)
         {
@@ -116,6 +118,7 @@ public class LocalPlayerMove : MonoBehaviour, IPunInstantiateMagicCallback
 
         gravity = -3f;
         isDash = false;
+        dushEff.SetActive(false);
 
         yield return new WaitForSeconds(2f);
         dashDelay = true;
@@ -141,5 +144,6 @@ public class LocalPlayerMove : MonoBehaviour, IPunInstantiateMagicCallback
 
         //EnemyUIController.Instance.inConnect = true;
         GameManager.Instance.isConnect = true;
+        PlayerWeaponManager.Instance.InitSetting();
     }
 }

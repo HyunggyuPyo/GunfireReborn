@@ -21,11 +21,6 @@ public class PlayerWeaponUI : MonoBehaviour
         
     }
 
-    void Update()
-    {
-
-    }
-
     void HoldGunsMark()
     {
         numImage[0].gameObject.SetActive(true);
@@ -33,6 +28,7 @@ public class PlayerWeaponUI : MonoBehaviour
 
     public void ImageChange(Sprite img) 
     {
+        print("이게 된다고333?");
         gunImage.sprite = img;
     }
 

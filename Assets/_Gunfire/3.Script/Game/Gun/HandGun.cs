@@ -24,8 +24,9 @@ public class HandGun : Gun
         base.InitPool();
     }
 
-    public override void Using(Transform sPos)
-    {
-        base.Using(sPos);
-    }
+    //public override void Using(Transform sPos)
+    //{
+    //    base.Using(sPos);
+    //}
+    //todo 이거 함수 베이스 그대로 사용할거면 굳이 여기서 재정의 하는 이유가?
 }
