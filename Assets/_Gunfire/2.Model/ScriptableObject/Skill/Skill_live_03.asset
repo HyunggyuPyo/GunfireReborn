@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20521c5b2702962438a149be2d31cb91, type: 3}
+  m_Name: Skill_live_03
+  m_EditorClassIdentifier: 
+  type: 7
+  skillClass: 2
+  maxLevel: 5
+  skillName: "\uD53C\uD574 \uC800\uD56D"
+  tooltip: "\uD53C\uD574 \uC800\uD56D \uD68D"
+  price: 85
+  image: {fileID: 0}
+  levelTooltip:
+  - "\uBC1B\uB294 \uB300\uBBF8\uC9C0 -3%"
+  - "\uBC1B\uB294 \uB300\uBBF8\uC9C0 -6%"
+  - "\uBC1B\uB294 \uB300\uBBF8\uC9C0 -9%"
+  - "\uBC1B\uB294 \uB300\uBBF8\uC9C0 -12%"
+  - "\uBC1B\uB294 \uB300\uBBF8\uC9C0 -15%"

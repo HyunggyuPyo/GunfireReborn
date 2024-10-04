@@ -27,5 +27,4 @@ public class PlayerEntry : MonoBehaviour
             readyText.text = "준비 완료";
         }
     }
-
 }

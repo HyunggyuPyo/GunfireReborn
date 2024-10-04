@@ -23,7 +23,7 @@ public class FirebaseManager : MonoBehaviour
     public event Action<FirebaseUser> onLogin;
     public event Action<string> onInviteMessage;
 
-    
+    public Dictionary<SkillType, int> skillData = new Dictionary<SkillType, int>();
 
     void Awake()
     {
@@ -85,6 +85,9 @@ public class FirebaseManager : MonoBehaviour
 
             this.userData = userData;
 
+
+            GetSkill();
+
             onLogin?.Invoke(result.User);
         }
         catch (FirebaseException e)
@@ -105,10 +108,13 @@ public class FirebaseManager : MonoBehaviour
         {
             string json = userDataValues.GetRawJsonValue();
             userData = JsonConvert.DeserializeObject<UserData>(json);
+            GetSkill();
+            print(this.userData.soulPoint);
         }
         else
         {
             //todo 에러창 띄우기
+            print("설마 오류난다고");
         }
 
         onLogin?.Invoke(result.User);
@@ -163,5 +169,36 @@ public class FirebaseManager : MonoBehaviour
         //string msgString = $"{msg.nickname}님으로부터 초대받으셨습니다. \n 파티에 참가하시겠습니까?";
 
         //onInviteMessage?.Invoke(msgString);
+    }
+
+    async void GetSkill()
+    {
+        foreach (SkillType id in Enum.GetValues(typeof(SkillType)))
+        {
+            DatabaseReference skillRef = DB.GetReference($"skill/{userData.userId}/{id}");
+
+            DataSnapshot snapshot = await skillRef.GetValueAsync();
+
+            if (snapshot.Exists)
+            {
+                int value = Convert.ToInt32(snapshot);
+                skillData.Add(id, (int)snapshot.Value);
+            }
+            else
+            {
+                skillData.Add(id, 0);
+            }
+        }
+    }
+
+    public async void SetSkill(SkillType id, Action callback = null)
+    {
+        DatabaseReference skillRef = DB.GetReference($"skill/{userData.userId}/{id}");
+
+        skillData[id] += 1;
+
+        await skillRef.SetValueAsync(skillData[id]);
+
+        callback?.Invoke();
     }
 }

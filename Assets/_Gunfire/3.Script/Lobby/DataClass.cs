@@ -8,14 +8,16 @@ public class UserData
     public string userName;
     //todo : 재능스킬 데이터 추가
     public int soulPoint;
+    public int coin;
 
     public UserData() { }
 
-    public UserData(string userId, string userName, int soul)
+    public UserData(string userId, string userName, int soul, int coin)
     {
         this.userId = userId;
         this.userName = userName;
         this.soulPoint = soul;
+        this.coin = coin;
     }
 
     public UserData(string userId)//, string userName
@@ -24,6 +26,7 @@ public class UserData
         //this.userName = userName;         todo : 닉네임 변경 만들기
         userName = $"{userId}";
         soulPoint = 0;
+        coin = 0;
     }
 }
 

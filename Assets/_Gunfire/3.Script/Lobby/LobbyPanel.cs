@@ -12,6 +12,8 @@ public class LobbyPanel : MonoBehaviourPunCallbacks
     public Button skillButton;
     public Button exitButton;
 
+    public GameObject SkillPanel;
+
     void Awake()
     {
         createRoomButton.onClick.AddListener(CreateRoomButtonClick);
@@ -45,10 +47,11 @@ public class LobbyPanel : MonoBehaviourPunCallbacks
     public void SkillButtonClick()
     {
         //todo : 재능 스킬 제작
+        SkillPanel.SetActive(true);
     }
 
     public void ExitButtonClick()
     {
-        //todo : 게임종료
+        Application.Quit();
     }
 }
