@@ -135,9 +135,10 @@ public class RoomPanel : MonoBehaviourPunCallbacks
 
         for (int i = 0; i < playerPoint.Length; i++)
         {
-            if (playerPoint[i].childCount != 0)
+            if (playerPoint[i] != null && playerPoint[i].childCount != 0)
                 Destroy(playerPoint[i].GetChild(0).gameObject);
         }
+        //todo 예외 처리
     }
 
     private void CheckReady()

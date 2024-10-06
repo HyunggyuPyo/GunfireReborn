@@ -12754,7 +12754,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4087
+    m_Bits: 36855
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -58508,14 +58508,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1741266140, guid: 70870726e35a0074889bb0c0bf9759a7, type: 3}
-      propertyPath: m_Color.a
-      value: 0.53333336
-      objectReference: {fileID: 0}
-    - target: {fileID: 1680689878097789196, guid: 70870726e35a0074889bb0c0bf9759a7, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 1680689878692799760, guid: 70870726e35a0074889bb0c0bf9759a7, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -58523,10 +58515,6 @@ PrefabInstance:
     - target: {fileID: 1680689878692799760, guid: 70870726e35a0074889bb0c0bf9759a7, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1680689878759481318, guid: 70870726e35a0074889bb0c0bf9759a7, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 1680689879254586537, guid: 70870726e35a0074889bb0c0bf9759a7, type: 3}
       propertyPath: m_Pivot.x
@@ -58623,10 +58611,6 @@ PrefabInstance:
     - target: {fileID: 1680689879264623238, guid: 70870726e35a0074889bb0c0bf9759a7, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4649252406034993734, guid: 70870726e35a0074889bb0c0bf9759a7, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70870726e35a0074889bb0c0bf9759a7, type: 3}

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e69325a71a7216348a463f4b1af7e5a0
+guid: 40ef68866a7a82b4b8f39114647fec39
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -29,7 +29,7 @@ TextureImporter:
   generateCubemap: 6
   cubemapConvolution: 0
   seamlessCubemap: 0
-  textureFormat: 12
+  textureFormat: 1
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
@@ -38,13 +38,13 @@ TextureImporter:
     mipBias: 0
     wrapU: 1
     wrapV: 1
-    wrapW: 1
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -62,15 +62,15 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
-  applyGammaDecoding: 1
-  cookieLightType: 1
+  applyGammaDecoding: 0
+  cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -82,7 +82,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -94,7 +94,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -106,7 +106,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -117,85 +117,169 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: coin
+      name: skillicons_lice3
       rect:
         serializedVersion: 2
-        x: 94
-        y: 142
-        width: 91
-        height: 87
+        x: 104
+        y: 568
+        width: 221
+        height: 221
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3f28b9043a6a22f4c952c39e5c8229a0
-      internalID: 835529949
+      spriteID: 783891fda84f62d4393c24251eb4f6ee
+      internalID: 113338583
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: soul
+      name: skillicons_lice2
       rect:
         serializedVersion: 2
-        x: 325
-        y: 258
-        width: 108
-        height: 107
+        x: 396
+        y: 568
+        width: 221
+        height: 221
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3c4ed82b940dade478fd24f50192f305
-      internalID: -418483443
+      spriteID: 35bfedfbf2823554db42bd6073be3eaf
+      internalID: 1334213366
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: skill
+      name: skillicons_lice1
       rect:
         serializedVersion: 2
-        x: 346
-        y: 447
-        width: 155
-        height: 149
+        x: 683
+        y: 568
+        width: 221
+        height: 221
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cf34d639785305f418a3388cfcf6b865
-      internalID: -1441697095
+      spriteID: 239b117abe042a1489ba5d0387191fab
+      internalID: 906484617
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: box
+      name: skillicons_battle3
       rect:
         serializedVersion: 2
-        x: 434
-        y: 763
-        width: 60
-        height: 60
+        x: 104
+        y: 274
+        width: 220
+        height: 220
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a33fe5d5cb1175c48aabdd6c714fcddf
-      internalID: -1052618543
+      spriteID: 5c975108770b4c04f97e45352f04b490
+      internalID: 1241282591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skillicons_battle2
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 274
+        width: 220
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e608b5d4f6122ac4bae5574311c10794
+      internalID: 1416151847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skillicons_battle1
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 274
+        width: 220
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 540d81669cdf1184c92060ffd97bf819
+      internalID: 869028537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skillicons_quest1
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 0
+        width: 220
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03fcbc30bc35b3943acb1b3c10d55cee
+      internalID: -913821523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skillicons_quest2
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 0
+        width: 220
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02e3c3a3e97a399478150fa70da94e99
+      internalID: -583803779
       vertices: []
       indices: 
       edges: []
@@ -203,7 +287,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 16488ccb705837340922c0e32961caf9
     internalID: 0
     vertices: []
     indices: 
@@ -211,10 +295,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      box: -1052618543
-      coin: 835529949
-      skill: -1441697095
-      soul: -418483443
+      skillicons_battle1: 869028537
+      skillicons_battle2: 1416151847
+      skillicons_battle3: 1241282591
+      skillicons_lice1: 906484617
+      skillicons_lice2: 1334213366
+      skillicons_lice3: 113338583
+      skillicons_quest1: -913821523
+      skillicons_quest2: -583803779
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -10,9 +10,12 @@ public class LocalPlayerMove : MonoBehaviour, IPunInstantiateMagicCallback
     Animator animator;
     private float moveSpeed;
 
+    public bool isAlive { get; set; }
     bool isGrounded;
     bool isDash = false;
     bool dashDelay = true;
+    bool direction = false;
+    int input = 1;
     LayerMask groundMask;
     Transform groundCheckPoint;
     float gravity = -3f;
@@ -31,6 +34,7 @@ public class LocalPlayerMove : MonoBehaviour, IPunInstantiateMagicCallback
 
         groundCheckPoint = transform;
         groundMask = (1 << LayerMask.NameToLayer("Ground"));
+        isAlive = true;
     }
 
     private void Start()
@@ -41,43 +45,59 @@ public class LocalPlayerMove : MonoBehaviour, IPunInstantiateMagicCallback
 
     void Update()
     {
-        Vector3 dir = Vector3.zero;
-
-        dir.x = Input.GetAxisRaw("Horizontal");
-        dir.z = Input.GetAxisRaw("Vertical");
-
-        if (Input.GetKeyDown(KeyCode.Space) && jumpCoroutine == null)
+        if(isAlive)
         {
+            Vector3 dir = Vector3.zero;
 
-            jumpCoroutine = StartCoroutine(Jump());
+            dir.x = Input.GetAxisRaw("Horizontal");
+            dir.z = Input.GetAxisRaw("Vertical");
+
+            direction = false;
+            if (Input.GetAxisRaw("Horizontal") != 0)
+            {
+                direction = true;
+                input = (int)Input.GetAxisRaw("Horizontal");
+            }
+            else if (Input.GetAxisRaw("Vertical") != 0)
+            {
+                direction = false;
+                input = (int)Input.GetAxisRaw("Vertical");
+            }
+
+            if (Input.GetKeyDown(KeyCode.Space) && jumpCoroutine == null)
+            {
+
+                jumpCoroutine = StartCoroutine(Jump());
+            }
+
+            if (isDash == false)
+            {
+                cc.Move(transform.forward * dir.z * moveSpeed * Time.deltaTime);
+                cc.Move(transform.right * dir.x * moveSpeed * Time.deltaTime);
+            }
+
+            if (dashDelay && Input.GetKeyDown(KeyCode.LeftShift))
+            {
+
+                dashCoroutine = StartCoroutine(Dash(direction));
+            }
+
+            isGrounded = Physics.Raycast(groundCheckPoint.position, Vector3.down, 0.2f, groundMask);
+
+            if (!isGrounded)
+            {
+                cc.Move(transform.up * gravity * Time.deltaTime);
+            }
+
+            dirX += Input.GetAxisRaw("Mouse X") * mouseSensitivity * Time.deltaTime;
+            dirY -= Input.GetAxisRaw("Mouse Y") * mouseSensitivity * Time.deltaTime;
+
+            dirY = Mathf.Clamp(dirY, -180f, 180f);
+
+            body.transform.localRotation = Quaternion.Euler(dirY * 0.4f, 0f, 0f);
+
+            transform.localRotation = Quaternion.Euler(0f, dirX * 0.4f, 0f);
         }
-
-        if(isDash == false)
-        {
-            cc.Move(transform.forward * dir.z * moveSpeed * Time.deltaTime);
-            cc.Move(transform.right * dir.x * moveSpeed * Time.deltaTime);
-        }        
-
-        if (dashDelay && Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            dashCoroutine = StartCoroutine(Dash());
-        }
-
-        isGrounded = Physics.Raycast(groundCheckPoint.position, Vector3.down, 0.2f, groundMask);
-
-        if (!isGrounded)
-        {
-            cc.Move(transform.up * gravity * Time.deltaTime);
-        }        
-
-        dirX += Input.GetAxisRaw("Mouse X") * mouseSensitivity * Time.deltaTime;
-        dirY -= Input.GetAxisRaw("Mouse Y") * mouseSensitivity * Time.deltaTime;
-
-        dirY = Mathf.Clamp(dirY, -180f, 180f);
-
-        body.transform.localRotation = Quaternion.Euler(dirY * 0.4f, 0f, 0f);
-
-        transform.localRotation = Quaternion.Euler(0f, dirX * 0.4f, 0f);
     }
 
     IEnumerator Jump()
@@ -100,7 +120,7 @@ public class LocalPlayerMove : MonoBehaviour, IPunInstantiateMagicCallback
         jumpCoroutine = null;
     }
 
-    IEnumerator Dash()
+    IEnumerator Dash(bool _forward)
     {
         StartCoroutine(PlayerWeaponUI.Instance.CoolTime());
         isDash = true;
@@ -109,12 +129,25 @@ public class LocalPlayerMove : MonoBehaviour, IPunInstantiateMagicCallback
         gravity = 0;
         dushEff.SetActive(true);
 
-        while (time < .5f)
+        if (_forward)
         {
-            cc.Move(transform.forward * 8f * Time.deltaTime);
-            time += Time.deltaTime;
-            yield return null;
+            while (time < .4f)
+            {
+                cc.Move(transform.right * 12f * input * Time.deltaTime);
+                time += Time.deltaTime;
+                yield return null;
+            }
         }
+        else
+        {
+            while (time < .4f)
+            {
+                cc.Move(transform.forward * 11f * input * Time.deltaTime);
+                time += Time.deltaTime;
+                yield return null;
+            }
+        }
+        
 
         gravity = -3f;
         isDash = false;

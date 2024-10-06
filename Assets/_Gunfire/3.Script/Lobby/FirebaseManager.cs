@@ -181,8 +181,8 @@ public class FirebaseManager : MonoBehaviour
 
             if (snapshot.Exists)
             {
-                int value = Convert.ToInt32(snapshot);
-                skillData.Add(id, (int)snapshot.Value);
+                int value = Convert.ToInt32(snapshot.Value);
+                skillData.Add(id, value);
             }
             else
             {
@@ -198,6 +198,10 @@ public class FirebaseManager : MonoBehaviour
         skillData[id] += 1;
 
         await skillRef.SetValueAsync(skillData[id]);
+
+        var soulRef = usersRef.Child("soulPoint");
+
+        await soulRef.SetValueAsync(userData.soulPoint);
 
         callback?.Invoke();
     }

@@ -10,7 +10,7 @@ public class FoxCharacter : Character
         characterData.hp = 65;
         characterData.maxShield = 65;
         characterData.shield = 65;
-        characterData.speed = 4f;
+        characterData.speed = 6f;
     }
 
     public override void MainSkill()

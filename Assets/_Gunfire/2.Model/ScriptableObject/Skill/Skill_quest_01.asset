@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20521c5b2702962438a149be2d31cb91, type: 3}
   m_Name: Skill_quest_01
   m_EditorClassIdentifier: 
-  id: 0
+  type: 0
+  skillClass: 0
   maxLevel: 5
-  level: 0
   skillName: "\uCD08\uAE30 \uC790\uAE08"
   tooltip: "\uC77C\uC815\uB7C9\uC758 \uCD08\uAE30 \uC790\uAE08\uC744 \uAC00\uC9C0\uACE0
     \uC804\uD22C\uB97C \uC2DC\uC791\uD569\uB2C8\uB2E4"
   price: 110
-  image: {fileID: 0}
+  image: {fileID: -913821523, guid: 40ef68866a7a82b4b8f39114647fec39, type: 3}
   levelTooltip:
   - "\uCD08\uAE30 \uB3D9\uC804+100"
   - "\uCD08\uAE30 \uB3D9\uC804+200"

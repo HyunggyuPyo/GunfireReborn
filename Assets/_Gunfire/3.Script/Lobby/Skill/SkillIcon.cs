@@ -14,16 +14,18 @@ public class SkillIcon : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     public GameObject skillPopup;
 
     Button buyButton;
+    SkillPanel skillPanel;
 
     void Awake()
     {
         buyButton = GetComponent<Button>();
         buyButton.onClick.AddListener(BuyButtonClick);
+        skillPanel = transform.GetComponentInParent<SkillPanel>();
     }
 
     void OnEnable()
     {
-        //iconImage.sprite = data.image;
+        iconImage.sprite = data.image;
         level.text = $"{FirebaseManager.Instance.skillData[data.type]}/{data.maxLevel}";
     }
     //todo awake때 멕스는 다 깔아두고 level만 onenable에서 매번 업데이트?
@@ -53,5 +55,6 @@ public class SkillIcon : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     void SetIcon()
     {
         level.text = $"{FirebaseManager.Instance.skillData[data.type]}/{data.maxLevel}";
+        skillPanel.soulCount.text = FirebaseManager.Instance.userData.soulPoint.ToString();
     }
 }

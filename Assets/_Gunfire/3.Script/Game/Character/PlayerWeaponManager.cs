@@ -168,4 +168,9 @@ public class PlayerWeaponManager : MonoBehaviour
         gun.transform.localRotation = Quaternion.identity;
     }
 
+    public Sprite GetGunImage()
+    {
+        Sprite gun = guns[gunNum -1].GetComponent<Gun>().data.image;
+        return gun;
+    }
 }

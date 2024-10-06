@@ -111,11 +111,17 @@ public abstract class Enemy : MonoBehaviour, IHitable
     {
         if(headshot.headShot)
         {
+            damage = (int)(damage * 1.5f);
             hp -= (int)(damage * 1.5f);
         }
         else
         {
             hp -= damage;
+        }
+
+        if(GameManager.Instance.maxDamage < damage)
+        {
+            GameManager.Instance.maxDamage = damage;
         }
         
         print($"{name} ÇÇ ´âÀ½ -> -{damage} : ÀÜ¿©hp -> {hp}");
@@ -128,6 +134,7 @@ public abstract class Enemy : MonoBehaviour, IHitable
             animator.SetTrigger("Dead");
             DropItem();
             StartCoroutine(Dead());
+            GameManager.Instance.enemyCount += 1;
         }
     }
 

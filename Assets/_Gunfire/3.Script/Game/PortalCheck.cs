@@ -32,6 +32,7 @@ public class PortalCheck : MonoBehaviour
                 }
                 else
                 {
+                    GameManager.Instance.clear = true;
                     GameManager.Instance.ReturnLobby();
                 }
                 

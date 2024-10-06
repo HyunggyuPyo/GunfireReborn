@@ -31,7 +31,7 @@ public class SkillPopup : MonoBehaviour
     public void Setting(SkillSO data)
     {
         skillName.text = data.skillName;
-        //icon.sprite = data.image;
+        icon.sprite = data.image;
         level.text = $"{FirebaseManager.Instance.skillData[data.type]}/{data.maxLevel}";
         price.text = data.price.ToString();
         tooltip.text = data.tooltip;

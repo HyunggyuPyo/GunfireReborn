@@ -18,7 +18,7 @@ MonoBehaviour:
   skillName: "\uC0DD\uBA85 \uAC15\uD654"
   tooltip: "\uC0DD\uBA85\uB825\uC744 \uAC15\uD654\uD55C\uB2E4"
   price: 100
-  image: {fileID: 0}
+  image: {fileID: 906484617, guid: 40ef68866a7a82b4b8f39114647fec39, type: 3}
   levelTooltip:
   - "\uCD5C\uB300 \uC0DD\uBA85\uB825+5"
   - "\uCD5C\uB300 \uC0DD\uBA85\uB825+10"

@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20521c5b2702962438a149be2d31cb91, type: 3}
   m_Name: Skill_battle_02
   m_EditorClassIdentifier: 
-  type: 1
+  type: 3
   skillClass: 1
   maxLevel: 1
   skillName: "\uC7A5\uC778 \uC815\uC2E0"
   tooltip: "\uBB34\uAE30 \uAC15\uD654 \uD69F\uC218+1"
   price: 50
-  image: {fileID: 0}
+  image: {fileID: 1241282591, guid: 40ef68866a7a82b4b8f39114647fec39, type: 3}
   levelTooltip: []

@@ -19,7 +19,7 @@ MonoBehaviour:
   tooltip: "\uB3D9\uC804 \uD68D\uB4DD \uC2DC \uC77C\uC815 \uD655\uB960\uB85C 2\uBC30
     \uB3D9\uC804 \uD68D\uB4DD"
   price: 110
-  image: {fileID: 0}
+  image: {fileID: -583803779, guid: 40ef68866a7a82b4b8f39114647fec39, type: 3}
   levelTooltip:
   - "\uB3D9\uC804 \uD68D\uB4DD \uC2DC, 5% \uD655\uB960\uB85C 2\uBC30 \uD68D\uB4DD"
   - "\uB3D9\uC804 \uD68D\uB4DD \uC2DC, 10% \uD655\uB960\uB85C 2\uBC30 \uD68D\uB4DD"
