@@ -10,11 +10,18 @@ public class GameUIManager : MonoBehaviour
     public GameObject headShotUI;
     public GameObject gameoverPanel;
     public GameObject playerUI;
+    public GameObject lodingUI;
+
     Coroutine headShot = null;
 
     private void Awake()
     {
         instance = this;
+    }
+
+    private void Start()
+    {
+        lodingUI.SetActive(true);
     }
 
     public void SetResultUI()
