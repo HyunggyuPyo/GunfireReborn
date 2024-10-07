@@ -68,7 +68,7 @@ public class CharacterManager : MonoBehaviour, IHitable
         }
     }
 
-    void PlayerDead()
+    public void PlayerDead()
     {
         gameObject.GetComponent<LocalPlayerMove>().isAlive = false;
         PlayerWeaponManager.Instance.weapons.gameObject.SetActive(false);
@@ -80,6 +80,18 @@ public class CharacterManager : MonoBehaviour, IHitable
         characterPrefab.SetActive(true);
         characterPrefab.GetComponent<FoxResultAnimator>().ChangeAnimation(GameManager.Instance.clear);
         StartCoroutine(GameManager.Instance.GameOver());
+    }
+
+    public void Interaction()
+    {
+        if(gameObject.GetComponent<LocalPlayerMove>().interaction)
+        {
+            gameObject.GetComponent<LocalPlayerMove>().interaction = false;
+        }
+        else
+        {
+            gameObject.GetComponent<LocalPlayerMove>().interaction = true;
+        }
     }
 
     IEnumerator ChargeShield()

@@ -11208,6 +11208,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c8db9ca6c15ce84786eb1b919cffe03, type: 3}
+--- !u!114 &605938139 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 241311772779931630, guid: 70870726e35a0074889bb0c0bf9759a7, type: 3}
+  m_PrefabInstance: {fileID: 1680689879633262223}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &608185210
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -59868,9 +59879,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1741266140, guid: 70870726e35a0074889bb0c0bf9759a7, type: 3}
-      propertyPath: m_Color.a
-      value: 0.53333336
+    - target: {fileID: 932995167587082506, guid: 70870726e35a0074889bb0c0bf9759a7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1680689878692799760, guid: 70870726e35a0074889bb0c0bf9759a7, type: 3}
       propertyPath: m_AnchorMax.x
@@ -59976,6 +59987,18 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1680689879458107301, guid: 70870726e35a0074889bb0c0bf9759a7, type: 3}
+      propertyPath: gunName
+      value: 
+      objectReference: {fileID: 605938139}
+    - target: {fileID: 1804289705971102936, guid: 70870726e35a0074889bb0c0bf9759a7, type: 3}
+      propertyPath: m_FillAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4696572090223311007, guid: 70870726e35a0074889bb0c0bf9759a7, type: 3}
+      propertyPath: bossData
+      value: 
+      objectReference: {fileID: 6934914982440116842}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70870726e35a0074889bb0c0bf9759a7, type: 3}
 --- !u!4 &1883436963052434905
@@ -61774,6 +61797,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cactus Boss
       objectReference: {fileID: 0}
+    - target: {fileID: 7927433857649264623, guid: d7e4536c8d1a5db419b313e2e251b401, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d7e4536c8d1a5db419b313e2e251b401, type: 3}
 --- !u!4 &6934914982440116837 stripped
@@ -61786,6 +61813,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7927433857649264623, guid: d7e4536c8d1a5db419b313e2e251b401, type: 3}
   m_PrefabInstance: {fileID: 6934914982440116836}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6934914982440116842 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7068467143332094738, guid: d7e4536c8d1a5db419b313e2e251b401, type: 3}
+  m_PrefabInstance: {fileID: 6934914982440116836}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6934914982440116838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a784988b217edd841a10c910c954d877, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!64 &7210903065316047943
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -62208,6 +62246,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1786046781299260504, guid: 89a9b57c81ab4f84c8dbe98808d5f0b2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3113035024989242527, guid: 89a9b57c81ab4f84c8dbe98808d5f0b2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3564874824792910150, guid: 89a9b57c81ab4f84c8dbe98808d5f0b2, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -62579,6 +62625,10 @@ PrefabInstance:
     - target: {fileID: 4750863223379588871, guid: 89a9b57c81ab4f84c8dbe98808d5f0b2, type: 3}
       propertyPath: m_Name
       value: BlackSmith
+      objectReference: {fileID: 0}
+    - target: {fileID: 6139426923203089122, guid: 89a9b57c81ab4f84c8dbe98808d5f0b2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8675688423396860474, guid: 89a9b57c81ab4f84c8dbe98808d5f0b2, type: 3}
       propertyPath: m_RootOrder

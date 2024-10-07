@@ -113,6 +113,8 @@ public abstract class Enemy : MonoBehaviour, IHitable
         {
             damage = (int)(damage * 1.5f);
             hp -= (int)(damage * 1.5f);
+
+            GameUIManager.instance.HeadShotUI();
         }
         else
         {

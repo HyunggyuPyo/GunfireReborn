@@ -11,17 +11,29 @@ public class GameUIManager : MonoBehaviour
     public GameObject gameoverPanel;
     public GameObject playerUI;
     public GameObject lodingUI;
+    public GameObject pauseUI;
+    public GameObject bossUI;
 
+    public bool popUp { get; set; }
     Coroutine headShot = null;
 
     private void Awake()
     {
         instance = this;
+        popUp = false;
     }
 
     private void Start()
     {
         lodingUI.SetActive(true);
+    }
+
+    private void Update()
+    {
+        if(!popUp && Input.GetKeyDown(KeyCode.Escape))
+        {
+            pauseUI.SetActive(true);
+        }
     }
 
     public void SetResultUI()

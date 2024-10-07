@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Cactus
   m_EditorClassIdentifier: 
   monsterPrefab: {fileID: 870353119720734539, guid: e1fd4ae8ba9b63444af89af734121121, type: 3}
+  enemyName: "\uCF58"
   maxHealth: 20
   maxShield: 0
   speed: 4

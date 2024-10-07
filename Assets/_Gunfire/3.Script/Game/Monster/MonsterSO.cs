@@ -4,6 +4,7 @@ using UnityEngine;
 public class MonsterSO : ScriptableObject
 {
     public GameObject monsterPrefab;
+    public string enemyName;
     public int maxHealth;
     public int maxShield;
     public float speed;

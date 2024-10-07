@@ -23,6 +23,8 @@ public class CactusBoss : Enemy
             {
                 encounter = true;
                 StartCoroutine(Attack());
+                GameUIManager.instance.bossUI.GetComponent<BossHpBarUI>().bossData = GetComponent<Enemy>();
+                GameUIManager.instance.bossUI.SetActive(true);
             }            
 
             if(encounter)

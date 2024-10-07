@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: MoleRat
   m_EditorClassIdentifier: 
   monsterPrefab: {fileID: 2773261381488995062, guid: a4e3506926d15864dbc1b108f047cea4, type: 3}
+  enemyName: "\uBAB0"
   maxHealth: 15
   maxShield: 0
   speed: 3
   damage: 30
   uiHeight: 1.5
+  detection: 0

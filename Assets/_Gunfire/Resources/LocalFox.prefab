@@ -2029,6 +2029,7 @@ GameObject:
   - component: {fileID: -4200146472760465456}
   - component: {fileID: -3898280177368815523}
   - component: {fileID: 5591847239172554553}
+  - component: {fileID: 8965628585342592330}
   m_Layer: 10
   m_Name: LocalFox
   m_TagString: Untagged
@@ -2218,6 +2219,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4cc60e48dc8ed240a85e04ee8d7791a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8965628585342592330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6977266894501688357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 098dcf6081c33634eb44be17c31544d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 0}
 --- !u!1 &6977266894512301568
 GameObject:
   m_ObjectHideFlags: 0

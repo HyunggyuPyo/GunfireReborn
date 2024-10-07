@@ -29,6 +29,7 @@ public class HeadShot : MonoBehaviour
         if(hitBone == headBone || hitBone == nickBone)
         {
             headShot = true;
+            print("headshot");
         }
         else
         {

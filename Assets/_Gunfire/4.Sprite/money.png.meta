@@ -209,7 +209,7 @@ TextureImporter:
         width: 40
         height: 40
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -217,6 +217,48 @@ TextureImporter:
       bones: []
       spriteID: ca45ef6ac0d6968479333dc69c1848b5
       internalID: 363541106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tryangle_right
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 893
+        width: 30
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 626386c6d6da9ac46916df138b6259b7
+      internalID: -134918715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tryangle_left
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 893
+        width: 29
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13f3e9a5edc7b664eb94bbff68c3657b
+      internalID: 1533213603
       vertices: []
       indices: 
       edges: []
@@ -237,6 +279,8 @@ TextureImporter:
       coin: 835529949
       skill: -1441697095
       soul: -418483443
+      tryangle_left: 1533213603
+      tryangle_right: -134918715
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

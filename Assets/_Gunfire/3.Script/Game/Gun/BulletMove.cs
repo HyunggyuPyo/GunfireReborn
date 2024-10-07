@@ -17,7 +17,7 @@ public class BulletMove : MonoBehaviour
     private void Awake()
     {
         rigid = GetComponent<Rigidbody>();
-        targetLayer = (1 << LayerMask.NameToLayer("Enemy"));
+        targetLayer = (1 << LayerMask.NameToLayer("Enemy")) | (1 << LayerMask.NameToLayer("Boss"));
         startPosition = GetComponentInParent<WeaponController>().startPosition;
     }
 

@@ -9,6 +9,7 @@ public class GunUI : MonoBehaviour
     public TMP_Text info;
     public Image gunImage;
     public GameObject panel;
+    public TMP_Text gunName;
 
     GameObject temp;
     // todo => EnemyUIController.Instance.inConnect 이거 따로 게임 플레이 매니저 만들어서 
@@ -34,6 +35,7 @@ public class GunUI : MonoBehaviour
     {
         GameObject target = RayController.Instance.hit.collider.gameObject;
         temp = target;
+        gunName.text = $"{target.GetComponent<Gun>().data.info} + {target.GetComponent<Gun>().data.level}";
         gunImage.sprite = target.GetComponent<Gun>().data.image;
         info.text = $"대미지 : {target.GetComponent<Gun>().data.damage} \n" +
             $"딜레이 : {target.GetComponent<Gun>().data.delay} \n" +

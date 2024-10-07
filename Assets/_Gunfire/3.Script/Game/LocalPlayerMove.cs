@@ -11,6 +11,7 @@ public class LocalPlayerMove : MonoBehaviour, IPunInstantiateMagicCallback
     private float moveSpeed;
 
     public bool isAlive { get; set; }
+    public bool interaction { get; set; }
     bool isGrounded;
     bool isDash = false;
     bool dashDelay = true;
@@ -35,6 +36,7 @@ public class LocalPlayerMove : MonoBehaviour, IPunInstantiateMagicCallback
         groundCheckPoint = transform;
         groundMask = (1 << LayerMask.NameToLayer("Ground"));
         isAlive = true;
+        interaction = false;
     }
 
     private void Start()
@@ -45,7 +47,7 @@ public class LocalPlayerMove : MonoBehaviour, IPunInstantiateMagicCallback
 
     void Update()
     {
-        if(isAlive)
+        if(isAlive && !interaction)
         {
             Vector3 dir = Vector3.zero;
 

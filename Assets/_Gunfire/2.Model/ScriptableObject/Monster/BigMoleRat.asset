@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: BigMoleRat
   m_EditorClassIdentifier: 
   monsterPrefab: {fileID: 4621246683165438788, guid: c5256c41a2b70ca4e9185ebb1c2ca757, type: 3}
+  enemyName: "\uBC25"
   maxHealth: 30
   maxShield: 0
   speed: 2

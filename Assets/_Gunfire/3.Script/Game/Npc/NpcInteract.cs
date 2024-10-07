@@ -24,11 +24,15 @@ public class NpcInteract : MonoBehaviour
     {
         if (on && uiPanel.activeSelf == false)
         {
-            if(Input.GetKeyDown(KeyCode.F))
+            GameUIManager.instance.popUp = false;
+
+            if (Input.GetKeyDown(KeyCode.F))
             {
                 uiPanel.SetActive(true);
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
+                CharacterManager.instance.Interaction();
+                GameUIManager.instance.popUp = true;
             }
         }           
 
@@ -37,6 +41,7 @@ public class NpcInteract : MonoBehaviour
             uiPanel.SetActive(false);
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
+            CharacterManager.instance.Interaction();
         }
     }
 
