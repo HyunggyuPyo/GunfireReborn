@@ -68,6 +68,10 @@ public class DropItem : MonoBehaviour
                     targetTransform.gameObject.GetComponent<Inventory>().GetSoulStone(item.amount);
                     gameObject.SetActive(false);
                     break;
+                case 2:
+                    targetTransform.gameObject.GetComponent<CharacterSkill>().GutSubSkillPoint();
+                    gameObject.SetActive(false);
+                    break;
                 default:
                     break;
             }

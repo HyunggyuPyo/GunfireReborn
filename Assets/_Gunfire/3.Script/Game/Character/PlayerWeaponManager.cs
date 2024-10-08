@@ -157,6 +157,10 @@ public class PlayerWeaponManager : MonoBehaviour
 
     public void InitSetting()
     {
+        if(guns[gunNum - 1].GetComponent<Gun>().data.image)
+        {
+            print("이미지 이씅ㅁ");
+        }
         PlayerWeaponUI.Instance.ImageChange(guns[gunNum - 1].GetComponent<Gun>().data.image);
         damage = guns[gunNum - 1].GetComponent<Gun>().data.damage + (guns[gunNum - 1].GetComponent<Gun>().data.level * 2);
         print($"damage => {damage}");

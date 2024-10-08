@@ -658,6 +658,9 @@ MonoBehaviour:
   - itemData: {fileID: 11400000, guid: 31afebc9a85f4f44f90a2b6b8432ca18, type: 2}
     percentage: 50
     maxDropCount: 2
+  - itemData: {fileID: 11400000, guid: da2d10a444c8b334183dc84f7ac86073, type: 2}
+    percentage: 50
+    maxDropCount: 2
 --- !u!195 &8018951976934791397
 NavMeshAgent:
   m_ObjectHideFlags: 0

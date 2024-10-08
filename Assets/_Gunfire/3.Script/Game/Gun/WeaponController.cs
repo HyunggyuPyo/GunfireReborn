@@ -11,10 +11,14 @@ public class WeaponController : MonoBehaviour
     [HideInInspector]
     public bool wearing = false;
 
+    private void Awake()
+    {
+        myWeapon.InitSetting();
+    }
+
     private void Start()
     {
         tempWeapon = myWeapon;
-        myWeapon.InitSetting();
         myWeapon.InitPool();
     }
 

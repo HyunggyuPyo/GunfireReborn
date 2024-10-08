@@ -2357,6 +2357,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1883436963157017875, guid: cd50baea5e7afd04bb1cc0a965677633, type: 3}
   m_PrefabInstance: {fileID: 67081473}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &69771988 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3961653027827352362, guid: 70870726e35a0074889bb0c0bf9759a7, type: 3}
+  m_PrefabInstance: {fileID: 1940243952}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &71069701
 GameObject:
   m_ObjectHideFlags: 0
@@ -45883,6 +45894,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1526140830 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1804289705971102936, guid: 70870726e35a0074889bb0c0bf9759a7, type: 3}
+  m_PrefabInstance: {fileID: 1940243952}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1530876653
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -58244,6 +58266,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1680689878046712109, guid: 70870726e35a0074889bb0c0bf9759a7, type: 3}
+      propertyPath: skillPoint
+      value: 
+      objectReference: {fileID: 69771988}
+    - target: {fileID: 1680689878046712109, guid: 70870726e35a0074889bb0c0bf9759a7, type: 3}
+      propertyPath: mainSkillCool
+      value: 
+      objectReference: {fileID: 1526140830}
     - target: {fileID: 1680689878692799760, guid: 70870726e35a0074889bb0c0bf9759a7, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -58350,6 +58380,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1680689879458107303, guid: 70870726e35a0074889bb0c0bf9759a7, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1804289705971102936, guid: 70870726e35a0074889bb0c0bf9759a7, type: 3}
+      propertyPath: m_FillAmount
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1901709167583220407, guid: 70870726e35a0074889bb0c0bf9759a7, type: 3}

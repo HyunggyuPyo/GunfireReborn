@@ -159,5 +159,6 @@ public abstract class Enemy : MonoBehaviour, IHitable
         agent.enabled = false;
         yield return new WaitForSeconds(2f);
         agent.enabled = true;
+        yield return null;
     }
 }

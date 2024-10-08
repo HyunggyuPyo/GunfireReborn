@@ -894,6 +894,9 @@ MonoBehaviour:
   - itemData: {fileID: 11400000, guid: 54c63c5e30ccc5b4cae883541707cb1d, type: 2}
     percentage: 30
     maxDropCount: 1
+  - itemData: {fileID: 11400000, guid: da2d10a444c8b334183dc84f7ac86073, type: 2}
+    percentage: 50
+    maxDropCount: 2
   attackParticle: {fileID: 6579668574651883108}
 --- !u!195 &1968583104
 NavMeshAgent:

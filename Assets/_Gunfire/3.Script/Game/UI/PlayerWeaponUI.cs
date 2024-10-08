@@ -14,11 +14,12 @@ public class PlayerWeaponUI : MonoBehaviour
 
     public Image dushCool;
     public TMP_Text count;
+    public Image mainSkillCool;
+    public TMP_Text skillPoint;
 
     private void Awake()
     {
         Instance = this;
-        
     }
 
     void HoldGunsMark()
@@ -28,25 +29,45 @@ public class PlayerWeaponUI : MonoBehaviour
 
     public void ImageChange(Sprite img) 
     {
-        print("이게 된다고333?");
         gunImage.sprite = img;
     }
 
+    public void SetSkillPoint(int amount)
+    {
+        skillPoint.text = amount.ToString();
+    }
 
-    public IEnumerator CoolTime()
+
+    public IEnumerator DushCoolTime(float time)
     {
         dushCool.gameObject.SetActive(true);
-        float cool = 2;
+        float cool = time;
         dushCool.fillAmount = 1;
 
         while(cool >= 0)
         {
             cool -= Time.deltaTime;
-            dushCool.fillAmount = cool / 2;
+            dushCool.fillAmount = cool / time;
             count.text = ((int)cool + 1).ToString();
             yield return new WaitForFixedUpdate();
         }
 
         dushCool.gameObject.SetActive(false);
+    }
+
+    public IEnumerator MainSkillDelay(float time)
+    {
+        mainSkillCool.gameObject.SetActive(true);
+        mainSkillCool.fillAmount = 1;
+        float temp = time;
+
+        while (temp >= 0)
+        {
+            temp -= Time.deltaTime;
+            mainSkillCool.fillAmount = temp / time;
+            yield return new WaitForFixedUpdate();
+        }
+
+        mainSkillCool.gameObject.SetActive(false);
     }
 }

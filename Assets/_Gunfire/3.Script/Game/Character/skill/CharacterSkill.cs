@@ -1,19 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public abstract class CharacterSkill : MonoBehaviour
 {
     public CharacterSkillSO data;
-    int mainDelay;
     int mainCount;
     int subCount;
+    bool mainskill = true;
 
     private void Awake()
     {
-        mainDelay = data.mainSkillCoolTime;
         mainCount = data.mainSkillCount;
         subCount = data.subSkillCount;
+        PlayerWeaponUI.Instance.SetSkillPoint(subCount);
     }
 
     public abstract void MainSkill();
@@ -22,19 +23,33 @@ public abstract class CharacterSkill : MonoBehaviour
 
     public virtual void UseSkill()
     {
-        if(Input.GetKeyDown(KeyCode.E) && mainDelay != 0 && mainCount != 0)
+        if(Input.GetKeyDown(KeyCode.E) && mainskill)//&&  mainCount != 0)
         {
             MainSkill();
-            mainCount -= 1;
-            // uiÄÄÆ÷³ÍÆ®¶û ¿¬µ¿ÇØ¼­ µô·¹ÀÌ µ¹¸®±â
-            print("mainskill");
+            mainskill = false;
+            //mainCount -= 1;
+
+            StartCoroutine(Dealy());
+            StartCoroutine(PlayerWeaponUI.Instance.MainSkillDelay(data.mainSkillCoolTime));
         }
 
         if(Input.GetKeyDown(KeyCode.Q) && subCount != 0)
         {
             SubSkill();
             subCount -= 1;
-            print("subskill");
+            PlayerWeaponUI.Instance.SetSkillPoint(subCount);
         }
+    }
+
+    public void GutSubSkillPoint()
+    {
+        subCount += 1;
+        PlayerWeaponUI.Instance.SetSkillPoint(subCount);
+    }
+
+    IEnumerator Dealy()
+    {
+        yield return new WaitForSeconds(data.mainSkillCoolTime);
+        mainskill = true;
     }
 }

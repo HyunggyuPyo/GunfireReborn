@@ -1750,6 +1750,9 @@ MonoBehaviour:
   - itemData: {fileID: 11400000, guid: 31afebc9a85f4f44f90a2b6b8432ca18, type: 2}
     percentage: 50
     maxDropCount: 10
+  - itemData: {fileID: 11400000, guid: da2d10a444c8b334183dc84f7ac86073, type: 2}
+    percentage: 50
+    maxDropCount: 20
   thornPool: {fileID: 195634726}
   tornadoPool: {fileID: 6816470168689232015}
 --- !u!195 &3722255257831163688

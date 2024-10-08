@@ -13,13 +13,15 @@ public class FoxMainSkill : MonoBehaviour
     Collider sphere;
     Vector3 dir;
     LayerMask targetLayer;
-    bool bondage = false;
+    bool bondage = false; 
+    Coroutine despawnCoroutine = null;
 
     private void Awake()
     {
         rigid = GetComponent<Rigidbody>();
         sphere = GetComponent<SphereCollider>();
         targetLayer = (1 << LayerMask.NameToLayer("Enemy")) | (1 << LayerMask.NameToLayer("Boss"));
+        damage = transform.GetComponentInParent<CharacterSkill>().data.mainSkillDamage;
     }
 
     private void OnEnable()
@@ -36,7 +38,8 @@ public class FoxMainSkill : MonoBehaviour
             transform.LookAt(dir);
         }
 
-        StartCoroutine(DespawnSkill());
+        var extinction = StartCoroutine(ExtinctionOrb());
+        despawnCoroutine = StartCoroutine(DespawnSkill(extinction));
     }
 
     private void Update()
@@ -46,7 +49,7 @@ public class FoxMainSkill : MonoBehaviour
             rigid.AddForce(transform.forward * speed, ForceMode.VelocityChange);
         }        
     }
-
+    
     private void OnTriggerEnter(Collider other)
     {
         if ((targetLayer | (1 << other.gameObject.layer)) != targetLayer)
@@ -54,7 +57,11 @@ public class FoxMainSkill : MonoBehaviour
             return;
         }
 
-        StopCoroutine(DespawnSkill());
+        if(despawnCoroutine != null)
+        {
+            StopCoroutine(despawnCoroutine);
+        }
+        
         bondage = true;
         orb.SetActive(false);
         chain.SetActive(true);
@@ -69,14 +76,18 @@ public class FoxMainSkill : MonoBehaviour
 
         transform.SetParent(other.transform);
         transform.localPosition = Vector3.zero;
-        StartCoroutine(other.gameObject.GetComponent<Enemy>().Bondage());
-        StartCoroutine(DespawnSkill());
+        var enemyBondage = StartCoroutine(other.gameObject.GetComponent<Enemy>().Bondage());
+        despawnCoroutine = StartCoroutine(DespawnSkill(enemyBondage));
+    }
+    IEnumerator DespawnSkill(Coroutine bondageCoroutine)
+    {
+        yield return bondageCoroutine; 
+
+        Destroy(gameObject);
     }
 
-    IEnumerator DespawnSkill()
+    IEnumerator ExtinctionOrb()
     {
-        yield return new WaitForSeconds(2.2f);
-        //gameObject.SetActive(false);
-        Destroy(gameObject);
+        yield return new WaitForSeconds(2f);
     }
 }

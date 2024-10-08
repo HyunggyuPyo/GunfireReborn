@@ -124,7 +124,7 @@ public class LocalPlayerMove : MonoBehaviour, IPunInstantiateMagicCallback
 
     IEnumerator Dash(bool _forward)
     {
-        StartCoroutine(PlayerWeaponUI.Instance.CoolTime());
+        StartCoroutine(PlayerWeaponUI.Instance.DushCoolTime(2f));
         isDash = true;
         dashDelay = false;
         float time = 0;
