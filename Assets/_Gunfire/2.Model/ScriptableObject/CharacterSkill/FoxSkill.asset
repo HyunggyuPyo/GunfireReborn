@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7ab2e028d2174f49be961b10cff8fe0, type: 3}
   m_Name: FoxSkill
   m_EditorClassIdentifier: 
-  mainSkillPrefab: {fileID: 8370901617856565643, guid: 4261485550fc01d42859cb5609b09c14, type: 3}
+  mainSkillPrefab: {fileID: 2732716837805322896, guid: 4261485550fc01d42859cb5609b09c14, type: 3}
   mainSkillDamage: 0
-  mainSkillCount: 0
-  mainSkillCoolTime: 0
-  mainSkillImage: {fileID: 0}
-  subSkillPrefab: {fileID: 0}
+  mainSkillCount: 5
+  mainSkillCoolTime: 4
+  mainSkillImage: {fileID: 2077019522891921112, guid: 30e3b7496473a244aa6c0fff228b4de4, type: 3}
+  subSkillPrefab: {fileID: 9151998771074822712, guid: bc05a2b74960e39458dcf40bf565d067, type: 3}
   subSkillDamage: 0
-  subSkillCount: 0
-  subSkillImage: {fileID: 0}
+  subSkillCount: 4
+  subSkillImage: {fileID: 1082801238, guid: 831f31b51b05f1c428f6c74ed12f91fd, type: 3}

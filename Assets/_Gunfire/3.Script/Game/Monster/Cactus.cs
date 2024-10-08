@@ -56,7 +56,7 @@ public class Cactus : Enemy
                     }                    
                 }
             }
-            else
+            else if(agent.enabled)
             {
                 agent.SetDestination(target.position);
 

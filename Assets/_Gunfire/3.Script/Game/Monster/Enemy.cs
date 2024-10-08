@@ -153,4 +153,11 @@ public abstract class Enemy : MonoBehaviour, IHitable
     {
         ItemDropManager.Instance.DropItemOnMonster(dropItems, transform);
     }
+
+    public IEnumerator Bondage()
+    {
+        agent.enabled = false;
+        yield return new WaitForSeconds(2f);
+        agent.enabled = true;
+    }
 }

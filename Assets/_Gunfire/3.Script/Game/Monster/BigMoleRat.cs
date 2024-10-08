@@ -35,7 +35,7 @@ public class BigMoleRat : Enemy
                     }
                 }
             }
-            else
+            else if(agent.enabled)
             {
                 agent.SetDestination(target.position);
 

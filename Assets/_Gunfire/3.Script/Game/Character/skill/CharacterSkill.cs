@@ -22,17 +22,19 @@ public abstract class CharacterSkill : MonoBehaviour
 
     public virtual void UseSkill()
     {
-        if(Input.GetKeyDown(KeyCode.E) && mainDelay == 0 && mainCount != 0)
+        if(Input.GetKeyDown(KeyCode.E) && mainDelay != 0 && mainCount != 0)
         {
             MainSkill();
             mainCount -= 1;
             // ui컴포넌트랑 연동해서 딜레이 돌리기
+            print("mainskill");
         }
 
         if(Input.GetKeyDown(KeyCode.Q) && subCount != 0)
         {
             SubSkill();
             subCount -= 1;
+            print("subskill");
         }
     }
 }
