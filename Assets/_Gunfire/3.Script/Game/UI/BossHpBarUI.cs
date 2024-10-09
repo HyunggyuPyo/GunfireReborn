@@ -21,8 +21,9 @@ public class BossHpBarUI : MonoBehaviour
     private void Update()
     {
         hp.text = $"{bossData.hp}/{bossData.MonsterData.maxHealth}";
+        hpBar.value = (float)bossData.hp / bossData.MonsterData.maxHealth;
 
-        if(bossData.hp <= 0)
+        if (bossData.hp <= 0)
         {
             Invoke("DisableObj", 3f);
         }

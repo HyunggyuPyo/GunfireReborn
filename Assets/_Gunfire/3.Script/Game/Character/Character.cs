@@ -5,9 +5,7 @@ using UnityEngine;
 public struct CharacterData
 {
     public int maxHealth;
-    public int hp;
     public int maxShield;
-    public int shield;
     public float speed;
 }
 

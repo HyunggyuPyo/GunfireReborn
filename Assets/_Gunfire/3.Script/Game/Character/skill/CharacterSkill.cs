@@ -7,7 +7,7 @@ public abstract class CharacterSkill : MonoBehaviour
 {
     public CharacterSkillSO data;
     int mainCount;
-    int subCount;
+    public int subCount { get; set; }
     bool mainskill = true;
 
     private void Awake()

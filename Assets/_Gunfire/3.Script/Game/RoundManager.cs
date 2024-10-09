@@ -28,6 +28,7 @@ public class RoundManager : MonoBehaviour
         {
             if(PhotonNetwork.IsMasterClient)
             {
+                PlayerDataManager.instance.SaveData();
                 PhotonNetwork.LoadLevel("Boss");
             }
         }

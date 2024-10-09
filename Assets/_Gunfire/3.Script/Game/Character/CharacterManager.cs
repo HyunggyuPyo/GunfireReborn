@@ -8,6 +8,8 @@ public class CharacterManager : MonoBehaviour, IHitable
     public Character playerCharacter;
     CharacterData data; // shield는 뺴서 maxshield로 초기화 하는게 맞지 않나? 
     public CharacterData Data { get { return data; } set { data = value; } }
+    public int hp { get; set; }
+    public int shield { get; set; }
 
     Coroutine chargeShield;
 
@@ -23,36 +25,38 @@ public class CharacterManager : MonoBehaviour, IHitable
         data = playerCharacter.characterData;
         // todo : 나중에 재능으로 찍은 스텟 json으로 불러와서 data값에 더해주기
         PlayerInfoUI.Instance.InitUI(data.maxShield, data.maxHealth);
+        hp = data.maxHealth;
+        shield = data.maxShield;
     }
 
     public void Hit(int damage)
     {
-        print($"fox hit -> {damage}, hp : {data.hp}");
+        print($"fox hit -> {damage}, hp : {hp}");
         if(chargeShield != null)
         {
             StopCoroutine(chargeShield);
         }        
 
-        if(data.shield < damage)
+        if(shield < damage)
         {
-            if(data.shield != 0)
+            if(shield != 0)
             {
-                data.hp -= damage - data.shield;
-                data.shield = 0;
+                hp -= damage - shield;
+                shield = 0;
             }
             else
             {
-                data.hp -= damage;
+                hp -= damage;
             }
         }
         else
         {
-            data.shield -= damage; 
+            shield -= damage; 
         }
 
-        PlayerInfoUI.Instance.SetUI(data.shield, data.hp);
+        PlayerInfoUI.Instance.SetUI(shield, hp);
 
-        if(data.shield < data.maxShield)
+        if(shield < data.maxShield)
         {
             if(chargeShield != null)
             {
@@ -61,7 +65,7 @@ public class CharacterManager : MonoBehaviour, IHitable
             chargeShield = StartCoroutine(ChargeShield());
         }        
 
-        if(data.hp <= 0)
+        if(hp <= 0)
         {
             StopCoroutine(chargeShield);
             PlayerDead();
@@ -98,14 +102,14 @@ public class CharacterManager : MonoBehaviour, IHitable
     {
         yield return new WaitForSeconds(3f);
 
-        while (data.shield <= data.maxShield)
+        while (shield <= data.maxShield)
         {
-            data.shield += 5;
-            PlayerInfoUI.Instance.SetUI(data.shield, data.hp);
+            shield += 5;
+            PlayerInfoUI.Instance.SetUI(shield, hp);
             yield return new WaitForSeconds(.7f);
         }
 
-        data.shield = data.maxShield;
+        shield = data.maxShield;
         chargeShield = null;
     }
 }

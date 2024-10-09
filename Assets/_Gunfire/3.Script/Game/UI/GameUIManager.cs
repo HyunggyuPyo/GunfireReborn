@@ -7,7 +7,8 @@ public class GameUIManager : MonoBehaviour
     public static GameUIManager instance;
 
     public GameObject resultUI;
-    public GameObject headShotUI;
+    public GameObject headShotAim;
+    public GameObject shotAim;
     public GameObject gameoverPanel;
     public GameObject playerUI;
     public GameObject lodingUI;
@@ -15,7 +16,7 @@ public class GameUIManager : MonoBehaviour
     public GameObject bossUI;
 
     public bool popUp { get; set; }
-    Coroutine headShot = null;
+    Coroutine headShot, shot = null;
 
     private void Awake()
     {
@@ -46,28 +47,43 @@ public class GameUIManager : MonoBehaviour
     {
         if(headShot == null)
         {
-            headShot = StartCoroutine(HeadShot());
+            headShot = StartCoroutine(HeadShot(headShotAim, headShot));
         }
         else
         {
             StopCoroutine(headShot);
-            headShotUI.SetActive(false);
+            headShotAim.SetActive(false);
             headShot = null;
-            headShot = StartCoroutine(HeadShot());
+            headShot = StartCoroutine(HeadShot(headShotAim, headShot));
         }
-        
     }
+
+    public void ShotUI()
+    {
+        if (shot == null)
+        {
+            shot = StartCoroutine(HeadShot(shotAim, shot));
+        }
+        else
+        {
+            StopCoroutine(shot);
+            shotAim.SetActive(false);
+            shot = null;
+            shot = StartCoroutine(HeadShot(shotAim, shot));
+        }
+    }
+
     public void GameOver()
     {
         playerUI.SetActive(false);
         gameoverPanel.SetActive(true);
     }
 
-    IEnumerator HeadShot()
+    IEnumerator HeadShot(GameObject aim, Coroutine coroutine)
     {
-        headShotUI.SetActive(true);
-        yield return new WaitForSeconds(1f);
-        headShotUI.SetActive(false);
-        headShot = null;
+        aim.SetActive(true);
+        yield return new WaitForSeconds(.5f);
+        aim.SetActive(false);
+        coroutine = null;
     }
 }

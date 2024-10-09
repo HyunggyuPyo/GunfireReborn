@@ -12,7 +12,7 @@ public class Rifle : Gun
         data.damage = 12;
         data.delay = 0.5f;
         data.maxBullet = 30;
-        data.bulletCount = data.maxBullet;
+        bulletCount = data.maxBullet;
         data.info = "ถ๓ภฬวร 1";
         //data.soundEffect = ;
         data.bullet = Resources.Load<GameObject>("DefultBullet");
@@ -27,5 +27,10 @@ public class Rifle : Gun
     public override void Using(Transform sPos)
     {
         base.Using(sPos);
+    }
+
+    public override void ReLoad()
+    {
+        base.ReLoad();
     }
 }

@@ -1631,7 +1631,7 @@ GameObject:
   - component: {fileID: 3722255257831163688}
   - component: {fileID: 195634726}
   - component: {fileID: 6816470168689232015}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: Cactus Boss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1659,6 +1659,7 @@ Transform:
   - {fileID: 5252124124336961345}
   - {fileID: 29843829165012735}
   - {fileID: 7214644897416047011}
+  - {fileID: 8178495299400246288}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
@@ -1755,6 +1756,7 @@ MonoBehaviour:
     maxDropCount: 20
   thornPool: {fileID: 195634726}
   tornadoPool: {fileID: 6816470168689232015}
+  rushCollider: {fileID: 8642551885415805739}
 --- !u!195 &3722255257831163688
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1804,7 +1806,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c69e922553fe2645bbece54ad6f8a30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 1600145308728766, guid: 148b1a0736ef85e41845a188ca3b7d35, type: 3}
+  prefab: {fileID: 2103997355535489081, guid: a4a6490ea539487499399b123b68a6e3, type: 3}
   parentObj: {fileID: 29843829165012735}
   startPosition: {fileID: 5252124124336961345}
 --- !u!1 &8013987114549587738
@@ -1965,6 +1967,52 @@ Transform:
   m_Father: {fileID: 4847511406920498095}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8642551885415805739
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8178495299400246288}
+  - component: {fileID: 3159700454584699048}
+  m_Layer: 12
+  m_Name: Rush
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &8178495299400246288
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8642551885415805739}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.05, z: 0.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7298144472505163093}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &3159700454584699048
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8642551885415805739}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1
+  m_Height: 3.5
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8910834464641619737
 GameObject:
   m_ObjectHideFlags: 0

@@ -1825,6 +1825,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: TempleBrazier_A (28)
       objectReference: {fileID: 0}
+    - target: {fileID: 8229158480240475880, guid: 4b339b2b96fd84e469d1536cb93719cb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8229158480240475880, guid: 4b339b2b96fd84e469d1536cb93719cb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8229158480240475887, guid: 4b339b2b96fd84e469d1536cb93719cb, type: 3}
       propertyPath: m_RootOrder
       value: 19
@@ -2357,17 +2365,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1883436963157017875, guid: cd50baea5e7afd04bb1cc0a965677633, type: 3}
   m_PrefabInstance: {fileID: 67081473}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &69771988 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3961653027827352362, guid: 70870726e35a0074889bb0c0bf9759a7, type: 3}
-  m_PrefabInstance: {fileID: 1940243952}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &71069701
 GameObject:
   m_ObjectHideFlags: 0
@@ -3136,6 +3133,10 @@ PrefabInstance:
     - target: {fileID: 8229158480240475880, guid: 4b339b2b96fd84e469d1536cb93719cb, type: 3}
       propertyPath: m_Name
       value: TempleBrazier_A (32)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8229158480240475880, guid: 4b339b2b96fd84e469d1536cb93719cb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8229158480240475887, guid: 4b339b2b96fd84e469d1536cb93719cb, type: 3}
       propertyPath: m_RootOrder
@@ -4316,6 +4317,14 @@ PrefabInstance:
     - target: {fileID: 8717010601986512977, guid: 43e83d8edff98d645a30d624e68e1231, type: 3}
       propertyPath: m_Name
       value: TemplePillar_C (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8717010601986512977, guid: 43e83d8edff98d645a30d624e68e1231, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8717010601986512977, guid: 43e83d8edff98d645a30d624e68e1231, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43e83d8edff98d645a30d624e68e1231, type: 3}
@@ -12316,6 +12325,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: TempleDoor_D (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7964624792888809290, guid: cc274a2e67c5e1141bbfff23f9a404fd, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7964624792888809290, guid: cc274a2e67c5e1141bbfff23f9a404fd, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7964624792888809291, guid: cc274a2e67c5e1141bbfff23f9a404fd, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -14817,6 +14834,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: TempleRock_C
       objectReference: {fileID: 0}
+    - target: {fileID: 4955387971658204883, guid: 9c8db9ca6c15ce84786eb1b919cffe03, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4955387971658204883, guid: 9c8db9ca6c15ce84786eb1b919cffe03, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c8db9ca6c15ce84786eb1b919cffe03, type: 3}
 --- !u!1 &467824233
@@ -15133,6 +15158,10 @@ PrefabInstance:
     - target: {fileID: 8229158480240475880, guid: 4b339b2b96fd84e469d1536cb93719cb, type: 3}
       propertyPath: m_Name
       value: TempleBrazier_A (37)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8229158480240475880, guid: 4b339b2b96fd84e469d1536cb93719cb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8229158480240475887, guid: 4b339b2b96fd84e469d1536cb93719cb, type: 3}
       propertyPath: m_RootOrder
@@ -15464,6 +15493,14 @@ PrefabInstance:
     - target: {fileID: 8229158480240475880, guid: 4b339b2b96fd84e469d1536cb93719cb, type: 3}
       propertyPath: m_Name
       value: TempleBrazier_A (26)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8229158480240475880, guid: 4b339b2b96fd84e469d1536cb93719cb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8229158480240475880, guid: 4b339b2b96fd84e469d1536cb93719cb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8229158480240475887, guid: 4b339b2b96fd84e469d1536cb93719cb, type: 3}
       propertyPath: m_RootOrder
@@ -18233,6 +18270,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 596569809761522709, guid: c5b7c10e97187aa41b34219c6120d74e, type: 3}
   m_PrefabInstance: {fileID: 591088961}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &593127493 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 241311772779931630, guid: 70870726e35a0074889bb0c0bf9759a7, type: 3}
+  m_PrefabInstance: {fileID: 1940243952}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &596027870
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18978,6 +19026,14 @@ PrefabInstance:
     - target: {fileID: 8229158480240475880, guid: 4b339b2b96fd84e469d1536cb93719cb, type: 3}
       propertyPath: m_Name
       value: TempleBrazier_A (29)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8229158480240475880, guid: 4b339b2b96fd84e469d1536cb93719cb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8229158480240475880, guid: 4b339b2b96fd84e469d1536cb93719cb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8229158480240475887, guid: 4b339b2b96fd84e469d1536cb93719cb, type: 3}
       propertyPath: m_RootOrder
@@ -24502,6 +24558,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TempleBrazier_A (36)
       objectReference: {fileID: 0}
+    - target: {fileID: 8229158480240475880, guid: 4b339b2b96fd84e469d1536cb93719cb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8229158480240475887, guid: 4b339b2b96fd84e469d1536cb93719cb, type: 3}
       propertyPath: m_RootOrder
       value: 27
@@ -24793,6 +24853,14 @@ PrefabInstance:
     - target: {fileID: 8717010601986512977, guid: 43e83d8edff98d645a30d624e68e1231, type: 3}
       propertyPath: m_Name
       value: TemplePillar_C
+      objectReference: {fileID: 0}
+    - target: {fileID: 8717010601986512977, guid: 43e83d8edff98d645a30d624e68e1231, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8717010601986512977, guid: 43e83d8edff98d645a30d624e68e1231, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43e83d8edff98d645a30d624e68e1231, type: 3}
@@ -25140,6 +25208,14 @@ PrefabInstance:
     - target: {fileID: 596569809761522705, guid: c5b7c10e97187aa41b34219c6120d74e, type: 3}
       propertyPath: m_Name
       value: TempleFrameB_A
+      objectReference: {fileID: 0}
+    - target: {fileID: 596569809761522705, guid: c5b7c10e97187aa41b34219c6120d74e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 596569809761522705, guid: c5b7c10e97187aa41b34219c6120d74e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 596569809761522709, guid: c5b7c10e97187aa41b34219c6120d74e, type: 3}
       propertyPath: m_RootOrder
@@ -25691,6 +25767,14 @@ PrefabInstance:
     - target: {fileID: 8717010601986512977, guid: 43e83d8edff98d645a30d624e68e1231, type: 3}
       propertyPath: m_Name
       value: TemplePillar_C
+      objectReference: {fileID: 0}
+    - target: {fileID: 8717010601986512977, guid: 43e83d8edff98d645a30d624e68e1231, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8717010601986512977, guid: 43e83d8edff98d645a30d624e68e1231, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43e83d8edff98d645a30d624e68e1231, type: 3}
@@ -31197,6 +31281,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: TemplePillar_C
       objectReference: {fileID: 0}
+    - target: {fileID: 8717010601986512977, guid: 43e83d8edff98d645a30d624e68e1231, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8717010601986512977, guid: 43e83d8edff98d645a30d624e68e1231, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43e83d8edff98d645a30d624e68e1231, type: 3}
 --- !u!4 &1022564446 stripped
@@ -31276,6 +31368,14 @@ PrefabInstance:
     - target: {fileID: 596569809761522705, guid: c5b7c10e97187aa41b34219c6120d74e, type: 3}
       propertyPath: m_Name
       value: TempleFrameB_A
+      objectReference: {fileID: 0}
+    - target: {fileID: 596569809761522705, guid: c5b7c10e97187aa41b34219c6120d74e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 596569809761522705, guid: c5b7c10e97187aa41b34219c6120d74e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 596569809761522709, guid: c5b7c10e97187aa41b34219c6120d74e, type: 3}
       propertyPath: m_RootOrder
@@ -34577,6 +34677,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: TempleFrameB_A
       objectReference: {fileID: 0}
+    - target: {fileID: 596569809761522705, guid: c5b7c10e97187aa41b34219c6120d74e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 596569809761522705, guid: c5b7c10e97187aa41b34219c6120d74e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 596569809761522709, guid: c5b7c10e97187aa41b34219c6120d74e, type: 3}
       propertyPath: m_RootOrder
       value: 263
@@ -34638,6 +34746,14 @@ PrefabInstance:
     - target: {fileID: 596569809761522705, guid: c5b7c10e97187aa41b34219c6120d74e, type: 3}
       propertyPath: m_Name
       value: TempleFrameB_A
+      objectReference: {fileID: 0}
+    - target: {fileID: 596569809761522705, guid: c5b7c10e97187aa41b34219c6120d74e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 596569809761522705, guid: c5b7c10e97187aa41b34219c6120d74e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 596569809761522709, guid: c5b7c10e97187aa41b34219c6120d74e, type: 3}
       propertyPath: m_RootOrder
@@ -35185,6 +35301,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TempleBrazier_A (31)
       objectReference: {fileID: 0}
+    - target: {fileID: 8229158480240475880, guid: 4b339b2b96fd84e469d1536cb93719cb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8229158480240475887, guid: 4b339b2b96fd84e469d1536cb93719cb, type: 3}
       propertyPath: m_RootOrder
       value: 22
@@ -35563,6 +35683,14 @@ PrefabInstance:
     - target: {fileID: 7964624792888809290, guid: cc274a2e67c5e1141bbfff23f9a404fd, type: 3}
       propertyPath: m_Name
       value: TempleDoor_D (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7964624792888809290, guid: cc274a2e67c5e1141bbfff23f9a404fd, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7964624792888809290, guid: cc274a2e67c5e1141bbfff23f9a404fd, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7964624792888809291, guid: cc274a2e67c5e1141bbfff23f9a404fd, type: 3}
       propertyPath: m_RootOrder
@@ -36764,6 +36892,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: TempleBrazier_A (27)
       objectReference: {fileID: 0}
+    - target: {fileID: 8229158480240475880, guid: 4b339b2b96fd84e469d1536cb93719cb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8229158480240475880, guid: 4b339b2b96fd84e469d1536cb93719cb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8229158480240475887, guid: 4b339b2b96fd84e469d1536cb93719cb, type: 3}
       propertyPath: m_RootOrder
       value: 18
@@ -37632,6 +37768,10 @@ PrefabInstance:
     - target: {fileID: 8229158480240475880, guid: 4b339b2b96fd84e469d1536cb93719cb, type: 3}
       propertyPath: m_Name
       value: TempleBrazier_A (35)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8229158480240475880, guid: 4b339b2b96fd84e469d1536cb93719cb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8229158480240475887, guid: 4b339b2b96fd84e469d1536cb93719cb, type: 3}
       propertyPath: m_RootOrder
@@ -41675,6 +41815,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: TempleDoor_D (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 7964624792888809290, guid: cc274a2e67c5e1141bbfff23f9a404fd, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7964624792888809290, guid: cc274a2e67c5e1141bbfff23f9a404fd, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7964624792888809291, guid: cc274a2e67c5e1141bbfff23f9a404fd, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -43189,6 +43337,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: TempleDoor_E (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7704738288960081538, guid: 59e9ab7789c7a3a45989c67bd59042dd, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7704738288960081538, guid: 59e9ab7789c7a3a45989c67bd59042dd, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59e9ab7789c7a3a45989c67bd59042dd, type: 3}
 --- !u!4 &1448088846 stripped
@@ -44639,6 +44795,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: TempleRock_C (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4955387971658204883, guid: 9c8db9ca6c15ce84786eb1b919cffe03, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4955387971658204883, guid: 9c8db9ca6c15ce84786eb1b919cffe03, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c8db9ca6c15ce84786eb1b919cffe03, type: 3}
 --- !u!4 &1491230019 stripped
@@ -45493,6 +45657,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TempleBrazier_A (22)
       objectReference: {fileID: 0}
+    - target: {fileID: 8229158480240475880, guid: 4b339b2b96fd84e469d1536cb93719cb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8229158480240475887, guid: 4b339b2b96fd84e469d1536cb93719cb, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -45828,6 +45996,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: TempleRock_C (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4955387971658204883, guid: 9c8db9ca6c15ce84786eb1b919cffe03, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4955387971658204883, guid: 9c8db9ca6c15ce84786eb1b919cffe03, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c8db9ca6c15ce84786eb1b919cffe03, type: 3}
 --- !u!4 &1525477332 stripped
@@ -45894,17 +46070,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1526140830 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1804289705971102936, guid: 70870726e35a0074889bb0c0bf9759a7, type: 3}
-  m_PrefabInstance: {fileID: 1940243952}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1530876653
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47306,6 +47471,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: TempleStair_C (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 8436245452409357792, guid: a52360390e610c342b5efa3d3393f14f, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8436245452409357792, guid: a52360390e610c342b5efa3d3393f14f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a52360390e610c342b5efa3d3393f14f, type: 3}
 --- !u!4 &1594204796 stripped
@@ -48622,6 +48795,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TempleBrazier_A (34)
       objectReference: {fileID: 0}
+    - target: {fileID: 8229158480240475880, guid: 4b339b2b96fd84e469d1536cb93719cb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8229158480240475887, guid: 4b339b2b96fd84e469d1536cb93719cb, type: 3}
       propertyPath: m_RootOrder
       value: 25
@@ -49556,6 +49733,10 @@ PrefabInstance:
     - target: {fileID: 8229158480240475880, guid: 4b339b2b96fd84e469d1536cb93719cb, type: 3}
       propertyPath: m_Name
       value: TempleBrazier_A (23)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8229158480240475880, guid: 4b339b2b96fd84e469d1536cb93719cb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8229158480240475887, guid: 4b339b2b96fd84e469d1536cb93719cb, type: 3}
       propertyPath: m_RootOrder
@@ -51780,6 +51961,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TempleBrazier_A (30)
       objectReference: {fileID: 0}
+    - target: {fileID: 8229158480240475880, guid: 4b339b2b96fd84e469d1536cb93719cb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8229158480240475887, guid: 4b339b2b96fd84e469d1536cb93719cb, type: 3}
       propertyPath: m_RootOrder
       value: 21
@@ -51841,6 +52026,14 @@ PrefabInstance:
     - target: {fileID: 596569809761522705, guid: c5b7c10e97187aa41b34219c6120d74e, type: 3}
       propertyPath: m_Name
       value: TempleFrameB_A
+      objectReference: {fileID: 0}
+    - target: {fileID: 596569809761522705, guid: c5b7c10e97187aa41b34219c6120d74e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 596569809761522705, guid: c5b7c10e97187aa41b34219c6120d74e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 596569809761522709, guid: c5b7c10e97187aa41b34219c6120d74e, type: 3}
       propertyPath: m_RootOrder
@@ -54942,6 +55135,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: TempleFrameB_A
       objectReference: {fileID: 0}
+    - target: {fileID: 596569809761522705, guid: c5b7c10e97187aa41b34219c6120d74e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 596569809761522705, guid: c5b7c10e97187aa41b34219c6120d74e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 596569809761522709, guid: c5b7c10e97187aa41b34219c6120d74e, type: 3}
       propertyPath: m_RootOrder
       value: 262
@@ -55544,6 +55745,10 @@ PrefabInstance:
     - target: {fileID: 8229158480240475880, guid: 4b339b2b96fd84e469d1536cb93719cb, type: 3}
       propertyPath: m_Name
       value: TempleBrazier_A (33)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8229158480240475880, guid: 4b339b2b96fd84e469d1536cb93719cb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8229158480240475887, guid: 4b339b2b96fd84e469d1536cb93719cb, type: 3}
       propertyPath: m_RootOrder
@@ -56957,6 +57162,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TempleBrazier_A (25)
       objectReference: {fileID: 0}
+    - target: {fileID: 8229158480240475880, guid: 4b339b2b96fd84e469d1536cb93719cb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8229158480240475887, guid: 4b339b2b96fd84e469d1536cb93719cb, type: 3}
       propertyPath: m_RootOrder
       value: 16
@@ -57856,6 +58065,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: TempleFrameB_A
       objectReference: {fileID: 0}
+    - target: {fileID: 596569809761522705, guid: c5b7c10e97187aa41b34219c6120d74e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 596569809761522705, guid: c5b7c10e97187aa41b34219c6120d74e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 596569809761522709, guid: c5b7c10e97187aa41b34219c6120d74e, type: 3}
       propertyPath: m_RootOrder
       value: 256
@@ -58262,18 +58479,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 793486426395210064, guid: 70870726e35a0074889bb0c0bf9759a7, type: 3}
+    - target: {fileID: 932995167587082506, guid: 70870726e35a0074889bb0c0bf9759a7, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1680689878046712109, guid: 70870726e35a0074889bb0c0bf9759a7, type: 3}
-      propertyPath: skillPoint
-      value: 
-      objectReference: {fileID: 69771988}
-    - target: {fileID: 1680689878046712109, guid: 70870726e35a0074889bb0c0bf9759a7, type: 3}
-      propertyPath: mainSkillCool
-      value: 
-      objectReference: {fileID: 1526140830}
     - target: {fileID: 1680689878692799760, guid: 70870726e35a0074889bb0c0bf9759a7, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -58378,29 +58587,13 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1680689879458107301, guid: 70870726e35a0074889bb0c0bf9759a7, type: 3}
+      propertyPath: gunName
+      value: 
+      objectReference: {fileID: 593127493}
     - target: {fileID: 1680689879458107303, guid: 70870726e35a0074889bb0c0bf9759a7, type: 3}
       propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1804289705971102936, guid: 70870726e35a0074889bb0c0bf9759a7, type: 3}
-      propertyPath: m_FillAmount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1901709167583220407, guid: 70870726e35a0074889bb0c0bf9759a7, type: 3}
-      propertyPath: m_IsActive
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2547157549669582419, guid: 70870726e35a0074889bb0c0bf9759a7, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4135188246999441151, guid: 70870726e35a0074889bb0c0bf9759a7, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7391910390986667726, guid: 70870726e35a0074889bb0c0bf9759a7, type: 3}
-      propertyPath: m_text
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70870726e35a0074889bb0c0bf9759a7, type: 3}
@@ -60197,6 +60390,50 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c8db9ca6c15ce84786eb1b919cffe03, type: 3}
+--- !u!1 &2011089982
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2011089984}
+  - component: {fileID: 2011089983}
+  m_Layer: 0
+  m_Name: PlayerDataManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2011089983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011089982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de71dbbce6efedb4ba2f45a93a0d23e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &2011089984
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011089982}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1628.976, y: 1046.6545, z: 2538.6238}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 25
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2011643132
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -62384,6 +62621,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TempleBrazier_A (24)
       objectReference: {fileID: 0}
+    - target: {fileID: 8229158480240475880, guid: 4b339b2b96fd84e469d1536cb93719cb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8229158480240475887, guid: 4b339b2b96fd84e469d1536cb93719cb, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -63357,6 +63598,14 @@ PrefabInstance:
     - target: {fileID: 8717010601986512977, guid: 43e83d8edff98d645a30d624e68e1231, type: 3}
       propertyPath: m_Name
       value: TemplePillar_C
+      objectReference: {fileID: 0}
+    - target: {fileID: 8717010601986512977, guid: 43e83d8edff98d645a30d624e68e1231, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8717010601986512977, guid: 43e83d8edff98d645a30d624e68e1231, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43e83d8edff98d645a30d624e68e1231, type: 3}
@@ -75540,8 +75789,8 @@ GameObject:
   m_Name: TemplePillar_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &479200424617013693
 MeshRenderer:
@@ -81929,8 +82178,8 @@ GameObject:
   m_Name: TempleFrameB_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &596569810647910983
 Transform:
@@ -84807,6 +85056,10 @@ PrefabInstance:
       value: TempleTile_L
       objectReference: {fileID: 0}
     - target: {fileID: 4623046178746532027, guid: 8a611daa41106824cb9a795784ae6965, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4623046178746532027, guid: 8a611daa41106824cb9a795784ae6965, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 8
       objectReference: {fileID: 0}
@@ -85065,8 +85318,8 @@ GameObject:
   m_Name: TempleFrameC_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1883436961454387879
 Transform:
@@ -85182,8 +85435,8 @@ GameObject:
   m_Name: TempleFrameC_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!1 &1883436961843997888
 GameObject:
@@ -85201,8 +85454,8 @@ GameObject:
   m_Name: TempleFrameC_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1883436961843997892
 Transform:
@@ -85250,8 +85503,8 @@ GameObject:
   m_Name: TempleFrameC_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1883436962089501242
 Transform:
@@ -85284,8 +85537,8 @@ GameObject:
   m_Name: TempleFrameC_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1883436962239213762
 Transform:
@@ -85318,8 +85571,8 @@ GameObject:
   m_Name: TempleFrameC_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!1 &1883436962281251864
 GameObject:
@@ -85337,8 +85590,8 @@ GameObject:
   m_Name: TempleFrameC_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1883436962281251868
 Transform:
@@ -85386,8 +85639,8 @@ GameObject:
   m_Name: TempleFrameC_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!1 &1883436962433462737
 GameObject:
@@ -85405,8 +85658,8 @@ GameObject:
   m_Name: TempleFrameC_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1883436962433462741
 Transform:
@@ -85488,8 +85741,8 @@ GameObject:
   m_Name: TempleFrameC_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!1 &1883436962782348537
 GameObject:
@@ -85556,8 +85809,8 @@ GameObject:
   m_Name: TempleFrameC_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1883436963052434905
 Transform:
@@ -85624,8 +85877,8 @@ GameObject:
   m_Name: TempleFrameC_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1921839435481884973 stripped
 Transform:
@@ -86382,6 +86635,14 @@ PrefabInstance:
     - target: {fileID: 7964624792888809290, guid: cc274a2e67c5e1141bbfff23f9a404fd, type: 3}
       propertyPath: m_Name
       value: TempleDoor_D
+      objectReference: {fileID: 0}
+    - target: {fileID: 7964624792888809290, guid: cc274a2e67c5e1141bbfff23f9a404fd, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7964624792888809290, guid: cc274a2e67c5e1141bbfff23f9a404fd, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7964624792888809291, guid: cc274a2e67c5e1141bbfff23f9a404fd, type: 3}
       propertyPath: m_RootOrder
@@ -89373,6 +89634,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: TempleDoor_E
       objectReference: {fileID: 0}
+    - target: {fileID: 7704738288960081538, guid: 59e9ab7789c7a3a45989c67bd59042dd, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7704738288960081538, guid: 59e9ab7789c7a3a45989c67bd59042dd, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59e9ab7789c7a3a45989c67bd59042dd, type: 3}
 --- !u!4 &7704738289995766996 stripped
@@ -89455,8 +89724,8 @@ GameObject:
   m_Name: TempleDoor_D (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &7964624791579152598
 Transform:
@@ -89489,8 +89758,8 @@ GameObject:
   m_Name: TempleDoor_D (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!1 &7964624791973396828
 GameObject:
@@ -90534,6 +90803,14 @@ PrefabInstance:
     - target: {fileID: 7274866531451133444, guid: 9ec0f7f122469444988622973338b2ac, type: 3}
       propertyPath: m_Name
       value: TempleWall_A
+      objectReference: {fileID: 0}
+    - target: {fileID: 7274866531451133444, guid: 9ec0f7f122469444988622973338b2ac, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7274866531451133444, guid: 9ec0f7f122469444988622973338b2ac, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7274866531451133445, guid: 9ec0f7f122469444988622973338b2ac, type: 3}
       propertyPath: m_RootOrder

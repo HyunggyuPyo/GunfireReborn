@@ -119,6 +119,7 @@ public abstract class Enemy : MonoBehaviour, IHitable
         else
         {
             hp -= damage;
+            GameUIManager.instance.ShotUI();
         }
 
         if(GameManager.Instance.maxDamage < damage)

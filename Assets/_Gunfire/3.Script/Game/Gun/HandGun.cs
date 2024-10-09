@@ -12,7 +12,7 @@ public class HandGun : Gun
         data.damage = 14;
         data.delay = 0.7f;
         data.maxBullet = 25;
-        data.bulletCount = data.maxBullet;
+        bulletCount = data.maxBullet;
         data.info = "ÇÚµå°Ç1";
         //data.soundEffect = ;
         data.bullet = Resources.Load<GameObject>("DefultBullet");
@@ -22,6 +22,11 @@ public class HandGun : Gun
     public override void InitPool()
     {
         base.InitPool();
+    }
+
+    public override void ReLoad()
+    {
+        base.ReLoad();
     }
 
     //public override void Using(Transform sPos)

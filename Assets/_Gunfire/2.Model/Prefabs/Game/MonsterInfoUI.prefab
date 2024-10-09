@@ -93,7 +93,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyName: {fileID: 1609412085636820292}
   hp: {fileID: 533866590668184901}
-  targetObj: {fileID: 0}
 --- !u!1 &1880684490784289195
 GameObject:
   m_ObjectHideFlags: 0
@@ -236,7 +235,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uB450\uB354\uC9C0 \uAD34\uBB3C"
+  m_text: Name
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0c84928361c76d840840e240e66ea44b, type: 2}
   m_sharedMaterial: {fileID: -4718096082867994032, guid: 0c84928361c76d840840e240e66ea44b, type: 2}

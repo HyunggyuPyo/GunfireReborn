@@ -9,7 +9,7 @@ public struct GunData
     public int damage;
     public float delay;
     public int maxBullet;
-    public int bulletCount;
+    
     public AudioSource soundEffect;
     public string info;
     public GameObject bullet;
@@ -19,6 +19,7 @@ public struct GunData
 public abstract class Gun : MonoBehaviour
 {
     public GunData data;
+    public int bulletCount { get; set; }
 
     bool shootAble = true;
     bool reLoading = false;
@@ -30,7 +31,7 @@ public abstract class Gun : MonoBehaviour
 
     private void Awake()
     {
-        parentAnimator = GetComponentInParent<Animator>();    
+        parentAnimator = GetComponentInParent<Animator>();
     }
 
     public abstract void InitSetting();
@@ -67,7 +68,8 @@ public abstract class Gun : MonoBehaviour
 
             shootAble = false;
 
-            data.bulletCount--;
+            bulletCount--;
+            PlayerWeaponUI.Instance.SetBulletCount(bulletCount, data.maxBullet);
         }
 
         if(shootAble == false)
@@ -83,12 +85,16 @@ public abstract class Gun : MonoBehaviour
 
     public virtual void ReLoad()
     {
+        if(parentAnimator == null)
+        {
+            parentAnimator = GetComponentInParent<Animator>();
+        }
         // ∏≈∆ø∞— æ÷¥œ∏ﬁ¿Ãº¢
-        if(Input.GetKeyDown(KeyCode.R) && data.maxBullet != data.bulletCount)
+        if(Input.GetKeyDown(KeyCode.R) && data.maxBullet != bulletCount)
         {
             reLoading = true;
             parentAnimator.SetTrigger("ReLoad");
-            data.bulletCount = data.maxBullet;
+            bulletCount = data.maxBullet;
             StartCoroutine(Reloading());
         }
     }
@@ -96,6 +102,7 @@ public abstract class Gun : MonoBehaviour
     IEnumerator Reloading()
     {
         yield return new WaitForSeconds(1.7f);
+        PlayerWeaponUI.Instance.SetBulletCount(bulletCount, data.maxBullet);
         reLoading = false;
     }
 }

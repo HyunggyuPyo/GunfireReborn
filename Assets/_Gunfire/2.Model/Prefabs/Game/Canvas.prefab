@@ -1040,6 +1040,7 @@ GameObject:
   - component: {fileID: 5286285438447496671}
   - component: {fileID: 1601155612063741321}
   - component: {fileID: 1511782667915430779}
+  - component: {fileID: 7646548795021697176}
   m_Layer: 5
   m_Name: HeadShot
   m_TagString: Untagged
@@ -1105,6 +1106,27 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &7646548795021697176
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793486426395210064}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9e30cdb687c8b6640bc5a6387f7a2480, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &932995167587082506
 GameObject:
   m_ObjectHideFlags: 0
@@ -1517,7 +1539,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 2
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 27c64c7e0aadaa24da8a33e5f3495409, type: 2}
   m_sharedMaterial: {fileID: 213554937901130156, guid: 27c64c7e0aadaa24da8a33e5f3495409, type: 2}
@@ -2538,6 +2560,8 @@ MonoBehaviour:
   bulletCount: {fileID: 1680689878081485936}
   dushCool: {fileID: 1680689878329361510}
   count: {fileID: 1680689878049943303}
+  mainSkillCool: {fileID: 1804289705971102936}
+  skillPoint: {fileID: 3961653027827352362}
 --- !u!1 &1680689878049943305
 GameObject:
   m_ObjectHideFlags: 0
@@ -4737,7 +4761,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1680689879458107302
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4774,6 +4798,7 @@ MonoBehaviour:
   info: {fileID: 8430658629361688880}
   gunImage: {fileID: 7522580554462492417}
   panel: {fileID: 932995167587082506}
+  gunName: {fileID: 0}
 --- !u!1 &1680689879541617622
 GameObject:
   m_ObjectHideFlags: 0
@@ -7869,7 +7894,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resultUI: {fileID: 7158312485414808642}
-  headShotUI: {fileID: 793486426395210064}
+  headShotAim: {fileID: 793486426395210064}
+  shotAim: {fileID: 4335338294285346863}
   gameoverPanel: {fileID: 3584946087145734548}
   playerUI: {fileID: 5554487375515861919}
   lodingUI: {fileID: 5474706179872080919}
@@ -8286,6 +8312,104 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &4335338294285346863
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4952846774584072629}
+  - component: {fileID: 2304676838318624607}
+  - component: {fileID: 777577113545747166}
+  - component: {fileID: 6724472140792593036}
+  m_Layer: 5
+  m_Name: Shot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &4952846774584072629
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4335338294285346863}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7637247447184213739}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 90, y: 90}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &2304676838318624607
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4335338294285346863}
+  m_CullTransparentMesh: 1
+--- !u!114 &777577113545747166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4335338294285346863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 24b52f1947dcdee4f960fd1d34688fa5, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!95 &6724472140792593036
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4335338294285346863}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e605fec805637c346ac403235c6c9b38, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4484032946752119474
 GameObject:
   m_ObjectHideFlags: 0
@@ -8395,6 +8519,7 @@ RectTransform:
   - {fileID: 837362501129084782}
   - {fileID: 1033343043176995177}
   - {fileID: 5286285438447496671}
+  - {fileID: 4952846774584072629}
   m_Father: {fileID: 6768690860875997167}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10370,7 +10495,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
-  m_FillAmount: 0.704
+  m_FillAmount: 0
   m_FillClockwise: 0
   m_FillOrigin: 2
   m_UseSpriteMesh: 0

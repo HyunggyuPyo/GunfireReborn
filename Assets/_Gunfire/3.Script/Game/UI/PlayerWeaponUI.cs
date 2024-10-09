@@ -37,6 +37,11 @@ public class PlayerWeaponUI : MonoBehaviour
         skillPoint.text = amount.ToString();
     }
 
+    public void SetBulletCount(int count, int max)
+    {
+        bulletCount.text = $"{count} /{max}";
+    }    
+
 
     public IEnumerator DushCoolTime(float time)
     {

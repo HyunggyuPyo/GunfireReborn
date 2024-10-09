@@ -9,8 +9,7 @@ public class EnemyUI : MonoBehaviour
     public TMP_Text enemyName;
     public Slider hp;
 
-    [HideInInspector]
-    public GameObject targetObj;
+    public GameObject targetObj { get; set; }
 
     private void OnEnable()
     {
@@ -25,14 +24,17 @@ public class EnemyUI : MonoBehaviour
 
     private void OnDisable()
     {
-        EnemyUIController.Instance.uiDic.Remove(targetObj);
+        if(targetObj != null)
+        {
+            EnemyUIController.Instance.uiDic.Remove(targetObj);
+        }
+        
         StopCoroutine(OffObj());
     }
 
     private void Update()
     {
         hp.value = targetObj.GetComponent<Enemy>().hp;
-
     }
 
     IEnumerator OffObj()

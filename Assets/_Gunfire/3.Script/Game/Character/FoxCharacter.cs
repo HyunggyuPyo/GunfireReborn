@@ -7,9 +7,7 @@ public class FoxCharacter : Character
     public override void InitSetting()
     {
         characterData.maxHealth = 65;
-        characterData.hp = 65;
         characterData.maxShield = 65;
-        characterData.shield = 65;
         characterData.speed = 6f;
     }
 

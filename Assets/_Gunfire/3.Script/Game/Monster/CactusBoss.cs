@@ -6,8 +6,10 @@ public class CactusBoss : Enemy
 {
     bool canAtk = false;
     bool encounter = false;
+    bool rush = false;
     public ObjectPool thornPool;
     public ObjectPool tornadoPool;
+    public GameObject rushCollider;
 
     private void OnEnable()
     {
@@ -54,6 +56,23 @@ public class CactusBoss : Enemy
         }
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if ((targetLayer | (1 << collision.gameObject.layer)) != targetLayer)
+        {
+            return;
+        }
+
+        print("보스랑 충돌");
+        if(rush)
+        {
+            if(collision.gameObject.TryGetComponent<IHitable>(out IHitable hitable))
+            {
+                hitable.Hit(MonsterData.damage);
+            }
+        }
+    }
+
     void RandPattem() //todo 잡몹 소환 추가?
     {
         print("패턴 실행");
@@ -95,7 +114,8 @@ public class CactusBoss : Enemy
         animator.SetBool("Rush", true);
         Quaternion lookTarget = Quaternion.LookRotation(target.position - transform.position);
         transform.rotation = Quaternion.Euler(0, lookTarget.eulerAngles.y, 0);
-
+        rushCollider.SetActive(true);
+        rush = true;
         float time = 0;
 
         while(time < .3f)
@@ -107,6 +127,8 @@ public class CactusBoss : Enemy
             yield return null;
         }
 
+        rushCollider.SetActive(false);
+        rush = false;
         animator.SetBool("Rush", false);
         yield return new WaitForSeconds(2f);
         //rigid.velocity = Vector3.zero;

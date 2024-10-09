@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class FoxSkill : CharacterSkill
 {
+    public static FoxSkill instance;
     public Transform startPoint;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     private void Update()
     {
