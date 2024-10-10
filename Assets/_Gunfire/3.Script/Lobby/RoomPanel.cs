@@ -224,8 +224,12 @@ public class RoomPanel : MonoBehaviourPunCallbacks
 
     void ExitRoomButtonClick()
     {
-        PhotonNetwork.LeaveRoom();
-        PhotonNetwork.AutomaticallySyncScene = false;
+        if (PhotonNetwork.IsConnected && PhotonNetwork.InRoom)
+        {
+            PhotonNetwork.LeaveRoom();
+            PhotonNetwork.AutomaticallySyncScene = false;
+        }
+            
         //OnConnectedToMaster();
     }
 

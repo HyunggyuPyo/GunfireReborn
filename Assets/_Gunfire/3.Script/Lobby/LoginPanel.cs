@@ -18,6 +18,9 @@ public class LoginPanel : MonoBehaviour
     public GameObject loginPanel;
     public GameObject namePanel;
 
+    public GameObject Popup;
+    public TMP_Text popupMessage;
+
     private void Awake()
     {
         loginButton.onClick.AddListener(LoginButtonClick);

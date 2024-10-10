@@ -7,8 +7,9 @@ public class FoxSkill : CharacterSkill
     public static FoxSkill instance;
     public Transform startPoint;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         instance = this;
     }
 

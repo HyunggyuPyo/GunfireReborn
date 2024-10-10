@@ -10,11 +10,12 @@ public abstract class CharacterSkill : MonoBehaviour
     public int subCount { get; set; }
     bool mainskill = true;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         mainCount = data.mainSkillCount;
         subCount = data.subSkillCount;
         PlayerWeaponUI.Instance.SetSkillPoint(subCount);
+        print($"½ºÅ³ :{subCount}");
     }
 
     public abstract void MainSkill();

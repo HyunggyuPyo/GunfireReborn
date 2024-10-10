@@ -23,12 +23,15 @@ public class LobbyPanel : MonoBehaviourPunCallbacks
 
     public void CreateRoomButtonClick()
     {
-        PhotonNetwork.CreateRoom(
+        if(PhotonNetwork.IsConnectedAndReady)
+        {
+            PhotonNetwork.CreateRoom(
             FirebaseManager.Instance.userData.userName,
             new RoomOptions()
             {
                 MaxPlayers = 4
             });
+        }        
     }
 
     public override void OnCreatedRoom()

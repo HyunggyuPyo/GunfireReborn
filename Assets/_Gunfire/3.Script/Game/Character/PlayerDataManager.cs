@@ -52,6 +52,7 @@ public class PlayerDataManager : MonoBehaviour
         {
             CharacterManager.instance.hp = this.hp;
             CharacterManager.instance.shield = this.shield;
+            PlayerWeaponManager.Instance.ResetWeapon();
             PlayerWeaponManager.Instance.Guns.Clear();
             PlayerWeaponManager.Instance.Guns.AddRange(new GameObject[] {guns[0], guns[1], guns[2]});
             for (int i = 0; i < guns.Count; i++)
@@ -59,7 +60,9 @@ public class PlayerDataManager : MonoBehaviour
                 if (guns[i] != null)
                 {
                     guns[i].gameObject.transform.SetParent(PlayerWeaponManager.Instance.weapons.transform);
-                    guns[i].GetComponent<Gun>().
+                    guns[i].gameObject.transform.localPosition = Vector3.zero;
+                    guns[i].gameObject.transform.localRotation = Quaternion.identity;
+                    guns[i].gameObject.transform.localScale = Vector3.one;
                 }                  
             }
             Inventory.Instance.coin = this.coin;

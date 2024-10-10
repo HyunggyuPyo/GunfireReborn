@@ -10,7 +10,6 @@ public class PlayerWeaponManager : MonoBehaviour
 
     List<GameObject> guns = new List<GameObject>(3);
     public List<GameObject> Guns { get { return guns; } set { guns = value; } }
-    //List<int> bullet = new List<int>();
     int gunNum;
     int tempNum;
     Transform fieldDrop;
@@ -18,14 +17,11 @@ public class PlayerWeaponManager : MonoBehaviour
     public int damage { get; set; }
     public float distance { get; private set; }
 
-    //GameObject hitGun;
-
     private void Awake()
     {
         Instance = this;
         gunNum = 3;
         fieldDrop = GameObject.Find("DropGunPrefab").transform;
-        //hitGun = RayController.Instance.hit.collider.gameObject;
         guns.AddRange(new GameObject[] { null, null, defaultGun});
         damage = defaultGun.GetComponent<Gun>().data.damage;
     }
@@ -160,7 +156,7 @@ public class PlayerWeaponManager : MonoBehaviour
     {
         if(guns[gunNum - 1].GetComponent<Gun>().data.image)
         {
-            print("이미지 이씅ㅁ");
+            print("이미지 확인");
         }
         PlayerWeaponUI.Instance.ImageChange(guns[gunNum - 1].GetComponent<Gun>().data.image);
         damage = guns[gunNum - 1].GetComponent<Gun>().data.damage + (guns[gunNum - 1].GetComponent<Gun>().data.level * 2);
@@ -177,5 +173,13 @@ public class PlayerWeaponManager : MonoBehaviour
     {
         Sprite gun = guns[gunNum -1].GetComponent<Gun>().data.image;
         return gun;
+    }
+
+    public void ResetWeapon()
+    {
+        foreach (Transform child in weapons)
+        {
+            GameObject.Destroy(child.gameObject);
+        }
     }
 }

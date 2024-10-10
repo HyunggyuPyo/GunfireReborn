@@ -50,7 +50,7 @@ public abstract class Gun : MonoBehaviour
 
     public virtual void Using(Transform startPos)
     {
-        if(Input.GetMouseButtonDown(0) && shootAble && !reLoading)
+        if(Input.GetMouseButtonDown(0) && shootAble && !reLoading && bulletCount > 0)
         {
             if (pointer != pool.Count)
             {
