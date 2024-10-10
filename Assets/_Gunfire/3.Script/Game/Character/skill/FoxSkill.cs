@@ -22,6 +22,7 @@ public class FoxSkill : CharacterSkill
     {
         GameObject orb = Instantiate(data.mainSkillPrefab, transform);
         orb.transform.position = startPoint.position;
+
     }
 
     public override void SubSkill()

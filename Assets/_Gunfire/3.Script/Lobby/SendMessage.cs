@@ -33,7 +33,8 @@ public class SendMessage : MonoBehaviour
         //    nickname = FirebaseManager.Instance.userData.userName
         //};
 
-        FirebaseManager.Instance.SendInvitation(nameInput.text, PhotonNetwork.CurrentRoom.Name);
+        FirebaseManager.Instance.Search(nameInput.text, PhotonNetwork.CurrentRoom.Name);
+        //FirebaseManager.Instance.SendInvitation(nameInput.text, PhotonNetwork.CurrentRoom.Name);
 
         gameObject.SetActive(false);
     }

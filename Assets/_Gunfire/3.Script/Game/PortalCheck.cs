@@ -11,6 +11,7 @@ public class PortalCheck : MonoBehaviour
     bool inCollider = false;
     bool clear = false;
     public bool isBossRound = false;
+    public AudioClip portalClip;
 
     private void Awake()
     {
@@ -25,6 +26,7 @@ public class PortalCheck : MonoBehaviour
 
             if (clear)
             {
+                SoundManager.instance.SoundPlay("PortalSound", portalClip);
                 //todo 여기서 파티워 레디 받아서 이동
                 if(isBossRound == false)
                 {

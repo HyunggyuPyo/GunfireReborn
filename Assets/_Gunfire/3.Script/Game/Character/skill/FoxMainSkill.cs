@@ -36,6 +36,7 @@ public class FoxMainSkill : MonoBehaviour
         else
         {
             transform.LookAt(dir);
+            print($"SKILL{transform.forward}");
         }
 
         var extinction = StartCoroutine(ExtinctionOrb());

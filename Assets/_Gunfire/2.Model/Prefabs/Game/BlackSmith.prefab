@@ -1578,6 +1578,7 @@ MonoBehaviour:
   upgradeCount: {fileID: 492492344244786231}
   num: 0
   upgrade: {fileID: 5983930721537269701}
+  buttonClip: {fileID: 8300000, guid: 71871eabeb236b94c8afb03ffd7377b2, type: 3}
 --- !u!1 &3142507829263646306
 GameObject:
   m_ObjectHideFlags: 0
@@ -1636,6 +1637,7 @@ MonoBehaviour:
   upgradeCount: {fileID: 492492344244786231}
   num: 1
   upgrade: {fileID: 4224066509219695802}
+  buttonClip: {fileID: 8300000, guid: 71871eabeb236b94c8afb03ffd7377b2, type: 3}
 --- !u!1 &3167295289267118488
 GameObject:
   m_ObjectHideFlags: 0
@@ -2815,6 +2817,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiPanel: {fileID: 6139426923203089122}
   upgradeCount: 0
+  npcClip: {fileID: 8300000, guid: a50c870065a0b15459b87dbcccbd55bf, type: 3}
 --- !u!1 &4808985843096828318
 GameObject:
   m_ObjectHideFlags: 0

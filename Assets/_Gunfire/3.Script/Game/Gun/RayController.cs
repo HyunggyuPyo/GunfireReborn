@@ -55,7 +55,7 @@ public class RayController : MonoBehaviour
         shotObj = Physics.Raycast(ray, out hitObj, 30f, targetMask);
 
 
-        Debug.DrawRay(ray.origin, ray.direction * 30f, Color.red, 1f);
+        //Debug.DrawRay(ray.origin, ray.direction * 30f, Color.red, 1f);
     }
 }
 

@@ -45,17 +45,28 @@ public class LoginPanel : MonoBehaviour
 
     public void LoginButtonClick()
     {
+        SoundManager.instance.ButtonSoundPlay();
+
         loginButton.interactable = false;
 
         FirebaseManager.Instance.Login(idInput.text, pwInput.text, (user) =>
         {
             loginButton.interactable = true;
             PhotonNetwork.ConnectUsingSettings();
+        },
+        (eMessage) =>
+        {
+            Popup.SetActive(true);
+            popupMessage.text = eMessage.ToString();
+            //todo 창 닫기 만들기 닉네임 중복 만들기 
         });
     }
 
+
     public void SignUpButtinCilck()
     {
+        SoundManager.instance.ButtonSoundPlay();
+
         signUpButton.interactable = false;
 
         FirebaseManager.Instance.SignUp(idInput.text, pwInput.text, (user) =>
@@ -68,6 +79,8 @@ public class LoginPanel : MonoBehaviour
 
     public void SetNameButtonClick()
     {
+        SoundManager.instance.ButtonSoundPlay();
+
         setNameButton.interactable = false;
 
         FirebaseManager.Instance.SetName(nameInput.text, () =>

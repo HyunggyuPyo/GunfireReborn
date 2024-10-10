@@ -8,9 +8,11 @@ public class CharacterSkillSO : ScriptableObject
     public int mainSkillCount;
     public int mainSkillCoolTime;
     public GameObject mainSkillImage;
+    public AudioClip mainSkillClip;
 
     public GameObject subSkillPrefab;
     public int subSkillDamage;
     public int subSkillCount;
     public Sprite subSkillImage;
+    public AudioClip subSkillClip;
 }

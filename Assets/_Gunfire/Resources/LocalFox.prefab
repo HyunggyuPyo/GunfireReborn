@@ -2140,6 +2140,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   body: {fileID: 3419834868283668158}
   dushEff: {fileID: 8176407093938686870}
+  dushClip: {fileID: 8300000, guid: 7a7a9680fc5a68846893d4b0f92e6179, type: 3}
 --- !u!114 &-2057743925887690482
 MonoBehaviour:
   m_ObjectHideFlags: 0

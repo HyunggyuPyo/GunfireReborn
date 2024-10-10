@@ -9,8 +9,9 @@ public struct GunData
     public int damage;
     public float delay;
     public int maxBullet;
-    
-    public AudioSource soundEffect;
+
+    public AudioClip shotClip;
+    public AudioClip reLoadClip;
     public string info;
     public GameObject bullet;
     public Sprite image;
@@ -69,6 +70,7 @@ public abstract class Gun : MonoBehaviour
             shootAble = false;
 
             bulletCount--;
+            SoundManager.instance.SoundPlay("ShotSound", data.shotClip);
             PlayerWeaponUI.Instance.SetBulletCount(bulletCount, data.maxBullet);
         }
 
@@ -93,6 +95,7 @@ public abstract class Gun : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.R) && data.maxBullet != bulletCount)
         {
             reLoading = true;
+            SoundManager.instance.SoundPlay("ReloadSound", data.reLoadClip);
             parentAnimator.SetTrigger("ReLoad");
             bulletCount = data.maxBullet;
             StartCoroutine(Reloading());

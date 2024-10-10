@@ -5,6 +5,8 @@ using UnityEngine;
 public class Rifle : Gun
 {
     public Sprite image;
+    public AudioClip shopClip;
+    public AudioClip reLoadClip;
 
     public override void InitSetting()
     {
@@ -14,7 +16,8 @@ public class Rifle : Gun
         data.maxBullet = 30;
         bulletCount = data.maxBullet;
         data.info = "ถ๓ภฬวร 1";
-        //data.soundEffect = ;
+        data.shotClip = shopClip;
+        data.reLoadClip = reLoadClip;
         data.bullet = Resources.Load<GameObject>("DefultBullet");
         data.image = image;
     }

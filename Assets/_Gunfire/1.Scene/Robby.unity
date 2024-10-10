@@ -2881,8 +2881,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uC774\uB984 :"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 0c84928361c76d840840e240e66ea44b, type: 2}
-  m_sharedMaterial: {fileID: -4718096082867994032, guid: 0c84928361c76d840840e240e66ea44b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 56c2fe6777fe2484aa3faae4ef322ee4, type: 2}
+  m_sharedMaterial: {fileID: 7286481583242249300, guid: 56c2fe6777fe2484aa3faae4ef322ee4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2912,7 +2912,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -3989,6 +3989,8 @@ MonoBehaviour:
   bgmList:
   - {fileID: 8300000, guid: d496e96269ec30e42b9cbf7a52362221, type: 3}
   - {fileID: 8300000, guid: 28f4bd3061cd97a499e29787383ffed6, type: 3}
+  - {fileID: 8300000, guid: 74f5d0e8a0fa3a148901da210a8c03e6, type: 3}
+  buttonClip: {fileID: 8300000, guid: a2b923be3e417584086f27e4a9e2d3bf, type: 3}
 --- !u!4 &452616764
 Transform:
   m_ObjectHideFlags: 0
@@ -5066,7 +5068,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &511111166
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14060,7 +14062,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1769914125
 RectTransform:
   m_ObjectHideFlags: 0

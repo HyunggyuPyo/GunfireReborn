@@ -103,29 +103,41 @@ public class FirebaseManager : MonoBehaviour
         }
     }
 
-    public async void Login(string email, string password, Action<FirebaseUser> callback = null)
+    public async void Login(string email, string password, Action<FirebaseUser> callback = null, Action<string> callback2 = null)
     {
-        var result = await Auth.SignInWithEmailAndPasswordAsync(email, password);
-
-        usersRef = DB.GetReference($"users/{result.User.UserId}");
-
-        DataSnapshot userDataValues = await usersRef.GetValueAsync();
-
-        if(userDataValues.Exists)
+        try
         {
-            string json = userDataValues.GetRawJsonValue();
-            userData = JsonConvert.DeserializeObject<UserData>(json);
-            GetSkill();
-            print(this.userData.soulPoint);
-        }
-        else
-        {
-            //todo 에러창 띄우기
-            print("설마 오류난다고");
-        }
+            var result = await Auth.SignInWithEmailAndPasswordAsync(email, password);
 
-        onLogin?.Invoke(result.User);
-        callback?.Invoke(result.User);
+            usersRef = DB.GetReference($"users/{result.User.UserId}");
+
+            DataSnapshot userDataValues = await usersRef.GetValueAsync();
+
+            if (userDataValues.Exists)
+            {
+                string json = userDataValues.GetRawJsonValue();
+                userData = JsonConvert.DeserializeObject<UserData>(json);
+                GetSkill();
+                print(this.userData.soulPoint);
+            }
+            else
+            {
+                print("설마 오류난다고");
+                throw new Exception();
+            }
+
+            onLogin?.Invoke(result.User);
+            callback?.Invoke(result.User);
+        }
+        catch (FirebaseException e)
+        {
+            callback2?.Invoke("오류 404.");
+        }
+        catch (Exception e)
+        {
+            callback2?.Invoke("아이디가 존재하지 않습니다.");
+        }     
+ 
     }
 
     public async void SetName(string name, Action callback = null)
@@ -135,8 +147,23 @@ public class FirebaseManager : MonoBehaviour
 
         userData.userName = name;
 
+        var invitRef = DB.GetReference($"userName/{name}");
+        await invitRef.SetValueAsync(userData.userId);
+
         callback?.Invoke();
         //todo 닉네임 중복검사 만들기
+    }
+
+    public async void Search(string name, string inviter)
+    {
+        var invtiRef = DB.GetReference($"userName/{name}");
+        DataSnapshot snapshot = await invtiRef.GetValueAsync();
+
+        if(snapshot.Exists)
+        {
+            string result = snapshot.Value.ToString();
+            SendInvitation(result, inviter);
+        }
     }
 
     public void SendInvitation(string receiver, string inviter)
@@ -148,7 +175,6 @@ public class FirebaseManager : MonoBehaviour
         //var invitJson = JsonConvert.SerializeObject(msg);
         //invitRef.Child( msg.nickname).SetRawJsonValueAsync(invitJson);
         //invitRef.SetValueAsync(msg.nickname);
-        
     }
 
     public void InvitationEventHandler(object sender, ValueChangedEventArgs args)

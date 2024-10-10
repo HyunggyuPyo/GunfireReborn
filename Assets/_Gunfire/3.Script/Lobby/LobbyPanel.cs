@@ -23,7 +23,9 @@ public class LobbyPanel : MonoBehaviourPunCallbacks
 
     public void CreateRoomButtonClick()
     {
-        if(PhotonNetwork.IsConnectedAndReady)
+        SoundManager.instance.ButtonSoundPlay();
+
+        if (PhotonNetwork.IsConnectedAndReady)
         {
             PhotonNetwork.CreateRoom(
             FirebaseManager.Instance.userData.userName,
@@ -49,12 +51,15 @@ public class LobbyPanel : MonoBehaviourPunCallbacks
 
     public void SkillButtonClick()
     {
+        SoundManager.instance.ButtonSoundPlay();
         //todo : 재능 스킬 제작
         SkillPanel.SetActive(true);
     }
 
     public void ExitButtonClick()
     {
+        SoundManager.instance.ButtonSoundPlay();
+
         Application.Quit();
     }
 }

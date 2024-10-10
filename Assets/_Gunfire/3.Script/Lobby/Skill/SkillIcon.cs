@@ -44,7 +44,9 @@ public class SkillIcon : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
 
     public void BuyButtonClick()
     {
-        if(data.price <= FirebaseManager.Instance.userData.soulPoint && data.maxLevel > FirebaseManager.Instance.skillData[data.type])
+        SoundManager.instance.ButtonSoundPlay();
+
+        if (data.price <= FirebaseManager.Instance.userData.soulPoint && data.maxLevel > FirebaseManager.Instance.skillData[data.type])
         {
             FirebaseManager.Instance.userData.soulPoint -= data.price;
             //todo 파이어베이스 데이터 값 바뀌면 반응 하는 액션 콜백 만들어거 데이터 바로 수정

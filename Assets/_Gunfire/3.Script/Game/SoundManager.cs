@@ -9,6 +9,7 @@ public class SoundManager : MonoBehaviour
     public static SoundManager instance;
     AudioSource bgmSound;
     public AudioClip[] bgmList;
+    public AudioClip buttonClip;
 
     private void Awake()
     {
@@ -42,9 +43,21 @@ public class SoundManager : MonoBehaviour
         GameObject so = new GameObject(soundName + "Sound");
         AudioSource audiosource = so.AddComponent<AudioSource>();
         audiosource.clip = clip;
+        audiosource.volume = 0.3f;
         audiosource.Play();
 
         Destroy(so, clip.length);
+    }
+
+    public void ButtonSoundPlay()
+    {
+        GameObject buttonSound = new GameObject("ButtonSound");
+        AudioSource audiosource = buttonSound.AddComponent<AudioSource>();
+        audiosource.clip = buttonClip;
+        audiosource.volume = 0.3f;
+        audiosource.Play();
+
+        Destroy(buttonSound, buttonClip.length);
     }
 
 

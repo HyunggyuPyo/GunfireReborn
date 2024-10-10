@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc48c9ce4d746e743b93bda1d8fe8294, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myWeapon: {fileID: 0}
+  myWeapon: {fileID: 2402618841514280319}
   startPosition: {fileID: 960814196060515080}
   particle: {fileID: 4559216933458413701}
   wearing: 0
@@ -63,6 +63,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: 81c76bb9c9aca3c41880186dad460834, type: 3}
+  shopClip: {fileID: 8300000, guid: 2962a429380f0aa4fb9d97bdb272faa7, type: 3}
+  reLoadClip: {fileID: 8300000, guid: 06a960e029379d84281988287642c7df, type: 3}
 --- !u!1 &4559216933458413701
 GameObject:
   m_ObjectHideFlags: 0

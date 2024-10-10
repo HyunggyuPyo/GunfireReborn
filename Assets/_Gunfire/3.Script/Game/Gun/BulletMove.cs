@@ -13,12 +13,14 @@ public class BulletMove : MonoBehaviour
     Vector3 dir;
     public GameObject particle;
     Transform startPosition;
+    public TrailRenderer tr;
 
     private void Awake()
     {
         rigid = GetComponent<Rigidbody>();
         targetLayer = (1 << LayerMask.NameToLayer("Enemy")) | (1 << LayerMask.NameToLayer("Boss"));
         startPosition = GetComponentInParent<WeaponController>().startPosition;
+        //tr = particle.GetComponent<TrailRenderer>();
     }
 
     private void OnEnable()
@@ -34,6 +36,7 @@ public class BulletMove : MonoBehaviour
         else
         {
             transform.LookAt(dir);
+            print($"bullet{transform.forward}");
         }
 
         damage = PlayerWeaponManager.Instance.damage;
@@ -41,6 +44,9 @@ public class BulletMove : MonoBehaviour
         StartCoroutine(DespawnBullet());
         reach = false;
         particle.SetActive(true);
+
+        if(tr != null)
+            tr.Clear();
     }
 
     private void OnDisable()
@@ -83,8 +89,7 @@ public class BulletMove : MonoBehaviour
     IEnumerator DespawnBullet()
     {
         yield return new WaitForSeconds(1.5f);
-        //transform.position = startPosition.position;
-        //despawn = null;
+
         gameObject.SetActive(false);
     }
 }

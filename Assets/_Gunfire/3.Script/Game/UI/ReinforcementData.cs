@@ -15,6 +15,7 @@ public class ReinforcementData : MonoBehaviour
 
     public Button upgrade;
     NpcInteract blackSmith;
+    public AudioClip buttonClip;
 
     private void Awake()
     {
@@ -52,6 +53,7 @@ public class ReinforcementData : MonoBehaviour
     {
         if(blackSmith.upgradeCount > 0 && Inventory.Instance.coin >= (200 + (PlayerWeaponManager.Instance.Guns[num].GetComponent<Gun>().data.level * 100)))
         {
+            SoundManager.instance.SoundPlay("UpgradeClip", buttonClip);
             Inventory.Instance.coin -= (200 + (PlayerWeaponManager.Instance.Guns[num].GetComponent<Gun>().data.level * 100));
             PlayerWeaponManager.Instance.Guns[num].GetComponent<Gun>().data.level += 1;
 

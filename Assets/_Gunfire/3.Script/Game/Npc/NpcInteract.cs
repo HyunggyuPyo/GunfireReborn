@@ -9,6 +9,7 @@ public class NpcInteract : MonoBehaviour
     bool on = false;
     [HideInInspector]
     public int upgradeCount;
+    public AudioClip npcClip;
 
     private void Awake()
     {
@@ -28,6 +29,7 @@ public class NpcInteract : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.F))
             {
+                SoundManager.instance.SoundPlay("SmithSound", npcClip);
                 uiPanel.SetActive(true);
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;

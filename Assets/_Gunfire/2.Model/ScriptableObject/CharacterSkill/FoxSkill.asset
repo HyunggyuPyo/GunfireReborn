@@ -17,7 +17,9 @@ MonoBehaviour:
   mainSkillCount: 1
   mainSkillCoolTime: 4
   mainSkillImage: {fileID: 2077019522891921112, guid: 30e3b7496473a244aa6c0fff228b4de4, type: 3}
+  mainSkillClip: {fileID: 8300000, guid: a3b585705098d2e4a80618930db68f4b, type: 3}
   subSkillPrefab: {fileID: 7329414987287303061, guid: 248d024209f99cb438a915770e8019c9, type: 3}
   subSkillDamage: 5
   subSkillCount: 4
   subSkillImage: {fileID: 1082801238, guid: 831f31b51b05f1c428f6c74ed12f91fd, type: 3}
+  subSkillClip: {fileID: 8300000, guid: 8857ed4c4273f8143a579aefaea61485, type: 3}

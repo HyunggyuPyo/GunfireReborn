@@ -26,6 +26,7 @@ public class LocalPlayerMove : MonoBehaviour, IPunInstantiateMagicCallback
     float dirX, dirY;
     public GameObject body;
     public GameObject dushEff;
+    public AudioClip dushClip;
     #endregion
 
     private void Awake()
@@ -130,6 +131,7 @@ public class LocalPlayerMove : MonoBehaviour, IPunInstantiateMagicCallback
         float time = 0;
         gravity = 0;
         dushEff.SetActive(true);
+        SoundManager.instance.SoundPlay("DushSound", dushClip);
 
         if (_forward)
         {

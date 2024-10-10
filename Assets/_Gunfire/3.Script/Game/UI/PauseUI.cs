@@ -7,6 +7,7 @@ public class PauseUI : MonoBehaviour
 {
     public Button continueButton;
     public Button exitButton;
+    public AudioClip buttonClip;
 
     private void Awake()
     {
@@ -34,6 +35,7 @@ public class PauseUI : MonoBehaviour
 
     void ContinueButinClick()
     {
+        SoundManager.instance.SoundPlay("ButtonSound", buttonClip);
         gameObject.SetActive(false);
         CharacterManager.instance.Interaction();
         GameUIManager.instance.playerUI.SetActive(true);
@@ -45,6 +47,7 @@ public class PauseUI : MonoBehaviour
 
     void ExitButtonClick()
     {
+        SoundManager.instance.SoundPlay("ButtonSound", buttonClip);
         ContinueButinClick();
         CharacterManager.instance.PlayerDead();
     }

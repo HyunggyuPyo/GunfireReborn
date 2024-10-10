@@ -30,6 +30,8 @@ public class SkillPanel : MonoBehaviour
 
     void OkButtonClick()
     {
+        SoundManager.instance.ButtonSoundPlay();
+
         gameObject.SetActive(false);
     }
 }

@@ -27,6 +27,7 @@ public abstract class CharacterSkill : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.E) && mainskill)//&&  mainCount != 0)
         {
             MainSkill();
+            SoundManager.instance.SoundPlay("MainSkillSound", data.mainSkillClip);
             mainskill = false;
             //mainCount -= 1;
 
@@ -37,6 +38,7 @@ public abstract class CharacterSkill : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Q) && subCount != 0)
         {
             SubSkill();
+            SoundManager.instance.SoundPlay("SubSkillSound", data.subSkillClip);
             subCount -= 1;
             PlayerWeaponUI.Instance.SetSkillPoint(subCount);
         }

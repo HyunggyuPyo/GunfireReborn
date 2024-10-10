@@ -64,6 +64,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: e168e7bd8a9ab514b924009bbe1c05d0, type: 3}
+  shopClip: {fileID: 8300000, guid: 2962a429380f0aa4fb9d97bdb272faa7, type: 3}
+  reLoadClip: {fileID: 8300000, guid: 06a960e029379d84281988287642c7df, type: 3}
 --- !u!135 &6664420871139727386
 SphereCollider:
   m_ObjectHideFlags: 0

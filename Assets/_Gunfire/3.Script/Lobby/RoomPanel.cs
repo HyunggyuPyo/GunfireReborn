@@ -194,7 +194,9 @@ public class RoomPanel : MonoBehaviourPunCallbacks
 
     void ReadyButtonClick()
     {
-        if(!PhotonNetwork.IsMasterClient) 
+        SoundManager.instance.ButtonSoundPlay();
+
+        if (!PhotonNetwork.IsMasterClient) 
         {
             if(PhotonNetwork.LocalPlayer.IsLocal)
             {
@@ -224,6 +226,8 @@ public class RoomPanel : MonoBehaviourPunCallbacks
 
     void ExitRoomButtonClick()
     {
+        SoundManager.instance.ButtonSoundPlay();
+
         if (PhotonNetwork.IsConnected && PhotonNetwork.InRoom)
         {
             PhotonNetwork.LeaveRoom();
@@ -242,5 +246,4 @@ public class RoomPanel : MonoBehaviourPunCallbacks
     {
         PhotonNetwork.LeaveRoom();
     }
-
 }
