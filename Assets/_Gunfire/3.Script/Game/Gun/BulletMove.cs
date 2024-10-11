@@ -26,8 +26,10 @@ public class BulletMove : MonoBehaviour
     private void OnEnable()
     {
         
-        dir = RayController.Instance.hitObj.point;
-        
+        this.dir = RayController.Instance.hitObj.point;
+
+        var dir = RayController.Instance.hitObj.point - transform.position;
+
         if(dir == Vector3.zero)
         {
             dir = RayController.Instance.centerPosition;
