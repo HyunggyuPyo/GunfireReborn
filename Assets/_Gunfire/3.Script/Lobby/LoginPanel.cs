@@ -57,8 +57,9 @@ public class LoginPanel : MonoBehaviour
         (eMessage) =>
         {
             Popup.SetActive(true);
-            popupMessage.text = eMessage.ToString();
+            popupMessage.text = "로그인 실패."; //eMessage.ToString()
             //todo 창 닫기 만들기 닉네임 중복 만들기 
+            loginButton.interactable = true;
         });
     }
 
@@ -73,6 +74,12 @@ public class LoginPanel : MonoBehaviour
         {
             loginPanel.SetActive(false);
             namePanel.SetActive(true);
+            signUpButton.interactable = true;
+        },
+        (eMessage) =>
+        {
+            Popup.SetActive(true);
+            popupMessage.text = "회원가입 실패."; //eMessage.ToString()
             signUpButton.interactable = true;
         });
     }

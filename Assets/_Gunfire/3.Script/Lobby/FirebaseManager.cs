@@ -70,7 +70,7 @@ public class FirebaseManager : MonoBehaviour
         }
     }
 
-    public async void SignUp(string email, string password, Action<FirebaseUser> callback = null)
+    public async void SignUp(string email, string password, Action<FirebaseUser> callback = null, Action<string> callback2 = null)
     {
         try
         {
@@ -99,7 +99,11 @@ public class FirebaseManager : MonoBehaviour
         }
         catch (FirebaseException e)
         {
-            Debug.LogError(e.Message);
+            callback2?.Invoke("회원가입 실패."); //e.Message
+        }
+        catch (Exception e)
+        {
+            callback2?.Invoke("회원가입 실패.");
         }
     }
 
@@ -239,3 +243,25 @@ public class FirebaseManager : MonoBehaviour
         callback?.Invoke();
     }
 }
+
+/*
+ using System.Security.Cryptography;
+using System.Text;
+
+public string HashPassword(string password)
+{
+    using (SHA256 sha256Hash = SHA256.Create())
+    {
+        // 비밀번호를 바이트 배열로 변환
+        byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(password));
+
+        // 바이트 배열을 16진수 문자열로 변환
+        StringBuilder builder = new StringBuilder();
+        for (int i = 0; i < bytes.Length; i++)
+        {
+            builder.Append(bytes[i].ToString("x2"));
+        }
+        return builder.ToString();
+    }
+}
+ */

@@ -20,7 +20,6 @@ public class BulletMove : MonoBehaviour
         rigid = GetComponent<Rigidbody>();
         targetLayer = (1 << LayerMask.NameToLayer("Enemy")) | (1 << LayerMask.NameToLayer("Boss"));
         startPosition = GetComponentInParent<WeaponController>().startPosition;
-        //tr = particle.GetComponent<TrailRenderer>();
     }
 
     private void OnEnable()
@@ -28,9 +27,12 @@ public class BulletMove : MonoBehaviour
         
         this.dir = RayController.Instance.hitObj.point;
 
-        var dir = RayController.Instance.hitObj.point - transform.position;
+        //var dir = RayController.Instance.hitObj.point - transform.position;
 
-        if(dir == Vector3.zero)
+        //dir = dir.normalized;
+
+        //rigid.velocity = dir * speed;
+        if (dir == Vector3.zero)
         {
             dir = RayController.Instance.centerPosition;
             transform.forward = dir;
@@ -61,10 +63,10 @@ public class BulletMove : MonoBehaviour
 
     private void Update()
     {
-        if(!reach)
+        if (!reach)
         {
             rigid.AddForce(transform.forward * speed, ForceMode.VelocityChange);
-        } 
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -74,6 +76,7 @@ public class BulletMove : MonoBehaviour
             return;
         }
 
+        print("총알 몬스터 충돌");
         reach = true;
 
         if (other.TryGetComponent<IHitable>(out IHitable hitable))
