@@ -7,6 +7,7 @@ public class Inventory : MonoBehaviour
     public static Inventory Instance;
     
     public int coin { get; set; }
+    public int bonusCoin { get; set; }
     public int soulStone { get; set; }
 
     private void Awake()
@@ -18,6 +19,11 @@ public class Inventory : MonoBehaviour
     
     public void GetCoin(int count)
     {
+        if(Random.Range(0, 101) <= bonusCoin)
+        {
+            count *= 2;
+        }
+        
         coin += count;
     }
 

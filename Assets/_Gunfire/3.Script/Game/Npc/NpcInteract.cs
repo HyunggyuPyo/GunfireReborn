@@ -18,7 +18,8 @@ public class NpcInteract : MonoBehaviour
 
     private void Start()
     {
-        upgradeCount = 3;
+        //upgradeCount = 3;
+        upgradeCount = PlayerDataManager.instance.upgradeCount;
     }
 
     private void Update()

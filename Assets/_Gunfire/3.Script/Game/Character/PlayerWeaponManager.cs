@@ -15,15 +15,21 @@ public class PlayerWeaponManager : MonoBehaviour
     Transform fieldDrop;
     public GameObject defaultGun; //todo 이거 여기서 리소스 이니트 하면 되는거 아닌가?
     public int damage { get; set; }
+    public int bonusDamage { get; set; }
     public float distance { get; private set; }
 
     private void Awake()
     {
         Instance = this;
         gunNum = 3;
+        bonusDamage = 0;
         fieldDrop = GameObject.Find("DropGunPrefab").transform;
         guns.AddRange(new GameObject[] { null, null, defaultGun});
         damage = defaultGun.GetComponent<Gun>().data.damage;
+        if(damage != 0)
+        {
+            damage *= 1 + (bonusDamage / damage);
+        }        
     }
 
     private void Start()
@@ -147,6 +153,7 @@ public class PlayerWeaponManager : MonoBehaviour
 
         PlayerWeaponUI.Instance.ImageChange(guns[gunNum - 1].GetComponent<Gun>().data.image);
         damage = guns[gunNum - 1].GetComponent<Gun>().data.damage + (guns[gunNum - 1].GetComponent<Gun>().data.level * 2);
+        damage *= 1 + (bonusDamage / damage);
         print($"damage => {damage}");
         PlayerWeaponUI.Instance.SetBulletCount(guns[gunNum - 1].GetComponent<Gun>().bulletCount, guns[gunNum - 1].GetComponent<Gun>().data.maxBullet);
         //RayController.Instance.startPoint = guns[gunNum - 1].GetComponent<WeaponController>().startPosition.position;
@@ -160,6 +167,7 @@ public class PlayerWeaponManager : MonoBehaviour
         }
         PlayerWeaponUI.Instance.ImageChange(guns[gunNum - 1].GetComponent<Gun>().data.image);
         damage = guns[gunNum - 1].GetComponent<Gun>().data.damage + (guns[gunNum - 1].GetComponent<Gun>().data.level * 2);
+        damage *= 1 + (bonusDamage / damage);
         print($"damage => {damage}");
     }
 

@@ -184,5 +184,6 @@ public class LocalPlayerMove : MonoBehaviour, IPunInstantiateMagicCallback
         PlayerWeaponManager.Instance.InitSetting();
         GameUIManager.instance.lodingUI.SetActive(false);
         PlayerDataManager.instance.LoadData();
+        PlayerDataManager.instance.PlayerGetSkillData();
     }
 }

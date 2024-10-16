@@ -14,6 +14,8 @@ public class PlayerDataManager : MonoBehaviour
     public int soulstone { get; set; }
     public int subSkillCount { get; set; }
 
+    public int upgradeCount { get; set; }
+
     private void Awake()
     {
         if (instance == null)
@@ -27,6 +29,49 @@ public class PlayerDataManager : MonoBehaviour
         }
 
         loadData = false;
+        upgradeCount = 3;
+    }
+
+    public void PlayerGetSkillData()
+    {
+        foreach (KeyValuePair<SkillType, int> entry in FirebaseManager.Instance.skillData)
+        {
+            if (entry.Value != 0)
+            {
+                SkillData(entry.Key, entry.Value);
+            }
+        }
+    }
+
+    void SkillData(SkillType type, int level)
+    {
+        switch (type)
+        {
+            case SkillType.skill_quest_01:
+                Inventory.Instance.coin += level * 100;
+                break;
+            case SkillType.skill_quest_02:
+                Inventory.Instance.bonusCoin = level * 5;
+                break;
+            case SkillType.skill_battle_01:
+                PlayerWeaponManager.Instance.bonusDamage = level * 5;
+                break;
+            case SkillType.skill_battle_02:
+                upgradeCount += level;
+                break;
+            case SkillType.skill_battle_03:
+                // 럭키샷 증가
+                break;
+            case SkillType.skill_live_01:
+                hp += level * 5;
+                break;
+            case SkillType.skill_live_02:
+                shield += level * 5;
+                break;
+            case SkillType.skill_live_03:
+                //방어력 증가
+                break;
+        }
     }
 
     public void SaveData()
