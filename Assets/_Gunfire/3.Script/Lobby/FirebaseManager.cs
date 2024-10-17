@@ -215,16 +215,18 @@ public class FirebaseManager : MonoBehaviour
             DatabaseReference skillRef = DB.GetReference($"skill/{userData.userId}/{id}");
 
             DataSnapshot snapshot = await skillRef.GetValueAsync();
+            int value = snapshot.Exists ? Convert.ToInt32(snapshot.Value) : 0;
+            skillData.Add(id, value);
 
-            if (snapshot.Exists)
-            {
-                int value = Convert.ToInt32(snapshot.Value);
-                skillData.Add(id, value);
-            }
-            else
-            {
-                skillData.Add(id, 0);
-            }
+            //if (snapshot.Exists)
+            //{
+            //    int value = Convert.ToInt32(snapshot.Value);
+            //    skillData.Add(id, value);
+            //}
+            //else
+            //{
+            //    skillData.Add(id, 0);
+            //}
         }
     }
 
